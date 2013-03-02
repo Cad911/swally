@@ -38,7 +38,7 @@
 			}
 		}
 		.time-played {
-		//	display: none;
+			display: none;
 		}
 	}
 	.playground.box, .activities {
@@ -48,5 +48,12 @@
 	}
 	.activities {
 		margin-bottom: 51px;
+		td.rank, td.rule {
+			padding: 6px 10px;
+			font-weight: bold;
+		}
+		td.rule {
+			padding: 6px 0 6px 10px;
+		}
 	}
 }

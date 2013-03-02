@@ -485,6 +485,10 @@ header p, header a, header span {
     padding: 5px inherit;
     font-size: 25px;
   }
+  /* line 40, ../sass/_responsive.scss */
+  .playground .time-played {
+    display: none;
+  }
 
   /* line 44, ../sass/_responsive.scss */
   .playground.box, .activities {
@@ -495,5 +499,14 @@ header p, header a, header span {
   /* line 49, ../sass/_responsive.scss */
   .activities {
     margin-bottom: 51px;
+  }
+  /* line 51, ../sass/_responsive.scss */
+  .activities td.rank, .activities td.rule {
+    padding: 6px 10px;
+    font-weight: bold;
+  }
+  /* line 55, ../sass/_responsive.scss */
+  .activities td.rule {
+    padding: 6px 0 6px 10px;
   }
 }
