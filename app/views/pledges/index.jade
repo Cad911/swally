@@ -1,0 +1,39 @@
+ul.breadcrumb
+    li
+       a(href='/') Home
+       span.divider /
+    li.active
+       != linkTo('pledges', path_to.pledges())
+
+.page-header
+  h1 Index of pledges
+
+
+.row
+  .span12
+     p
+        != linkTo('<i class="icon-plus icon-white"></i> New pledge', path_to.new_pledge(), {class: 'btn btn-primary'})
+
+- if (pledges.length) {
+.row
+  .span12
+     table.table.table-striped
+       thead
+         tr
+           th ID
+           th.span3 Actions
+       tbody
+         - pledges.forEach(function (pledge) {
+         tr
+           td
+             != linkTo('pledge #' + pledge.id, path_to.pledge(pledge))
+           td
+             != linkTo('<i class="icon-edit"></i> Edit', pathTo.edit_pledge(pledge), {class: 'btn btn-mini'}) + ' '
+             != linkTo('<i class="icon-remove icon-white"></i> Delete', pathTo.pledge(pledge), {class: 'btn btn-mini btn-danger', method: 'delete', remote: true, jsonp: '(function (u) {location.href = u;})'})
+         - });
+- } else{
+.row
+  .span12
+     p.alert.alert-block.alert-info
+        strong No pledges were found.
+- }

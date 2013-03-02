@@ -1,0 +1,22 @@
+ul.breadcrumb
+      li
+        a(href='/') Home
+        span.divider /
+      li
+        != linkTo('pledges', pathTo.pledges())
+        span.divider /
+      li.active
+        a(href='#') Edit pledge
+
+.page-header
+  h1 Edit pledge
+
+- var form = formFor(pledge, {action: pathTo.pledge(pledge), method: 'PUT', id: "pledge_form", class: 'form-horizontal'});
+
+!= form.begin()
+include _form
+.form-actions
+  != form.submit('<i class="icon-ok icon-white"></i> Update pledge', {class: 'btn btn-primary'})
+  span= ' or '
+  != linkTo('Cancel', pathTo.pledge(pledge), {class: 'btn'})
+!= form.end()

@@ -1,0 +1,30 @@
+ul.breadcrumb
+    li
+       a(href='/') Home
+       span.divider /
+    li
+       != link_to('pledges', pathTo.pledges())
+       span.divider /
+    li.active
+       a(href='#') Details of pledge
+
+.page-header
+  h1 Details of pledge
+
+div(about=path_to.pledge(pledge))
+  table.table.table-bordered
+    tbody
+      tr
+        td pledge
+        td
+          != pledge.pledge
+        tr
+        td description
+        td
+          != pledge.description
+
+.well
+  != linkTo('<i class="icon-edit icon-white"></i> Edit', pathTo.edit_pledge(pledge), {class: 'btn btn-primary'}) + ' '
+  != linkTo('<i class="icon-remove icon-white"></i> Delete', pathTo.pledge(pledge), {class: 'btn btn-danger', method: 'delete', remote: true, jsonp: '(function (u) { location.href = u; })'})
+  span= ' or '
+  != linkTo('Back to index', pathTo.pledges())

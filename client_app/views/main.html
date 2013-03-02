@@ -1,0 +1,27 @@
+<section class="sub-bar">
+  <div class="clear"></div>
+</section>
+
+<section class="box playground">
+  <div class="content">
+    <h1>{{ current_pledge.pledge }}</h1>
+    <p>{{ current_pledge.description }}</p>
+  </div>
+
+  <form class="action" data-ng-submit="getPledge()">
+    <button type='submit' class="btn btn-primary is-huge">Joue !</button>
+    <p class="time-played light">{{nb_play}} tours joués</p>
+  </form>
+  <div class="clear"></div>
+</section>
+
+<section class="box activities">
+  <table class="table">
+    <tbody data-ng-repeat="pledge in history_pledges_play">
+      <tr>
+        <td class="rank">#{{pledge.turn}}</td>
+        <td class="rule">{{pledge.pledge.pledge}}</td>
+      </tr>     
+    </tbody>
+  </table>
+</section>

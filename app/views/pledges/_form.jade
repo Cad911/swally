@@ -1,0 +1,9 @@
+!= errorMessagesFor(pledge) 
+.control-group
+  != form.label("pledge", false, {class: "control-label"})
+  .controls
+    != form.input("pledge")
+.control-group
+  != form.label("description", false, {class: "control-label"})
+  .controls
+    != form.textarea("description")

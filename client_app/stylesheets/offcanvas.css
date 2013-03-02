@@ -1,0 +1,201 @@
+/* Off canvas layout CSS/JS provided by or adapted from work by Jason Weaver and Luke Wroblewski Requires globals.css grid.css */
+/* line 2, ../sass/offcanvas.scss */
+body.off-canvas {
+  padding: 0;
+  margin: 0;
+}
+
+/* line 4, ../sass/offcanvas.scss */
+.container {
+  width: 100%;
+}
+
+/* line 6, ../sass/offcanvas.scss */
+.row {
+  overflow: hidden;
+}
+
+/* line 8, ../sass/offcanvas.scss */
+.row .row {
+  overflow: visible;
+}
+
+/* line 10, ../sass/offcanvas.scss */
+.paneled .container {
+  overflow: hidden;
+}
+
+/* line 12, ../sass/offcanvas.scss */
+.paneled .row {
+  width: 100%;
+}
+
+/* line 14, ../sass/offcanvas.scss */
+[role="main"]:before {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 16, ../sass/offcanvas.scss */
+[role="complementary"], [role="main"] {
+  width: 100%;
+  padding: 0 15px;
+  display: block;
+  position: relative;
+  z-index: 1;
+  -webkit-transition: 0.25s all ease-in;
+  -moz-transition: 0.25s all ease-in;
+  -o-transition: 0.25s all ease-in;
+  transition: 0.25s all ease-in;
+}
+
+/* line 18, ../sass/offcanvas.scss */
+.paneled [role="main"] {
+  padding: 0;
+}
+
+/* line 20, ../sass/offcanvas.scss */
+.page-panel {
+  width: 100%;
+  padding: 0 15px;
+  -webkit-transition: 0.3s margin ease-in-out;
+  -moz-transition: 0.3s margin ease-in-out;
+  -o-transition: 0.3s margin ease-in-out;
+  transition: 0.3s margin ease-in-out;
+  background: #fff;
+}
+
+/* line 22, ../sass/offcanvas.scss */
+#switchPanels {
+  margin: 0 -15px;
+}
+
+/* line 24, ../sass/offcanvas.scss */
+.hide-extras [role="complementary"] {
+  display: block;
+}
+
+/* line 26, ../sass/offcanvas.scss */
+[role="navigation"]#topMenu {
+  -webkit-transition: 0.25s all ease-in;
+  -moz-transition: 0.25s all ease-in;
+  -o-transition: 0.25s all ease-in;
+  transition: 0.25s all ease-in;
+}
+
+/* line 28, ../sass/offcanvas.scss */
+[role="navigation"]#topMenu ul {
+  margin-top: 0;
+}
+
+/* line 30, ../sass/offcanvas.scss */
+[role="complementary"] {
+  margin-left: -100%;
+  width: 70%;
+  float: left;
+  z-index: 2;
+}
+
+/* line 32, ../sass/offcanvas.scss */
+[role="main"] {
+  margin-left: 0;
+  float: right;
+  z-index: 1;
+  position: relative;
+}
+
+/* line 34, ../sass/offcanvas.scss */
+.paneled [role="main"] {
+  background: #fff;
+  width: 500%;
+  overflow: hidden;
+  float: none;
+  position: relative;
+  left: 0;
+  -webkit-transition: 0.15s all ease-in;
+  -moz-transition: 0.15s all ease-in;
+  -o-transition: 0.15s all ease-in;
+  transition: 0.15s all ease-in;
+}
+
+/* line 36, ../sass/offcanvas.scss */
+.page-panel {
+  min-height: 400px;
+  float: left;
+  margin: 0;
+  width: 20%;
+}
+
+/* line 38, ../sass/offcanvas.scss */
+.active [role="complementary"] {
+  margin-left: 0;
+}
+
+/* line 40, ../sass/offcanvas.scss */
+.active [role="main"] {
+  margin-right: -80%;
+}
+
+/* line 42, ../sass/offcanvas.scss */
+.active-menu [role="navigation"]#topMenu {
+  margin-top: 0 !important;
+}
+
+@media all and (min-width: 768px) {
+  /* line 44, ../sass/offcanvas.scss */
+  menu-button, .sidebar-button {
+    display: none;
+  }
+
+  /* line 45, ../sass/offcanvas.scss */
+  [role="complementary"] {
+    width: 30%;
+    margin-left: 0;
+    float: left;
+    padding: 0 15px;
+  }
+
+  /* line 46, ../sass/offcanvas.scss */
+  [role="main"] {
+    width: 70%;
+    padding: 0 15px;
+  }
+
+  /* line 47, ../sass/offcanvas.scss */
+  .paneled [role="main"] {
+    width: 100%;
+    padding: 0;
+    background: #f4f4f4;
+    left: 0 !important;
+  }
+
+  /* line 48, ../sass/offcanvas.scss */
+  .page-panel {
+    display: block;
+    min-height: 800px;
+    float: none;
+    margin: 0;
+    width: 100%;
+    background: #f4f4f4;
+  }
+
+  /* line 49, ../sass/offcanvas.scss */
+  .hide-extras [role="main"] {
+    width: 100%;
+  }
+
+  /* line 50, ../sass/offcanvas.scss */
+  .hide-extras [role="complementary"] {
+    display: none;
+  }
+
+  /* line 51, ../sass/offcanvas.scss */
+  [role="navigation"]#topMenu {
+    display: none;
+  }
+}
