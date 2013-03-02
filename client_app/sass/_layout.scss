@@ -61,13 +61,14 @@ header {
 	padding: 0px;
 	border-left: 1px solid $background-color-light-2;
 	.box {
-		margin: 0 $main-gutter $main-gutter $main-gutter;
+		margin: inherit $main-gutter $main-gutter $main-gutter;
 	}
 	.activities {
 		padding: 0; // override la marge interne du module .box
 	}
 }
 .playground {
+	margin: $main-gutter;
 	.name {
 		font-size: 16px;
 		font-weight: 400;
@@ -95,6 +96,7 @@ header {
 }
 .activities {
 	overflow: hidden;
+	margin: 0 $main-gutter;
 	.rank {
 		width: 20px;
 		padding: 12px $main-gutter;

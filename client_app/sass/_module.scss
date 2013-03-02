@@ -1,0 +1,130 @@
+// Dégradé PRIMAIRE
+.primary-gradient {
+	@include background-image(linear-gradient($primary-color-light, $primary-color));
+}
+.classic-gradient {
+	@include background-image(linear-gradient(#ffffff, #f0f0f0));
+}
+// Ombre appliquée de manière persistente au travers du design
+.classic-shadow {
+	@include box-shadow(rgba(0,0,0,0.45) 0px 2px 1px);
+}
+.no-shadow {
+	@include box-shadow(rgba(0,0,0,0) 0px 0px 0px);
+}
+// Coins arrondis de 8px selon la charte graphique
+.rounded {
+	@include border-radius(8px);
+}
+// réduit un texte classique en texte moins important
+.small {
+	font-size: 0.8em;
+	line-height: 1.4em;
+}
+// réduit un texte classique en texte boucoup moins important
+.very-small {
+	font-size: 0.6em;
+	line-height: 1.3em;
+}
+// rends le texte en couleur plus clair
+.light {
+	color: $text-color-light-2;
+}
+// rétablie la hauteur lors de l'utilisation de floats
+.clear, .clearfix {
+	clear:both;
+}
+// style des "container" / boite utilisés dans le site
+.box {
+	padding: $main-gutter;
+	margin-bottom: $main-gutter;
+	
+	@extend .rounded;
+	border: solid 1px $background-color-dark-3;
+	background: $background-color-light-2;
+	@include box-shadow(rgba(0,0,0,0.55) 0px 2px 1px);
+}
+.tag {
+	margin: 0 10px 0 0;
+	padding: 2px 13px;
+
+	@extend .rounded;
+	display: inline-block;
+	@extend .small;
+	font-weight: 700;
+
+	color: #ffffff;
+	background-color: $secondary-color;
+	@extend .classic-shadow;
+	&:hover {
+		cursor: pointer;
+		background-color: $secondary-color-dark;
+	}
+	&:active, &.is-active {
+		background-color: $secondary-color-dark;
+		@include box-shadow(rgba(255,255,255,1) 0px 1px 1px);
+		color: $background-color-light;
+	}
+}
+// bar apparaissant en dessous de la bar principale, sert à des expliqcation et à du filtrage
+.sub-bar {
+	padding: $main-gutter;
+	
+	background: $background-color-dark-2;
+	border-bottom: 1px solid $background-color-dark-3;
+}
+// Boutons
+.btn {
+	display: inline-block;
+	padding: 4px 12px;
+
+	@extend .classic-gradient;
+	border: solid 1px $background-color-dark-3;
+	@include border-radius(8px);
+	@include box-shadow(rgba(0,0,0,0.55) 0px 2px 1px);
+
+	font-weight: 700;
+	text-align: center;
+
+	&.btn-primary {
+		border: solid 1px $primary-color-dark;
+
+		@extend .primary-gradient;
+		color: $background-color-light;
+		@include box-shadow(rgba(0,0,0,0.75) 0px 2px 5px, $primary-color-light-4 0 1px 1px 0px inset);
+
+		text-shadow: 0px -1px 2px rgba(0,0,0,0.7);
+		&:hover {
+			cursor: pointer;
+			@include background-image(linear-gradient($primary-color-light-2, $primary-color-light));
+			@include box-shadow(rgba(0,0,0,0.75) 0px 2px 5px, $primary-color-light-5 0 1px 1px 0px inset);
+		}
+		&:active {
+			@include box-shadow(rgba(255,255,255,1) 0px 1px 1px,$primary-color-light-4 0 1px 1px 0px inset);
+		}
+	}
+}
+// élément table servant de tableau de données et non de mise en page
+.table {
+	tr, th {
+		background-color: #ffffff
+	}
+	tbody:nth-child(odd) td, tbody:nth-child(odd) th {
+		background-color: $background-color-light-2;
+	}
+	tbody, tr {
+		vertical-align: middle;
+	}
+	tbody {
+		&:first-child td {
+			border: none;
+		}
+	}
+	td {
+		display: table-cell;
+		padding: 12px;
+		border-top: solid 1px $background-color-dark-2;
+
+		text-align: left;
+	}
+}
