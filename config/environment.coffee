@@ -4,7 +4,6 @@ module.exports = (compound) ->
   app = compound.app
 
   app.configure ->
-    app.use(compound.assetsCompiler.init());
     app.enable 'coffee'
 
     app.set 'cssEngine', 'sass'
