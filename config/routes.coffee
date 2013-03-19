@@ -1,4 +1,6 @@
 exports.routes = (map)->
+  map.resources 'categories'
+
   map.resources 'pledges'
 
 

@@ -1,25 +1,24 @@
 { "name": "swally"
 , "version": "0.0.1"
-, "engines":
-  { "node": "0.8.x",
-    "npm": "1.1.x"
-  }
-, "main": "server.js"
+, "engines": ["node >= 0.8.0"]
+, "main": "server.coffee"
 , "dependencies":
-  { "jade":              "*"
-  , "jade-ext":          "latest"
-  , "express":          "~3.x"
-  , "compound":       ">= 1.1.2-7"
-  , "jugglingdb":       ">= 0.1.0"
-  , "coffee-script":    ">= 1.1.1"
-  , "sass":           "latest"
+  { "jade": "*"
+  , "jade-ext": "latest"
+  , "express": "~3.x"
+  , "compound": ">= 1.1.0"
+  , "jugglingdb": ">= 0.1.0"
+  , "coffee-script": ">= 1.1.1"
+  , "sass": "latest"
   , "jugglingdb-mongodb": "0.0.4-1"
   , "seedjs": "latest"
+  , "co-assets-compiler": "*"
   },
   "devDependencies":
-  { "nodeunit":         "*"
-  , "sinon":            "*"
-  , "semicov":          "*"
+  { "nodeunit": "*"
+  , "sinon": "*"
+  , "semicov": "*"
+  , "co-generators": "*"
   }
 , "scripts":
   { "test": "nodeunit test/*/*"
