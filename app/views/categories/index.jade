@@ -1,0 +1,39 @@
+ul.breadcrumb
+    li
+       a(href='/') Home
+       span.divider /
+    li.active
+       != linkTo('categories', path_to.categories())
+
+.page-header
+  h1 Index of categories
+
+
+.row
+  .span12
+     p
+        != linkTo('<i class="icon-plus icon-white"></i> New category', path_to.new_category(), {class: 'btn btn-primary'})
+
+- if (categories.length) {
+.row
+  .span12
+     table.table.table-striped
+       thead
+         tr
+           th ID
+           th.span3 Actions
+       tbody
+         - categories.forEach(function (category) {
+         tr
+           td
+             != linkTo('category #' + category.id, path_to.category(category))
+           td
+             != linkTo('<i class="icon-edit"></i> Edit', pathTo.edit_category(category), {class: 'btn btn-mini'}) + ' '
+             != linkTo('<i class="icon-remove icon-white"></i> Delete', pathTo.category(category), {class: 'btn btn-mini btn-danger', method: 'delete', remote: true, jsonp: '(function (u) {location.href = u;})'})
+         - });
+- } else{
+.row
+  .span12
+     p.alert.alert-block.alert-info
+        strong No categories were found.
+- }
