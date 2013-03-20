@@ -7,6 +7,8 @@ module.exports = (compound) ->
     app.enable 'coffee'
 
     app.set 'cssEngine', 'sass'
+    app.set 'jsDirectory', '/backoffice/scripts/'
+    app.set 'cssDirectory', '/backoffice/stylesheets/'
 
     # make sure you run `npm install railway-routes browserify`
     # app.enable 'clientside'
