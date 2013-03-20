@@ -26,7 +26,7 @@ ul.breadcrumb
          - categories.forEach(function (category) {
          tr
            td
-             != linkTo('category #' + category.id, path_to.category(category))
+             != linkTo(category.title, path_to.category(category))
            td
              != linkTo('<i class="icon-edit"></i> Edit', pathTo.edit_category(category), {class: 'btn btn-mini'}) + ' '
              != linkTo('<i class="icon-remove icon-white"></i> Delete', pathTo.category(category), {class: 'btn btn-mini btn-danger', method: 'delete', remote: true, jsonp: '(function (u) {location.href = u;})'})
