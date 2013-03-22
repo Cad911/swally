@@ -9,6 +9,7 @@
 Pledge = describe 'Pledge', ->
     property 'pledge', String
     property 'description', String
+    property 'categoryId', Number
     set 'restPath', pathTo.pledges
 
 Category = describe 'Category', ->

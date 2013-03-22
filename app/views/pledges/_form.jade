@@ -7,3 +7,7 @@
   != form.label("description", false, {class: "control-label"})
   .controls
     != form.textarea("description")
+.control-group
+  != form.label("category", false, {class: "control-label"})
+  .controls
+    != form.select("categoryId", categories, {fieldvalue: 'id', fieldname: 'title'})

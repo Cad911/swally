@@ -1,2 +1,3 @@
 module.exports = (compound, Pledge) ->
-  # define Pledge here
+	Category = compound.models.Category
+	Pledge.belongsTo Category, as: 'categorized',  foreignKey: 'categoryId'

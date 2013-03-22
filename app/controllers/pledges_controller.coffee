@@ -11,6 +11,22 @@ before 'load pledge', ->
       next()
 , only: ['show', 'edit', 'update', 'destroy']
 
+before 'edit and create pledge', ->
+  Category.all (err, categories) =>
+    if err || !categories
+      if !err && !categories && params.format == 'json'
+        return send code: 404, error: 'Not found'
+    @categories = categories || [] 
+    next()
+, only: ['new', 'edit']
+
+before 'show pledge', ->
+  category_id = @pledge.categoryId
+  @pledge.categorized (category_id, category) =>
+    @category = category || []
+    next()
+, only: ['show']
+
 action 'new', ->
   @pledge = new Pledge
   @title = 'New pledge'
@@ -61,6 +77,7 @@ action 'edit', ->
       render()
 
 action 'update', ->
+  console.log body.Pledge
   @pledge.updateAttributes body.Pledge, (err) =>
     respondTo (format) =>
       format.json =>
