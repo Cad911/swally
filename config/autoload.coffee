@@ -7,7 +7,7 @@ module.exports = (compound) ->
   developmentModules = []
   if compound.app.get('env') is 'development'
     developmentModules = [
-      '{{ VIEWENGINE }}-ext',
+      'jade-ext',
       'seedjs',
       'co-generators'
     ]
