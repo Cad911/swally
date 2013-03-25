@@ -22,7 +22,7 @@ before 'edit and create pledge', ->
 
 before 'show pledge', ->
   category_id = @pledge.categoryId
-  @pledge.categorized (category_id, category) =>
+  Category.find category_id, (err, category) =>
     @category = category || []
     next()
 , only: ['show']
