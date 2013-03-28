@@ -3,9 +3,20 @@
 </section>-->
 
 <section class="box playground">
-  <div class="content">
-    <h1>{{ current_pledge.pledge }}</h1>
-    <p>{{ current_pledge.description }}</p>
+  <div class="pledges">
+    <ul>
+      <li data-ng-repeat="pledge in current_pledges">
+        <div class="pledge">{{ pledge.pledge }}</div>
+        <div class="description">{{ pledge.description }}</div>
+      </li>
+    </ul>
+  </div>
+  <div class="categories">
+    <ul>
+      <li data-ng-repeat="category in current_categories">
+        {{ category.pledge }}</div>
+      </li>
+    </ul>
   </div>
 
   <form class="action" data-ng-submit="getPledge()">
