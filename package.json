@@ -15,8 +15,7 @@
   , "co-assets-compiler": "*"
   },
   "devDependencies":
-  { "nodeunit": "*"
-  , "sinon": "*"
+  { "sinon": "*"
   , "semicov": "*"
   , "co-generators": "*"
   , "mocha": "*"
@@ -24,6 +23,6 @@
   , "should": "*"
   }
 , "scripts":
-  { "test": "nodeunit test/*/*"
+  { "test": "mocha test/*/*"
   }
 }
