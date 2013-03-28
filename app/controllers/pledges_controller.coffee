@@ -11,14 +11,14 @@ before 'load pledge', ->
       next()
 , only: ['show', 'edit', 'update', 'destroy']
 
-before 'edit and create pledge', ->
+before 'edit, new, update and create pledge', ->
   Category.all (err, categories) =>
     if err || !categories
       if !err && !categories && params.format == 'json'
         return send code: 404, error: 'Not found'
     @categories = categories || [] 
     next()
-, only: ['new', 'edit']
+, only: ['new', 'edit', 'create', 'update']
 
 before 'show pledge', ->
   category_id = @pledge.categoryId
