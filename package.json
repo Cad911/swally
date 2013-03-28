@@ -7,10 +7,10 @@
   , "jade-ext": "latest"
   , "express": "~3.x"
   , "compound": ">= 1.1.0"
-  , "jugglingdb": ">= 0.1.0"
+  , "jugglingdb": "0.2.x"
+  , "jugglingdb-mongodb": "latest"
   , "coffee-script": ">= 1.1.1"
   , "sass": "latest"
-  , "jugglingdb-mongodb": "0.0.4-1"
   , "seedjs": "latest"
   , "co-assets-compiler": "*"
   },
@@ -19,6 +19,9 @@
   , "sinon": "*"
   , "semicov": "*"
   , "co-generators": "*"
+  , "mocha": "*"
+  , "supertest": "*"
+  , "should": "*"
   }
 , "scripts":
   { "test": "nodeunit test/*/*"
