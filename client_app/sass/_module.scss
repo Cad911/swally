@@ -7,7 +7,7 @@
 }
 // Ombre appliquée de manière persistente au travers du design
 .classic-shadow {
-	@include box-shadow(rgba(0,0,0,0.45) 0px 2px 1px);
+	@include box-shadow(rgba(0,0,0,0.45) 0px 1px 1px);
 }
 .no-shadow {
 	@include box-shadow(rgba(0,0,0,0) 0px 0px 0px);
@@ -40,9 +40,9 @@
 	margin-bottom: $main-gutter;
 	
 	@extend .rounded;
-	border: solid 1px $background-color-dark-3;
+	border: solid 1px darken($background-color-dark-3, 10%);
 	background: $background-color-light-2;
-	@include box-shadow(rgba(0,0,0,0.55) 0px 2px 1px);
+	@extend .classic-shadow;
 }
 .tag {
 	margin: 0 10px 0 0;
@@ -78,10 +78,10 @@
 	display: inline-block;
 	padding: 4px 12px;
 
-	@extend .classic-gradient;
+//	@extend .classic-gradient;
 	border: solid 1px $background-color-dark-3;
-	@include border-radius(8px);
-	@include box-shadow(rgba(0,0,0,0.55) 0px 2px 1px);
+	@include border-radius(8px);	
+	background-color: $primary-color;
 
 	font-weight: 700;
 	text-align: center;
@@ -89,18 +89,18 @@
 	&.btn-primary {
 		border: solid 1px $primary-color-dark;
 
-		@extend .primary-gradient;
-		color: $background-color-light;
-		@include box-shadow(rgba(0,0,0,0.75) 0px 2px 5px, $primary-color-light-4 0 1px 1px 0px inset);
-
-		text-shadow: 0px -1px 2px rgba(0,0,0,0.7);
+		color: $background-color-light;	
+		background-color: $primary-color;	
 		&:hover {
 			cursor: pointer;
-			@include background-image(linear-gradient($primary-color-light-2, $primary-color-light));
-			@include box-shadow(rgba(0,0,0,0.75) 0px 2px 5px, $primary-color-light-5 0 1px 1px 0px inset);
+			@extend .primary-gradient;
+			@include box-shadow(rgba(0,0,0,0.55) 0px 1px 1px);
 		}
 		&:active {
-			@include box-shadow(rgba(255,255,255,1) 0px 1px 1px,$primary-color-light-4 0 1px 1px 0px inset);
+			background-image: none;
+			background-color: $primary-color-dark;
+			@include box-shadow(rgba(0,0,0, 0.45) 0 0px 1px 1px inset);
+			border:solid 1px rgba(0,0,0, 0);
 		}
 	}
 }

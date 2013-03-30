@@ -1,10 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Merriweather:400,700);
 /* line 42, sprites/*.png */
-.sprites-sprite, .sprites-Swally-logo, header h1 {
+.sprites-sprite, .sprites-Swally-logo {
   background: url('/images/sprites-sdd5f21941a.png') no-repeat;
 }
 
-/* line 60, ../../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../.rvm/gems/ruby-1.9.3-p374@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .sprites-Swally-logo {
   background-position: 0 0;
 }
@@ -125,7 +125,7 @@ td {
 }
 
 /* line 2, ../sass/_module.scss */
-.primary-gradient, .btn.btn-primary, header {
+.primary-gradient, .btn.btn-primary:hover, header {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff9036), color-stop(100%, #ff7d13));
   background-image: -webkit-linear-gradient(#ff9036, #ff7d13);
   background-image: -moz-linear-gradient(#ff9036, #ff7d13);
@@ -134,7 +134,7 @@ td {
 }
 
 /* line 5, ../sass/_module.scss */
-.classic-gradient, .btn {
+.classic-gradient {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f0f0f0));
   background-image: -webkit-linear-gradient(#ffffff, #f0f0f0);
   background-image: -moz-linear-gradient(#ffffff, #f0f0f0);
@@ -143,10 +143,10 @@ td {
 }
 
 /* line 9, ../sass/_module.scss */
-.classic-shadow, .tag, header {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.45) 0px 2px 1px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.45) 0px 2px 1px;
-  box-shadow: rgba(0, 0, 0, 0.45) 0px 2px 1px;
+.classic-shadow, .box, .tag, header {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.45) 0px 1px 1px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.45) 0px 1px 1px;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 1px 1px;
 }
 
 /* line 12, ../sass/_module.scss */
@@ -191,11 +191,8 @@ td {
 .box {
   padding: 30px;
   margin-bottom: 30px;
-  border: solid 1px #d3cbc0;
+  border: solid 1px #beb2a2;
   background: #fffcf7;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 1px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 1px;
-  box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 1px;
 }
 
 /* line 47, ../sass/_module.scss */
@@ -238,9 +235,7 @@ td {
   -ms-border-radius: 8px;
   -o-border-radius: 8px;
   border-radius: 8px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 1px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 1px;
-  box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 1px;
+  background-color: #ff7d13;
   font-weight: 700;
   text-align: center;
 }
@@ -248,28 +243,23 @@ td {
 .btn.btn-primary {
   border: solid 1px #d96a10;
   color: #fff6eb;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.75) 0px 2px 5px, #ffcba1 0 1px 1px 0px inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.75) 0px 2px 5px, #ffcba1 0 1px 1px 0px inset;
-  box-shadow: rgba(0, 0, 0, 0.75) 0px 2px 5px, #ffcba1 0 1px 1px 0px inset;
-  text-shadow: 0px -1px 2px rgba(0, 0, 0, 0.7);
+  background-color: #ff7d13;
 }
-/* line 97, ../sass/_module.scss */
+/* line 94, ../sass/_module.scss */
 .btn.btn-primary:hover {
   cursor: pointer;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffa459), color-stop(100%, #ff9036));
-  background-image: -webkit-linear-gradient(#ffa459, #ff9036);
-  background-image: -moz-linear-gradient(#ffa459, #ff9036);
-  background-image: -o-linear-gradient(#ffa459, #ff9036);
-  background-image: linear-gradient(#ffa459, #ff9036);
-  -webkit-box-shadow: rgba(0, 0, 0, 0.75) 0px 2px 5px, #ffdec4 0 1px 1px 0px inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.75) 0px 2px 5px, #ffdec4 0 1px 1px 0px inset;
-  box-shadow: rgba(0, 0, 0, 0.75) 0px 2px 5px, #ffdec4 0 1px 1px 0px inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.55) 0px 1px 1px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.55) 0px 1px 1px;
+  box-shadow: rgba(0, 0, 0, 0.55) 0px 1px 1px;
 }
-/* line 102, ../sass/_module.scss */
+/* line 99, ../sass/_module.scss */
 .btn.btn-primary:active {
-  -webkit-box-shadow: white 0px 1px 1px, #ffcba1 0 1px 1px 0px inset;
-  -moz-box-shadow: white 0px 1px 1px, #ffcba1 0 1px 1px 0px inset;
-  box-shadow: white 0px 1px 1px, #ffcba1 0 1px 1px 0px inset;
+  background-image: none;
+  background-color: #d96a10;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.45) 0 0px 1px 1px inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.45) 0 0px 1px 1px inset;
+  box-shadow: rgba(0, 0, 0, 0.45) 0 0px 1px 1px inset;
+  border: solid 1px rgba(0, 0, 0, 0);
 }
 
 /* line 109, ../sass/_module.scss */
@@ -302,16 +292,17 @@ header {
   height: 54px;
   position: relative;
   z-index: 100;
-  border-bottom: solid 1px #ffcba1;
 }
-/* line 12, ../sass/_layout.scss */
+/* line 10, ../sass/_layout.scss */
 header h1 {
   display: inline-block;
   height: 34px;
   width: 137px;
   vertical-align: middle;
   text-align: center;
-  background-position: 0 0;
+  background-image: url(../images/logo.svg);
+  background-size: 116px;
+  background-repeat: no-repeat;
 }
 /* line 21, ../sass/_layout.scss */
 header td {
