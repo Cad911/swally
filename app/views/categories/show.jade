@@ -1,0 +1,26 @@
+ul.breadcrumb
+    li
+       a(href='/') Home
+       span.divider /
+    li
+       != link_to('categories', pathTo.categories)
+       span.divider /
+    li.active
+       a(href='#') Details of category
+
+.page-header
+  h1 Details of category
+
+div(about=path_to.category(category))
+  table.table.table-bordered
+    tbody
+      tr
+        td title
+        td
+          != category.title
+
+.well
+  != linkTo('<i class="icon-edit icon-white"></i> Edit', pathTo.edit_category(category), {class: 'btn btn-primary'}) + ' '
+  != linkTo('<i class="icon-remove icon-white"></i> Delete', pathTo.category(category), {class: 'btn btn-danger', method: 'delete', remote: true, jsonp: '(function (u) { location.href = u; })'})
+  span= ' or '
+  != linkTo('Back to index', pathTo.categories)

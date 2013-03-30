@@ -1,119 +1,208 @@
-require('../test_helper.js').controller('models', module.exports);
+var app, compound 
+  , request = require('supertest')
+  , sinon   = require('sinon');
+require('../init')
 
-var sinon  = require('sinon');
-
-function ValidAttributes () {
+function PledgeStub () {
     return {
         pledge: ''
     };
 }
 
-exports['models controller'] = {
+describe('PledgeController', function() {
+  beforeEach(function(done) {
+    app = getApp();
+    compound = app.compound;
+    compound.on('ready', done);
+  });
 
-    'GET new': function (test) {
-        test.get('/models/new', function () {
-            test.success();
-            test.render('new');
-            test.done();
-        });
-    },
+  /*
+   * GET /pledges/new
+   * Should render pledges/new.jade
+   */
+  it('should render "new" template on GET /pledges/new', function (done) {
+    request(app)
+      .get('/pledges/new')
+      .end(function (err, res) {
+        res.statusCode.should.equal(200);
+        app.didRender(/pledges\/new\.jade$/i).should.be.true;
+        done();
+      });
+  });
 
-    'GET index': function (test) {
-        test.get('/models', function () {
-            test.success();
-            test.render('index');
-            test.done();
-        });
-    },
+  /*
+   * GET /pledges
+   * Should render pledges/index.jade
+   */
+  it('should render "index" template on GET /pledges', function (done) {
+    request(app)
+      .get('/pledges')
+      .end(function (err, res) {
+        res.statusCode.should.equal(200);
+        app.didRender(/pledges\/index\.jade$/i).should.be.true;
+        done();
+      });
+  });
 
-    'GET edit': function (test) {
-        var find = Model.find;
-        Model.find = sinon.spy(function (id, callback) {
-            callback(null, new Model);
-        });
-        test.get('/models/42/edit', function () {
-            test.ok(Model.find.calledWith('42'));
-            Model.find = find;
-            test.success();
-            test.render('edit');
-            test.done();
-        });
-    },
+  /*
+   * GET /pledges/:id/edit
+   * Should access Pledge#find and render pledges/edit.jade
+   */
+  it('should access Pledge#find and render "edit" template on GET /pledges/:id/edit', function (done) {
+    var Pledge = app.models.Pledge;
 
-    'GET show': function (test) {
-        var find = Model.find;
-        Model.find = sinon.spy(function (id, callback) {
-            callback(null, new Model);
-        });
-        test.get('/models/42', function (req, res) {
-            test.ok(Model.find.calledWith('42'));
-            Model.find = find;
-            test.success();
-            test.render('show');
-            test.done();
-        });
-    },
+    // Mock Pledge#find
+    Pledge.find = sinon.spy(function (id, callback) {
+      callback(null, new Pledge);
+    });
 
-    'POST create': function (test) {
-        var model = new ValidAttributes;
-        var create = Model.create;
-        Model.create = sinon.spy(function (data, callback) {
-            test.strictEqual(data, model);
-            callback(null, model);
-        });
-        test.post('/models', {Model: model}, function () {
-            test.redirect('/models');
-            test.flash('info');
-            test.done();
-        });
-    },
+    request(app)
+      .get('/pledges/42/edit')
+      .end(function (err, res) {
+        res.statusCode.should.equal(200);
+        Pledge.find.calledWith('42').should.be.true;
+        app.didRender(/pledges\/edit\.jade$/i).should.be.true;
 
-    'POST create fail': function (test) {
-        var model = new ValidAttributes;
-        var create = Model.create;
-        Model.create = sinon.spy(function (data, callback) {
-            test.strictEqual(data, model);
-            callback(new Error, model);
-        });
-        test.post('/models', {Model: model}, function () {
-            test.success();
-            test.render('new');
-            test.flash('error');
-            test.done();
-        });
-    },
+        done();
+      });
+  });
 
-    'PUT update': function (test) {
-        Model.find = sinon.spy(function (id, callback) {
-            test.equal(id, 1);
-            callback(null, {id: 1, updateAttributes: function (data, cb) { cb(null); }});
-        });
-        test.put('/models/1', new ValidAttributes, function () {
-            test.redirect('/models/1');
-            test.flash('info');
-            test.done();
-        });
-    },
+  /*
+   * GET /pledges/:id
+   * Should render pledges/index.jade
+   */
+  it('should access Pledge#find and render "show" template on GET /pledges/:id', function (done) {
+    var Pledge = app.models.Pledge;
 
-    'PUT update fail': function (test) {
-        Model.find = sinon.spy(function (id, callback) {
-            test.equal(id, 1);
-            callback(null, {id: 1, updateAttributes: function (data, cb) { cb(new Error); }});
+    // Mock Pledge#find
+    Pledge.find = sinon.spy(function (id, callback) {
+      callback(null, new Pledge);
+    });
+
+    request(app)
+      .get('/pledges/42')
+      .end(function (err, res) {
+        res.statusCode.should.equal(200);
+        Pledge.find.calledWith('42').should.be.true;
+        app.didRender(/pledges\/show\.jade$/i).should.be.true;
+
+        done();
+      });
+  });
+
+  /*
+   * POST /pledges
+   * Should access Pledge#create when Pledge is valid
+   */
+  it('should access Pledge#create on POST /pledges with a valid Pledge', function (done) {
+    var Pledge = app.models.Pledge
+      , pledge = new PledgeStub;
+
+    // Mock Pledge#create
+    Pledge.create = sinon.spy(function (data, callback) {
+      callback(null, pledge);
+    });
+
+    request(app)
+      .post('/pledges')
+      .send({ "Pledge": pledge })
+      .end(function (err, res) {
+        res.statusCode.should.equal(302);
+        Pledge.create.calledWith(pledge).should.be.true;
+
+        done();
+      });
+  });
+
+  /*
+   * POST /pledges
+   * Should fail when Pledge is invalid
+   */
+  it('should fail on POST /pledges when Pledge#create returns an error', function (done) {
+    var Pledge = app.models.Pledge
+      , pledge = new PledgeStub;
+
+    // Mock Pledge#create
+    Pledge.create = sinon.spy(function (data, callback) {
+      callback(new Error, pledge);
+    });
+
+    request(app)
+      .post('/pledges')
+      .send({ "Pledge": pledge })
+      .end(function (err, res) {
+        res.statusCode.should.equal(200);
+        Pledge.create.calledWith(pledge).should.be.true;
+
+        app.didFlash('error').should.be.true;
+
+        done();
+      });
+  });
+
+  /*
+   * PUT /pledges/:id
+   * Should redirect back to /pledges when Pledge is valid
+   */
+  it('should redirect on PUT /pledges/:id with a valid Pledge', function (done) {
+    var Pledge = app.models.Pledge
+      , pledge = new PledgeStub;
+
+    Pledge.find = sinon.spy(function (id, callback) {
+        callback(null, {
+          id: 1,
+          updateAttributes: function (data, cb) { cb(null) }
         });
-        test.put('/models/1', new ValidAttributes, function () {
-            test.success();
-            test.render('edit');
-            test.flash('error');
-            test.done();
+    });
+
+    request(app)
+      .put('/pledges/1')
+      .send({ "Pledge": pledge })
+      .end(function (err, res) {
+        res.statusCode.should.equal(302);
+        res.header['location'].should.include('/pledges/1');
+
+        app.didFlash('error').should.be.false;
+
+        done();
+      });
+  });
+
+  /*
+   * PUT /pledges/:id
+   * Should not redirect when Pledge is invalid
+   */
+  it('should fail / not redirect on PUT /pledges/:id with an invalid Pledge', function (done) {
+    var Pledge = app.models.Pledge
+      , pledge = new PledgeStub;
+
+    Pledge.find = sinon.spy(function (id, callback) {
+        callback(null, {
+          id: 1,
+          updateAttributes: function (data, cb) { cb(new Error) }
         });
-    },
+    });
 
-    'DELETE destroy': function (test) {
-        test.done();
-    },
+    request(app)
+      .put('/pledges/1')
+      .send({ "Pledge": pledge })
+      .end(function (err, res) {
+        res.statusCode.should.equal(200);
+        app.didFlash('error').should.be.true;
 
-    'DELETE destroy fail': function (test) {
-        test.done();
-    }
-};
+        done();
+      });
+  });
 
+  /*
+   * DELETE /pledges/:id
+   * -- TODO: IMPLEMENT --
+   */
+  it('should delete a Pledge on DELETE /pledges/:id');
+
+  /*
+   * DELETE /pledges/:id
+   * -- TODO: IMPLEMENT FAILURE --
+   */
+  it('should not delete a Pledge on DELETE /pledges/:id if it fails');
+});
