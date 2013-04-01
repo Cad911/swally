@@ -3,6 +3,8 @@ module.exports = (compound) ->
   express = require 'express'
   app = compound.app
 
+  require('./mongoose').init(compound)
+
   app.configure ->
     app.enable 'coffee'
 

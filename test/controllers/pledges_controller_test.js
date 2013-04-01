@@ -45,6 +45,24 @@ describe('PledgeController', function() {
   });
 
   /*
+   * GET /pledges.json
+   * Should render pledges.json
+   */
+  // it('should render json datas on GET /pledges.json', function (done) {
+  //   request(app)
+  //     .get('/pledges.json')
+  //     .end(function (err, res) {
+  //       var datas = JSON.parse(res.text).data;
+
+  //       res.statusCode.should.equal(200);
+  //       datas.should.have.property('category')
+  //       // datas.category.should.be.a('object');
+        
+  //       done();
+  //     });
+  // });
+
+  /*
    * GET /pledges/:id/edit
    * Should access Pledge#find and render pledges/edit.jade
    */

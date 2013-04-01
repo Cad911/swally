@@ -51,7 +51,7 @@ action 'create', ->
           redirect pathTo.pledges
 
 action 'index', ->
-  Pledge.all (err, pledges) =>
+  Pledge.find (err, pledges) =>
     @pledges = pledges
     @title = 'Pledge index'
     respondTo (format) ->
