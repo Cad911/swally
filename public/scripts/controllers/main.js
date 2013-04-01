@@ -1,6 +1,6 @@
 'use strict';
 
-swallyApp.controller('MainCtrl', function ($scope, Pledges) {
+swallyApp.controller('MainCtrl', function ($scope, Pledges, Categories) {
   $scope.pledges = Pledges.getAll(function () {
     $scope.pledges = $scope.pledges.data;
   });
@@ -40,15 +40,22 @@ swallyApp.controller('MainCtrl', function ($scope, Pledges) {
     // Generate random pledeges.
     for(var i = 1;  i <= number; i++) {
       var pledge = all_pledges[Math.floor(Math.random() * pledges_length)],
-          index  = Math.floor(Math.random() * number);
+          category_id = pledge.categoryId,
+          index  = Math.floor(Math.random() * number),
+          category;
 
-      // Get categories.
+      // Get category.
+      category = Categories.getById({categoryId: category_id});
+      console.log(category);
+      category = category.data;
+
+      // Get index category.
       while(categories[index] != undefined) {
         index  = Math.floor(Math.random() * number);
       }
-
+      
       // Push datas.
-      categories[index] = pledge;
+      categories[index] = category;      
       pledges.push(pledge);
     }
 
