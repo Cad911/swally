@@ -1,7 +1,7 @@
 load 'application'
 
 before 'load pledge', ->
-  Pledge.find params.id, (err, pledge) =>
+  Pledge.findById(params.id).populate('category').exec (err, pledge) =>
     if err || !pledge
       if !err && !pledge && params.format == 'json'
         return send code: 404, error: 'Not found'
@@ -12,7 +12,7 @@ before 'load pledge', ->
 , only: ['show', 'edit', 'update', 'destroy']
 
 before 'edit, new, update and create pledge', ->
-  Category.all (err, categories) =>
+  Category.find (err, categories) =>
     if err || !categories
       if !err && !categories && params.format == 'json'
         return send code: 404, error: 'Not found'
@@ -20,20 +20,14 @@ before 'edit, new, update and create pledge', ->
     next()
 , only: ['new', 'edit', 'create', 'update']
 
-before 'show pledge', ->
-  category_id = @pledge.categoryId
-  Category.find category_id, (err, category) =>
-    @category = category || []
-    next()
-, only: ['show']
-
 action 'new', ->
   @pledge = new Pledge
   @title = 'New pledge'
   render()
 
 action 'create', ->
-  Pledge.create body.Pledge, (err, pledge) =>
+  pledge = body.Pledge
+  Pledge.create pledge, (err, pledge) =>
     respondTo (format) =>
       format.json ->
         if err
@@ -51,7 +45,7 @@ action 'create', ->
           redirect pathTo.pledges
 
 action 'index', ->
-  Pledge.all (err, pledges) =>
+  Pledge.find().populate('category').exec (err, pledges) =>
     @pledges = pledges
     @title = 'Pledge index'
     respondTo (format) ->
@@ -77,8 +71,8 @@ action 'edit', ->
       render()
 
 action 'update', ->
-  console.log body.Pledge
-  @pledge.updateAttributes body.Pledge, (err) =>
+  pledge = body.Pledge
+  @pledge.update pledge, (err, pledge) =>
     respondTo (format) =>
       format.json =>
         if err
