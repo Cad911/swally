@@ -3,21 +3,19 @@
 </section>-->
 
 <section class="box playground">
-  <div class="pledges">
-    <ul>
-      <li data-ng-repeat="pledge in current_pledges">
-        <h2>{{ pledge.title }}</h2>
-        <p class="description">{{ pledge.description }}</p>
-      </li>
-    </ul>
-  </div>
-  <div class="categories">
+  <section class="pledges">
+    <article data-ng-repeat="pledge in current_pledges">
+      <h2>{{ pledge.title }}</h2>
+      <p class="description">{{ pledge.description }}</p>
+    </article>
+  </section>
+  <section class="categories">
     <ul>
       <li data-ng-repeat="category in current_categories">
         {{ category.title }}
       </li>
     </ul>
-  </div>
+  </section>
 
   <form class="action" data-ng-submit="getPledge()">
     <button type='submit' class="btn btn-primary is-huge">Joue !</button>
