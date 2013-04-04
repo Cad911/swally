@@ -6,15 +6,15 @@
   <div class="pledges">
     <ul>
       <li data-ng-repeat="pledge in current_pledges">
-        <div class="pledge">{{ pledge.pledge }}</div>
-        <div class="description">{{ pledge.description }}</div>
+        <h2>{{ pledge.title }}</h2>
+        <p class="description">{{ pledge.description }}</p>
       </li>
     </ul>
   </div>
   <div class="categories">
     <ul>
       <li data-ng-repeat="category in current_categories">
-        {{ category.pledge }}</div>
+        {{ category.title }}
       </li>
     </ul>
   </div>
@@ -31,7 +31,6 @@
     <tbody data-ng-repeat="pledge in history_pledges_play">
       <tr>
         <td class="rank">#{{pledge.turn}}</td>
-        <td class="rule">{{pledge.pledge.pledge}}</td>
       </tr>     
     </tbody>
   </table>
