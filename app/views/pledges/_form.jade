@@ -1,8 +1,8 @@
 != errorMessagesFor(pledge) 
 .control-group
-  != form.label("pledge", false, {class: "control-label"})
+  != form.label("title", false, {class: "control-label"})
   .controls
-    != form.input("pledge")
+    != form.input("title")
 .control-group
   != form.label("description", false, {class: "control-label"})
   .controls
@@ -10,4 +10,4 @@
 .control-group
   != form.label("category", false, {class: "control-label"})
   .controls
-    != form.select("categoryId", categories, {fieldvalue: 'id', fieldname: 'title'})
+    != form.select("category", categories, {fieldvalue: 'id', fieldname: 'title'})

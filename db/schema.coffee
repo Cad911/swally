@@ -10,19 +10,19 @@
 module.exports = (mongoose, compound)  ->
   Schema = mongoose.Schema
 
-  CategoryModel = new Schema
+  CategorySchema = new Schema
     title : String
 
-  PledgeModel = new Schema
+  PledgeSchema = new Schema
     title       : String
-    description  : String
-    category   : [CategoryModel]
+    description : String
+    category    : type: Schema.ObjectId, ref: 'Category', required: true
 
-  Category = mongoose.model 'CategoryModel', CategoryModel
+  Category = mongoose.model 'Category', CategorySchema, 'Category'
   Category.modelName = 'Category'
   compound.models.Category = Category;
 
-  Pledge = mongoose.model 'PledgeModel', PledgeModel
+  Pledge = mongoose.model 'Pledge', PledgeSchema, 'Pledge'
   Pledge.modelName = 'Pledge'
   compound.models.Pledge = Pledge;
 

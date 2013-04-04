@@ -17,7 +17,7 @@ div(about=path_to.pledge(pledge))
       tr
         td pledge
         td
-          != pledge.pledge
+          != pledge.title
       tr
         td description
         td
@@ -25,7 +25,7 @@ div(about=path_to.pledge(pledge))
       tr
         td Category
         td
-          != linkTo(category.title, pathTo.category(category))
+          != linkTo(pledge.category.title, pathTo.category(pledge.category))
 
 .well
   != linkTo('<i class="icon-edit icon-white"></i> Edit', pathTo.edit_pledge(pledge), {class: 'btn btn-primary'}) + ' '
