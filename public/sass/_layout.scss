@@ -6,8 +6,6 @@ header {
 	z-index: 100;
 	@extend .classic-shadow;
 	
-	border-bottom:solid 1px $primary-color-light-4; 
-
 	@extend .primary-gradient;
 	h1 {
 		display: inline-block;
@@ -16,7 +14,9 @@ header {
 		vertical-align: middle;
 		text-align: center;
 
-		@include sprites-sprite(Swally-logo);
+		background-image: url(../images/logo.svg);
+		background-size: 116px;
+		background-repeat: no-repeat;
 	}
 	td {
 		height: 100%;
