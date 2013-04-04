@@ -10,4 +10,4 @@
 .control-group
   != form.label("category", false, {class: "control-label"})
   .controls
-    != form.select("category", categories, {fieldvalue: 'id', fieldname: 'title'})
+    != form.select("category", categories, {fieldvalue: 'id', fieldname: 'title', select: pledge.category.id})
