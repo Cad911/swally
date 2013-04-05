@@ -106,52 +106,60 @@
 	border: solid 1px #c4bcb2;
 	@include box-shadow(rgba(0,0,0, 0.20) 0px 0px 3px);
 	text-align: center;
-	.category, .smiley {
-		position: relative;
-		z-index: 100;		
+	&.is-not-revealed {
+		@include card-sprite(front);
+		.category, .smiley {
+			display: none;
+		}
 	}
-	.category {
-		margin: 40px 27px 10px 27px;
-		@extend .h5;
-		color: $primary-color;
-	}
-	.smiley {
-		color: rgba($primary-color, 0.6);
-		font-weight: bold; 
-		@include rotate(90deg);
-	}
-	.first-background-color, 
-	.second-background-color,
-	.first-background-image,
-	.second-background-image {
-		position: absolute;
-		top: 0;
-		left: 0;
-	}
-	.first-background-color, 
-	.second-background-color {
-		background-color: rgba($primary-color, 0.3);
-	}
-	.first-background-image {
-		@include card-sprite(mask-lvl-1);
-	} 
-	.second-background-image {
-		@include card-sprite(mask-lvl-2);
-	} 
-	.first-background-image,
-	.second-background-image {
-		background-repeat: no-repeat;
-	}
-	&.default {
-		.first-background-color, 
-		.second-background-color {
-			background-color: rgba($text-color, 0.3);
-		}		
+	&.is-revealed {
+		.category, .smiley {
+			position: relative;
+			z-index: 100;		
+		}
 		.category {
-			color: $text-color;
+			margin: 40px 27px 10px 27px;
+			@extend .h5;
+			color: $primary-color;
 		}
 		.smiley {
-			color: rgba($text-color, 0.6);
+			color: rgba($primary-color, 0.6);
+			font-weight: bold; 
+			@include rotate(90deg);
+		}
+		.first-background-color, 
+		.second-background-color,
+		.first-background-image,
+		.second-background-image {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.first-background-color, 
+		.second-background-color {
+			background-color: rgba($primary-color, 0.3);
+		}
+		.first-background-image {
+			@include card-sprite(mask-lvl-1);
+		} 
+		.second-background-image {
+			@include card-sprite(mask-lvl-2);
+		} 
+		.first-background-image,
+		.second-background-image {
+			background-repeat: no-repeat;
+		}
+		&.default {
+			.first-background-color, 
+			.second-background-color {
+				background-color: rgba($text-color, 0.3);
+			}		
+			.category {
+				color: $text-color;
+			}
+			.smiley {
+				color: rgba($text-color, 0.6);
+			}
 		}
 	}
 }

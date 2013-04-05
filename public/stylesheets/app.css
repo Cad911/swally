@@ -9,19 +9,24 @@
   background-position: 0 0;
 }
 
-/* line 50, card/*.png */
-.card-sprite, .card-mask-lvl-1, .card-mask-lvl-2, .card .first-background-image, .card .second-background-image {
-  background: url('/images/card-sb5279facf5.png') no-repeat;
+/* line 58, card/*.png */
+.card-sprite, .card-front, .card-mask-lvl-1, .card-mask-lvl-2, .card.is-not-revealed, .card.is-revealed .first-background-image, .card.is-revealed .second-background-image {
+  background: url('/images/card-s01815f1af0.png') no-repeat;
+}
+
+/* line 60, ../../../../.rvm/gems/ruby-1.9.3-p374@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.card-front {
+  background-position: 0 0;
 }
 
 /* line 60, ../../../../.rvm/gems/ruby-1.9.3-p374@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .card-mask-lvl-1 {
-  background-position: 0 -280px;
+  background-position: 0 -577px;
 }
 
 /* line 60, ../../../../.rvm/gems/ruby-1.9.3-p374@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .card-mask-lvl-2 {
-  background-position: 0 0;
+  background-position: 0 -297px;
 }
 
 /* line 3, ../sass/_base.scss */
@@ -47,7 +52,7 @@ body, p {
 }
 
 /* line 24, ../sass/_base.scss */
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, .card .category, h6, .h6 {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, .card.is-revealed .category, h6, .h6 {
   margin: 10px 0 10px 0;
   font-family: "Merriweather", georgia, arial;
   font-weight: 900;
@@ -82,7 +87,7 @@ h4, .h4 {
 }
 
 /* line 51, ../sass/_base.scss */
-h5, .h5, .card .category {
+h5, .h5, .card.is-revealed .category {
   color: #565656;
   font-size: 18px;
   line-height: 20px;
@@ -326,17 +331,25 @@ td {
   text-align: center;
 }
 /* line 109, ../sass/_module.scss */
-.card .category, .card .smiley {
+.card.is-not-revealed {
+  background-position: 0 0;
+}
+/* line 111, ../sass/_module.scss */
+.card.is-not-revealed .category, .card.is-not-revealed .smiley {
+  display: none;
+}
+/* line 116, ../sass/_module.scss */
+.card.is-revealed .category, .card.is-revealed .smiley {
   position: relative;
   z-index: 100;
 }
-/* line 113, ../sass/_module.scss */
-.card .category {
+/* line 120, ../sass/_module.scss */
+.card.is-revealed .category {
   margin: 40px 27px 10px 27px;
   color: #ff7d13;
 }
-/* line 118, ../sass/_module.scss */
-.card .smiley {
+/* line 125, ../sass/_module.scss */
+.card.is-revealed .smiley {
   color: rgba(255, 125, 19, 0.6);
   font-weight: bold;
   -webkit-transform: rotate(90deg);
@@ -345,44 +358,44 @@ td {
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-/* line 126, ../sass/_module.scss */
-.card .first-background-color,
-.card .second-background-color,
-.card .first-background-image,
-.card .second-background-image {
+/* line 133, ../sass/_module.scss */
+.card.is-revealed .first-background-color,
+.card.is-revealed .second-background-color,
+.card.is-revealed .first-background-image,
+.card.is-revealed .second-background-image {
   position: absolute;
   top: 0;
   left: 0;
 }
-/* line 132, ../sass/_module.scss */
-.card .first-background-color,
-.card .second-background-color {
+/* line 139, ../sass/_module.scss */
+.card.is-revealed .first-background-color,
+.card.is-revealed .second-background-color {
   background-color: rgba(255, 125, 19, 0.3);
 }
-/* line 135, ../sass/_module.scss */
-.card .first-background-image {
-  background-position: 0 -280px;
-}
-/* line 138, ../sass/_module.scss */
-.card .second-background-image {
-  background-position: 0 0;
-}
 /* line 142, ../sass/_module.scss */
-.card .first-background-image,
-.card .second-background-image {
+.card.is-revealed .first-background-image {
+  background-position: 0 -577px;
+}
+/* line 145, ../sass/_module.scss */
+.card.is-revealed .second-background-image {
+  background-position: 0 -297px;
+}
+/* line 149, ../sass/_module.scss */
+.card.is-revealed .first-background-image,
+.card.is-revealed .second-background-image {
   background-repeat: no-repeat;
 }
-/* line 147, ../sass/_module.scss */
-.card.default .first-background-color,
-.card.default .second-background-color {
+/* line 154, ../sass/_module.scss */
+.card.is-revealed.default .first-background-color,
+.card.is-revealed.default .second-background-color {
   background-color: rgba(102, 102, 102, 0.3);
 }
-/* line 150, ../sass/_module.scss */
-.card.default .category {
+/* line 157, ../sass/_module.scss */
+.card.is-revealed.default .category {
   color: #666666;
 }
-/* line 153, ../sass/_module.scss */
-.card.default .smiley {
+/* line 160, ../sass/_module.scss */
+.card.is-revealed.default .smiley {
   color: rgba(102, 102, 102, 0.6);
 }
 
