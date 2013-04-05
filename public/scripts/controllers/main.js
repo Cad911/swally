@@ -6,10 +6,6 @@ swallyApp.controller('MainCtrl', function ($scope, Pledges) {
   });
 
   $scope.history_pledges_play = [];
-  $scope.current_pledge = {
-    'pledge': 'A toi de jouer!',
-    'description': ''
-  };
   $scope.current_pledges = [];
   $scope.current_categories = [];
 
@@ -21,7 +17,6 @@ swallyApp.controller('MainCtrl', function ($scope, Pledges) {
     if(nb_play !== 0){
       $scope.history_pledges_play.unshift({
         'turn': nb_play,
-        'pledge': $scope.current_pledge
       });
     }
 
@@ -34,21 +29,20 @@ swallyApp.controller('MainCtrl', function ($scope, Pledges) {
     var all_pledges = $scope.pledges,
         pledges_length = all_pledges.length,
         categories = [],
-        pledges = [],
-        nb_play = $scope.nb_play;
+        pledges = [];
 
     // Generate random pledeges.
     for(var i = 1;  i <= number; i++) {
       var pledge = all_pledges[Math.floor(Math.random() * pledges_length)],
           index  = Math.floor(Math.random() * number);
 
-      // Get categories.
+      // Get index category.
       while(categories[index] != undefined) {
         index  = Math.floor(Math.random() * number);
       }
-
+      
       // Push datas.
-      categories[index] = pledge;
+      categories[index] = pledge.category;
       pledges.push(pledge);
     }
 

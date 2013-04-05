@@ -1,6 +1,6 @@
 'use strict';
 
-var swallyApp = angular.module('swallyApp', ['pledgeServices'])
+var swallyApp = angular.module('swallyApp', ['pledgeServices', 'categoryServices'])
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
       .when('/', {

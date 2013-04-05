@@ -1,7 +1,7 @@
 load 'application'
 
 before 'load category', ->
-  Category.find params.id, (err, category) =>
+  Category.findById params.id, (err, category) =>
     if err || !category
       if !err && !category && params.format == 'json'
         return send code: 404, error: 'Not found'
@@ -35,7 +35,7 @@ action 'create', ->
           redirect pathTo.categories
 
 action 'index', ->
-  Category.all (err, categories) =>
+  Category.find (err, categories) =>
     @categories = categories
     @title = 'Category index'
     respondTo (format) ->
@@ -61,7 +61,7 @@ action 'edit', ->
       render()
 
 action 'update', ->
-  @category.updateAttributes body.Category, (err) =>
+  @category.update body.Category, (err) =>
     respondTo (format) =>
       format.json =>
         if err

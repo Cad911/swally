@@ -26,7 +26,7 @@ ul.breadcrumb
          - pledges.forEach(function (pledge) {
          tr
            td
-             != linkTo(pledge.pledge, path_to.pledge(pledge))
+             != linkTo(pledge.title, path_to.pledge(pledge))
            td
              != linkTo('<i class="icon-edit"></i> Edit', pathTo.edit_pledge(pledge), {class: 'btn btn-mini'}) + ' '
              != linkTo('<i class="icon-remove icon-white"></i> Delete', pathTo.pledge(pledge), {class: 'btn btn-mini btn-danger', method: 'delete', remote: true, jsonp: '(function (u) {location.href = u;})'})
