@@ -383,7 +383,7 @@ td {
 }
 /* line 153, ../sass/_module.scss */
 .card.default .smiley {
-  color: #7d7c7c;
+  color: rgba(102, 102, 102, 0.6);
 }
 
 /* line 2, ../sass/_layout.scss */

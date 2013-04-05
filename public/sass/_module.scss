@@ -151,7 +151,7 @@
 			color: $text-color;
 		}
 		.smiley {
-			color: $text-color-light;
+			color: rgba($text-color, 0.6);
 		}
 	}
 }
