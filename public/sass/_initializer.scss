@@ -46,6 +46,10 @@ $text-color-dark: #565656;
 @import "sprites/*.png";
 @include all-sprites-sprites;
 
+$card-spacing :43px;
+@import "card/*.png";
+@include all-card-sprites;
+
 // Marge appliquée de manière persitente aux travers du design. Variabilisée pour le responsive
 $main-gutter: 30px; 
 $phone-gutter: 10px;
@@ -55,6 +59,7 @@ $phone-gutter: 10px;
 $break-phone: "only screen and (max-width : 600px)";
 
 @import "base";
+@import "tools";
 @import "module";
 @import "layout";
 @import "state";

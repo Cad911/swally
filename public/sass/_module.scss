@@ -1,39 +1,3 @@
-// Dégradé PRIMAIRE
-.primary-gradient {
-	@include background-image(linear-gradient($primary-color-light, $primary-color));
-}
-.classic-gradient {
-	@include background-image(linear-gradient(#ffffff, #f0f0f0));
-}
-// Ombre appliquée de manière persistente au travers du design
-.classic-shadow {
-	@include box-shadow(rgba(0,0,0,0.45) 0px 1px 1px);
-}
-.no-shadow {
-	@include box-shadow(rgba(0,0,0,0) 0px 0px 0px);
-}
-// Coins arrondis de 8px selon la charte graphique
-.rounded {
-	@include border-radius(8px);
-}
-// réduit un texte classique en texte moins important
-.small {
-	font-size: 0.8em;
-	line-height: 1.4em;
-}
-// réduit un texte classique en texte boucoup moins important
-.very-small {
-	font-size: 0.6em;
-	line-height: 1.3em;
-}
-// rends le texte en couleur plus clair
-.light {
-	color: $text-color-light-2;
-}
-// rétablie la hauteur lors de l'utilisation de floats
-.clear, .clearfix {
-	clear:both;
-}
 // style des "container" / boite utilisés dans le site
 .box {
 	padding: $main-gutter;
@@ -126,5 +90,68 @@
 		border-top: solid 1px $background-color-dark-2;
 
 		text-align: left;
+	}
+}
+.card,
+.first-background-color, 
+.second-background-color,
+.first-background-image, 
+.second-background-image {
+	width: 156px;
+	height: 254px;
+	@include border-radius(10px);
+}
+.card {
+	position: relative;
+	border: solid 1px #c4bcb2;
+	@include box-shadow(rgba(0,0,0, 0.20) 0px 0px 3px);
+	text-align: center;
+	.category, .smiley {
+		position: relative;
+		z-index: 100;		
+	}
+	.category {
+		margin: 40px 27px 10px 27px;
+		@extend .h5;
+		color: $primary-color;
+	}
+	.smiley {
+		color: rgba($primary-color, 0.6);
+		font-weight: bold; 
+		@include rotate(90deg);
+	}
+	.first-background-color, 
+	.second-background-color,
+	.first-background-image,
+	.second-background-image {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	.first-background-color, 
+	.second-background-color {
+		background-color: rgba($primary-color, 0.3);
+	}
+	.first-background-image {
+		@include card-sprite(mask-lvl-1);
+	} 
+	.second-background-image {
+		@include card-sprite(mask-lvl-2);
+	} 
+	.first-background-image,
+	.second-background-image {
+		background-repeat: no-repeat;
+	}
+	&.default {
+		.first-background-color, 
+		.second-background-color {
+			background-color: rgba($text-color, 0.3);
+		}		
+		.category {
+			color: $text-color;
+		}
+		.smiley {
+			color: $text-color-light;
+		}
 	}
 }

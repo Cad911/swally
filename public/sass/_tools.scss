@@ -1,0 +1,36 @@
+// Dégradé PRIMAIRE
+.primary-gradient {
+	@include background-image(linear-gradient($primary-color-light, $primary-color));
+}
+.classic-gradient {
+	@include background-image(linear-gradient(#ffffff, #f0f0f0));
+}
+// Ombre appliquée de manière persistente au travers du design
+.classic-shadow {
+	@include box-shadow(rgba(0,0,0,0.45) 0px 1px 1px);
+}
+.no-shadow {
+	@include box-shadow(rgba(0,0,0,0) 0px 0px 0px);
+}
+// Coins arrondis de 8px selon la charte graphique
+.rounded {
+	@include border-radius(8px);
+}
+// réduit un texte classique en texte moins important
+.small {
+	font-size: 0.8em;
+	line-height: 1.4em;
+}
+// réduit un texte classique en texte boucoup moins important
+.very-small {
+	font-size: 0.6em;
+	line-height: 1.3em;
+}
+// rends le texte en couleur plus clair
+.light {
+	color: $text-color-light-2;
+}
+// rétablie la hauteur lors de l'utilisation de floats
+.clear, .clearfix {
+	clear:both;
+}

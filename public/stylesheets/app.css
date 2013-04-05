@@ -9,6 +9,21 @@
   background-position: 0 0;
 }
 
+/* line 50, card/*.png */
+.card-sprite, .card-mask-lvl-1, .card-mask-lvl-2, .card .first-background-image, .card .second-background-image {
+  background: url('/images/card-sb5279facf5.png') no-repeat;
+}
+
+/* line 60, ../../../../.rvm/gems/ruby-1.9.3-p374@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.card-mask-lvl-1 {
+  background-position: 0 -280px;
+}
+
+/* line 60, ../../../../.rvm/gems/ruby-1.9.3-p374@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.card-mask-lvl-2 {
+  background-position: 0 0;
+}
+
 /* line 3, ../sass/_base.scss */
 body {
   background: #f7eee2;
@@ -25,16 +40,16 @@ body {
 body, p {
   margin: 0;
   padding-bottom: 10px;
-  font-family: 'Merriweather', georgia, arial;
+  font-family: "Merriweather", georgia, arial;
   font-size: 16px;
   line-height: 1.5em;
   color: #666666;
 }
 
 /* line 24, ../sass/_base.scss */
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, .card .category, h6, .h6 {
   margin: 10px 0 10px 0;
-  font-family: 'Merriweather', georgia, arial;
+  font-family: "Merriweather", georgia, arial;
   font-weight: 900;
 }
 
@@ -67,7 +82,7 @@ h4, .h4 {
 }
 
 /* line 51, ../sass/_base.scss */
-h5, .h5 {
+h5, .h5, .card .category {
   color: #565656;
   font-size: 18px;
   line-height: 20px;
@@ -124,7 +139,7 @@ td {
   padding: 0;
 }
 
-/* line 2, ../sass/_module.scss */
+/* line 2, ../sass/_tools.scss */
 .primary-gradient, .btn.btn-primary:hover, header {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff9036), color-stop(100%, #ff7d13));
   background-image: -webkit-linear-gradient(#ff9036, #ff7d13);
@@ -133,7 +148,7 @@ td {
   background-image: linear-gradient(#ff9036, #ff7d13);
 }
 
-/* line 5, ../sass/_module.scss */
+/* line 5, ../sass/_tools.scss */
 .classic-gradient {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f0f0f0));
   background-image: -webkit-linear-gradient(#ffffff, #f0f0f0);
@@ -142,21 +157,21 @@ td {
   background-image: linear-gradient(#ffffff, #f0f0f0);
 }
 
-/* line 9, ../sass/_module.scss */
+/* line 9, ../sass/_tools.scss */
 .classic-shadow, .box, .tag, header {
   -webkit-box-shadow: rgba(0, 0, 0, 0.45) 0px 1px 1px;
   -moz-box-shadow: rgba(0, 0, 0, 0.45) 0px 1px 1px;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 1px 1px;
 }
 
-/* line 12, ../sass/_module.scss */
+/* line 12, ../sass/_tools.scss */
 .no-shadow, .tag.is-disabled {
   -webkit-box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px;
   -moz-box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px;
   box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px;
 }
 
-/* line 16, ../sass/_module.scss */
+/* line 16, ../sass/_tools.scss */
 .rounded, .box, .tag {
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
@@ -165,29 +180,29 @@ td {
   border-radius: 8px;
 }
 
-/* line 20, ../sass/_module.scss */
+/* line 20, ../sass/_tools.scss */
 .small, .tag {
   font-size: 0.8em;
   line-height: 1.4em;
 }
 
-/* line 25, ../sass/_module.scss */
+/* line 25, ../sass/_tools.scss */
 .very-small {
   font-size: 0.6em;
   line-height: 1.3em;
 }
 
-/* line 30, ../sass/_module.scss */
+/* line 30, ../sass/_tools.scss */
 .light {
   color: #939392;
 }
 
-/* line 34, ../sass/_module.scss */
+/* line 34, ../sass/_tools.scss */
 .clear, .clearfix {
   clear: both;
 }
 
-/* line 38, ../sass/_module.scss */
+/* line 2, ../sass/_module.scss */
 .box {
   padding: 30px;
   margin-bottom: 30px;
@@ -195,7 +210,7 @@ td {
   background: #fffcf7;
 }
 
-/* line 47, ../sass/_module.scss */
+/* line 11, ../sass/_module.scss */
 .tag {
   margin: 0 10px 0 0;
   padding: 2px 13px;
@@ -204,12 +219,12 @@ td {
   color: #ffffff;
   background-color: #0b9999;
 }
-/* line 59, ../sass/_module.scss */
+/* line 23, ../sass/_module.scss */
 .tag:hover {
   cursor: pointer;
   background-color: #0a8989;
 }
-/* line 63, ../sass/_module.scss */
+/* line 27, ../sass/_module.scss */
 .tag:active, .tag.is-active {
   background-color: #0a8989;
   -webkit-box-shadow: white 0px 1px 1px;
@@ -218,14 +233,14 @@ td {
   color: #fff6eb;
 }
 
-/* line 70, ../sass/_module.scss */
+/* line 34, ../sass/_module.scss */
 .sub-bar {
   padding: 30px;
   background: #f1e8dd;
   border-bottom: 1px solid #d3cbc0;
 }
 
-/* line 77, ../sass/_module.scss */
+/* line 41, ../sass/_module.scss */
 .btn {
   display: inline-block;
   padding: 4px 12px;
@@ -239,20 +254,20 @@ td {
   font-weight: 700;
   text-align: center;
 }
-/* line 89, ../sass/_module.scss */
+/* line 53, ../sass/_module.scss */
 .btn.btn-primary {
   border: solid 1px #d96a10;
   color: #fff6eb;
   background-color: #ff7d13;
 }
-/* line 94, ../sass/_module.scss */
+/* line 58, ../sass/_module.scss */
 .btn.btn-primary:hover {
   cursor: pointer;
   -webkit-box-shadow: rgba(0, 0, 0, 0.55) 0px 1px 1px;
   -moz-box-shadow: rgba(0, 0, 0, 0.55) 0px 1px 1px;
   box-shadow: rgba(0, 0, 0, 0.55) 0px 1px 1px;
 }
-/* line 99, ../sass/_module.scss */
+/* line 63, ../sass/_module.scss */
 .btn.btn-primary:active {
   background-image: none;
   background-color: #d96a10;
@@ -262,28 +277,113 @@ td {
   border: solid 1px rgba(0, 0, 0, 0);
 }
 
-/* line 109, ../sass/_module.scss */
+/* line 73, ../sass/_module.scss */
 .table tr, .table th {
   background-color: white;
 }
-/* line 112, ../sass/_module.scss */
+/* line 76, ../sass/_module.scss */
 .table tbody:nth-child(odd) td, .table tbody:nth-child(odd) th {
   background-color: #fffcf7;
 }
-/* line 115, ../sass/_module.scss */
+/* line 79, ../sass/_module.scss */
 .table tbody, .table tr {
   vertical-align: middle;
 }
-/* line 119, ../sass/_module.scss */
+/* line 83, ../sass/_module.scss */
 .table tbody:first-child td {
   border: none;
 }
-/* line 123, ../sass/_module.scss */
+/* line 87, ../sass/_module.scss */
 .table td {
   display: table-cell;
   padding: 12px;
   border-top: solid 1px #f1e8dd;
   text-align: left;
+}
+
+/* line 99, ../sass/_module.scss */
+.card,
+.first-background-color,
+.second-background-color,
+.first-background-image,
+.second-background-image {
+  width: 156px;
+  height: 254px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/* line 104, ../sass/_module.scss */
+.card {
+  position: relative;
+  border: solid 1px #c4bcb2;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px;
+  text-align: center;
+}
+/* line 109, ../sass/_module.scss */
+.card .category, .card .smiley {
+  position: relative;
+  z-index: 100;
+}
+/* line 113, ../sass/_module.scss */
+.card .category {
+  margin: 40px 27px 10px 27px;
+  color: #ff7d13;
+}
+/* line 118, ../sass/_module.scss */
+.card .smiley {
+  color: rgba(255, 125, 19, 0.6);
+  font-weight: bold;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+/* line 126, ../sass/_module.scss */
+.card .first-background-color,
+.card .second-background-color,
+.card .first-background-image,
+.card .second-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 132, ../sass/_module.scss */
+.card .first-background-color,
+.card .second-background-color {
+  background-color: rgba(255, 125, 19, 0.3);
+}
+/* line 135, ../sass/_module.scss */
+.card .first-background-image {
+  background-position: 0 -280px;
+}
+/* line 138, ../sass/_module.scss */
+.card .second-background-image {
+  background-position: 0 0;
+}
+/* line 142, ../sass/_module.scss */
+.card .first-background-image,
+.card .second-background-image {
+  background-repeat: no-repeat;
+}
+/* line 147, ../sass/_module.scss */
+.card.default .first-background-color,
+.card.default .second-background-color {
+  background-color: rgba(102, 102, 102, 0.3);
+}
+/* line 150, ../sass/_module.scss */
+.card.default .category {
+  color: #666666;
+}
+/* line 153, ../sass/_module.scss */
+.card.default .smiley {
+  color: #7d7c7c;
 }
 
 /* line 2, ../sass/_layout.scss */
