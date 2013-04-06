@@ -457,29 +457,36 @@ header p, header a, header span {
   margin: 0;
 }
 /* line 107, ../sass/_layout.scss */
-.card-area .span3 {
+.card-area .card-container {
   position: relative;
+  margin-left: 2.5641%;
+  width: 23.07692%;
+  float: left;
+}
+/* line 112, ../sass/_layout.scss */
+.card-area .card-container:first-child {
+  margin-left: 0;
 }
 
-/* line 111, ../sass/_layout.scss */
+/* line 117, ../sass/_layout.scss */
 .categories-area, .playground {
   float: left;
 }
 
-/* line 115, ../sass/_layout.scss */
+/* line 121, ../sass/_layout.scss */
 .categories-area .title {
   color: #ff7d13;
   line-height: 1.5em;
 }
 
-/* line 123, ../sass/_layout.scss */
+/* line 129, ../sass/_layout.scss */
 .pledge-area {
   padding: 30px;
   background: #f7eee2;
   border-top: 1px solid #e8dfd3;
   position: relative;
 }
-/* line 128, ../sass/_layout.scss */
+/* line 134, ../sass/_layout.scss */
 .pledge-area:after, .pledge-area:before {
   bottom: 100%;
   border: solid transparent;
@@ -489,51 +496,53 @@ header p, header a, header span {
   position: absolute;
   pointer-events: none;
 }
-/* line 137, ../sass/_layout.scss */
+/* line 143, ../sass/_layout.scss */
 .pledge-area:before {
   border-color: rgba(194, 225, 245, 0);
   border-bottom-color: #e8dfd3;
   border-width: 11px;
   margin-left: -11px;
   left: 12.5%;
+  display: none;
 }
-/* line 144, ../sass/_layout.scss */
+/* line 151, ../sass/_layout.scss */
 .pledge-area:after {
   border-color: rgba(136, 183, 213, 0);
   border-bottom-color: #f7eee2;
   border-width: 10px;
   margin-left: -10px;
   left: 12.5%;
+  display: none;
 }
 
-/* line 152, ../sass/_layout.scss */
+/* line 160, ../sass/_layout.scss */
 .activities {
   overflow: hidden;
   margin: 0 30px;
 }
-/* line 155, ../sass/_layout.scss */
+/* line 163, ../sass/_layout.scss */
 .activities .rank {
   width: 20px;
   padding: 12px 30px;
   color: #0b9999;
   font-weight: 700;
 }
-/* line 162, ../sass/_layout.scss */
+/* line 170, ../sass/_layout.scss */
 .activities .rule {
   padding-left: 0;
 }
 
-/* line 169, ../sass/_layout.scss */
+/* line 177, ../sass/_layout.scss */
 .sub-bar .label {
   font-weight: 400;
   color: #666666;
 }
-/* line 173, ../sass/_layout.scss */
+/* line 181, ../sass/_layout.scss */
 .sub-bar .filter {
   margin-right: 60px;
   float: left;
 }
-/* line 176, ../sass/_layout.scss */
+/* line 184, ../sass/_layout.scss */
 .sub-bar .filter:last-child {
   margin-right: 0;
 }
@@ -752,6 +761,11 @@ header p, header a, header span {
   body {
     padding-left: 00px;
     padding-right: 00px;
+  }
+
+  /* line 67, ../sass/_responsive.scss */
+  .row-fluid [class*="span"] {
+    float: left;
   }
 }
 /*

@@ -100,12 +100,18 @@ header {
 	box-sizing: border-box;
 	.card {
 		left: 18px;
-	}
+	}	
 	ul {
 		margin: 0;
 	}
-    .span3 {
+    .card-container {
         position: relative;
+		margin-left: 2.5641%;	
+		width: 23.07692%; 
+		float: left;
+		&:first-child {
+			margin-left: 0;
+		}       
     }
 }
 .categories-area, .playground {
@@ -140,6 +146,7 @@ header {
 		border-width: 11px;
 		margin-left: -11px;
 		left: 12.5%;
+		display: none;
 	}	
 	&:after {
 		border-color: rgba(136, 183, 213, 0);
@@ -147,6 +154,7 @@ header {
 		border-width: 10px;
 		margin-left: -10px;
 		left: 12.5%;
+		display: none;
 	}
 }
 .activities {

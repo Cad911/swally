@@ -64,4 +64,8 @@
     padding-left: 00px;
     padding-right: 00px;
   }
+	.row-fluid [class*="span"] {
+
+		float: left;
+	}
 }
