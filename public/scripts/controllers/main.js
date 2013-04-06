@@ -22,16 +22,16 @@ swallyApp.controller('MainCtrl', function ($scope, Pledges) {
   $scope.getPledge = function () {
     var nb_play = $scope.nb_play;
 
-    if(nb_play !== 0){
+    /*if(nb_play !== 0){
       $scope.history_pledges_play.unshift({
         'turn': nb_play
       });
-    }
+    }*/
 
     generateRandomPledges(4);
 
     $scope.show_new_turn = false;
-    $scope.nb_play += 1;
+    /* $scope.nb_play += 1;*/
   };
 
   $scope.reveal = function (index) {
