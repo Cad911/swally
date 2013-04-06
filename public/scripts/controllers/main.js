@@ -12,6 +12,7 @@ swallyApp.controller('MainCtrl', function ($scope, Pledges) {
   $scope.current_pledges = [];
   $scope.current_categories = [];
   $scope.show_new_turn = true;
+  $scope.button_text = " Démarrer une partie";
   $scope.display_pledge = {
     title: "",
     description: ""
@@ -24,6 +25,7 @@ swallyApp.controller('MainCtrl', function ($scope, Pledges) {
 
     played_card = [];
     $scope.show_new_turn = false;
+    $scope.button_text = " Nouveau tour";
   };
 
   $scope.reveal = function (index_card) {
