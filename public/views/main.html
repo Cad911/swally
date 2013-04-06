@@ -5,8 +5,8 @@
   <section class="categories-area box span3">
     <h6 class="title">Catégories mises en jeu:</h6>
     <ul>
-      <li data-ng-repeat="category in current_categories">
-        {{ category.title }}
+      <li data-ng-repeat="category in current_categories" data-ng-class="{active: category.played}">
+        {{ category.data.title }}
       </li>
     </ul>
   </section>

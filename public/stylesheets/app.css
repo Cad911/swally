@@ -4,7 +4,7 @@
   background: url('/images/sprites-sdd5f21941a.png') no-repeat;
 }
 
-/* line 60, ../../../../.rvm/gems/ruby-1.9.3-p374@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .sprites-Swally-logo {
   background-position: 0 0;
 }
@@ -14,17 +14,17 @@
   background: url('/images/card-s01815f1af0.png') no-repeat;
 }
 
-/* line 60, ../../../../.rvm/gems/ruby-1.9.3-p374@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .card-front {
   background-position: 0 0;
 }
 
-/* line 60, ../../../../.rvm/gems/ruby-1.9.3-p374@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .card-mask-lvl-1 {
   background-position: 0 -577px;
 }
 
-/* line 60, ../../../../.rvm/gems/ruby-1.9.3-p374@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .card-mask-lvl-2 {
   background-position: 0 -297px;
 }
@@ -45,7 +45,7 @@ body {
 body, p {
   margin: 0;
   padding-bottom: 10px;
-  font-family: "Merriweather", georgia, arial;
+  font-family: 'Merriweather', georgia, arial;
   font-size: 16px;
   line-height: 1.5em;
   color: #666666;
@@ -54,7 +54,7 @@ body, p {
 /* line 24, ../sass/_base.scss */
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, .card.is-revealed .category, h6, .h6 {
   margin: 10px 0 10px 0;
-  font-family: "Merriweather", georgia, arial;
+  font-family: 'Merriweather', georgia, arial;
   font-weight: 900;
 }
 
@@ -655,7 +655,7 @@ header p, header a, header span {
 }
 
 /* line 80, ../sass/_state.scss */
-.card-area .span3.show .front {
+.card-area .card-container.show .front {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);
@@ -663,7 +663,7 @@ header p, header a, header span {
   transform: rotateY(180deg);
 }
 /* line 83, ../sass/_state.scss */
-.card-area .span3.show .back {
+.card-area .card-container.show .back {
   -webkit-transform: rotateY(0deg);
   -moz-transform: rotateY(0deg);
   -ms-transform: rotateY(0deg);
@@ -965,7 +965,7 @@ header p, header a, header span {
   /* line 126, ../sass/compass_twitter_bootstrap/_responsive-767px-max.scss */
   input[type="checkbox"],
   input[type="radio"] {
-    border: 1px solid #cccccc;
+    border: 1px solid #ccc;
   }
 
   /* line 131, ../sass/compass_twitter_bootstrap/_responsive-767px-max.scss */
