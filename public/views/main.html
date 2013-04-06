@@ -11,7 +11,7 @@
     </ul>
   </section>
 
-  <section class="box playground span9">
+  <section class="box playground span9 container-fluid">
     <div class="card-area row-fluid">
       <ul>
         <li class="span3">
@@ -57,6 +57,10 @@
       </ul>
 
       <div class="clear"></div>
+    
+      <form class="action row-fluid" data-ng-submit="getPledge()">
+        <button type='submit' class="btn btn-primary span4 offset4"><i class="icon-repeat"></i> Nouveau tour</button>
+      </form>      
 
     </div>
 
@@ -73,11 +77,6 @@
 
   </section>
 </div>
-
-  <form class="action" data-ng-submit="getPledge()">
-    <button type='submit' class="btn btn-primary is-huge">Joue !</button>
-    <p class="time-played light">{{nb_play}} tours joués</p>
-  </form>
 
   <section class="box activities" data-ng-show="history_pledges_play.length > 0">
     <table class="table">

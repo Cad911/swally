@@ -80,16 +80,16 @@ header {
 		padding-right: 5%;
 	}
 	.action {
-		width: 20%;
-		float: left;
 	}
 	.btn {
-		width: 100%;
-		padding: $main-gutter 0;
-		margin-bottom: 15px;				
-
-		font-size: 40px;
-		font-weight: 700;		
+		margin-bottom: 15px;
+		margin-top: 20px;				
+		font-size: 20px;
+		font-weight: normal;
+		padding: 10px inherit		
+	}
+	.btn i {
+		font-weight: normal;		
 	}
 	.time-played {
 		text-align: center;
@@ -132,14 +132,14 @@ header {
 		border-bottom-color: $background-color-dark;
 		border-width: 11px;
 		margin-left: -11px;
-		left: 50%;
+		left: 12.5%;
 	}	
 	&:after {
 		border-color: rgba(136, 183, 213, 0);
 		border-bottom-color: $background-color;
 		border-width: 10px;
 		margin-left: -10px;
-		left: 50%;
+		left: 12.5%;
 	}
 }
 .activities {
