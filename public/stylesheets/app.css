@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url(http://fonts.googleapis.com/css?family=Merriweather:400,700);
 /* line 42, sprites/*.png */
 .sprites-sprite, .sprites-Swally-logo {
@@ -594,24 +593,16 @@ header p, header a, header span {
   position: relative;
   z-index: 100;
 }
-<<<<<<< HEAD
-/* line 26, ../sass/_state.scss */
+/* line 33, ../sass/_state.scss */
 .card.is-revealed:hover {
   cursor: pointer;
 }
-/* line 29, ../sass/_state.scss */
-=======
-/* line 33, ../sass/_state.scss */
->>>>>>> 959435caf688fd3c2ab0dc2f648bf9ac8caf5388
+/* line 36, ../sass/_state.scss */
 .card.is-revealed .category {
   margin: 40px 27px 10px 27px;
   color: #ff7d13;
 }
-<<<<<<< HEAD
-/* line 34, ../sass/_state.scss */
-=======
-/* line 38, ../sass/_state.scss */
->>>>>>> 959435caf688fd3c2ab0dc2f648bf9ac8caf5388
+/* line 41, ../sass/_state.scss */
 .card.is-revealed .smiley {
   color: rgba(255, 125, 19, 0.6);
   font-weight: bold;
@@ -621,11 +612,7 @@ header p, header a, header span {
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-<<<<<<< HEAD
-/* line 42, ../sass/_state.scss */
-=======
-/* line 46, ../sass/_state.scss */
->>>>>>> 959435caf688fd3c2ab0dc2f648bf9ac8caf5388
+/* line 49, ../sass/_state.scss */
 .card.is-revealed .first-background-color,
 .card.is-revealed .second-background-color,
 .card.is-revealed .first-background-image,
@@ -634,71 +621,39 @@ header p, header a, header span {
   top: 0;
   left: 0;
 }
-<<<<<<< HEAD
-/* line 48, ../sass/_state.scss */
-=======
-/* line 52, ../sass/_state.scss */
->>>>>>> 959435caf688fd3c2ab0dc2f648bf9ac8caf5388
+/* line 55, ../sass/_state.scss */
 .card.is-revealed .first-background-color,
 .card.is-revealed .second-background-color {
   background-color: rgba(255, 125, 19, 0.3);
 }
-<<<<<<< HEAD
-/* line 51, ../sass/_state.scss */
+/* line 58, ../sass/_state.scss */
 .card.is-revealed .first-background-image {
   background-position: 0 -577px;
 }
-/* line 54, ../sass/_state.scss */
+/* line 61, ../sass/_state.scss */
 .card.is-revealed .second-background-image {
   background-position: 0 -297px;
 }
-/* line 58, ../sass/_state.scss */
-=======
-/* line 55, ../sass/_state.scss */
-.card.is-revealed .first-background-image {
-  background-position: 0 -577px;
-}
-/* line 58, ../sass/_state.scss */
-.card.is-revealed .second-background-image {
-  background-position: 0 -297px;
-}
-/* line 62, ../sass/_state.scss */
->>>>>>> 959435caf688fd3c2ab0dc2f648bf9ac8caf5388
+/* line 65, ../sass/_state.scss */
 .card.is-revealed .first-background-image,
 .card.is-revealed .second-background-image {
   background-repeat: no-repeat;
   background-position: top middle;
 }
-<<<<<<< HEAD
-/* line 64, ../sass/_state.scss */
-=======
-/* line 67, ../sass/_state.scss */
->>>>>>> 959435caf688fd3c2ab0dc2f648bf9ac8caf5388
+/* line 71, ../sass/_state.scss */
 .card.is-revealed.default .first-background-color,
 .card.is-revealed.default .second-background-color {
   background-color: rgba(102, 102, 102, 0.3);
 }
-<<<<<<< HEAD
-/* line 67, ../sass/_state.scss */
+/* line 74, ../sass/_state.scss */
 .card.is-revealed.default .category {
   color: #666666;
 }
-/* line 70, ../sass/_state.scss */
+/* line 77, ../sass/_state.scss */
 .card.is-revealed.default .smiley {
   color: rgba(102, 102, 102, 0.6);
 }
-/* line 75, ../sass/_state.scss */
-=======
-/* line 70, ../sass/_state.scss */
-.card.is-revealed.default .category {
-  color: #666666;
-}
-/* line 73, ../sass/_state.scss */
-.card.is-revealed.default .smiley {
-  color: rgba(102, 102, 102, 0.6);
-}
-/* line 78, ../sass/_state.scss */
->>>>>>> 959435caf688fd3c2ab0dc2f648bf9ac8caf5388
+/* line 82, ../sass/_state.scss */
 .card.back {
   position: absolute;
   top: 0;
@@ -710,11 +665,7 @@ header p, header a, header span {
   transform: rotateY(180deg);
 }
 
-<<<<<<< HEAD
-/* line 84, ../sass/_state.scss */
-=======
-/* line 87, ../sass/_state.scss */
->>>>>>> 959435caf688fd3c2ab0dc2f648bf9ac8caf5388
+/* line 91, ../sass/_state.scss */
 .card-area .span3.show .front {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
@@ -722,11 +673,7 @@ header p, header a, header span {
   -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
-<<<<<<< HEAD
-/* line 87, ../sass/_state.scss */
-=======
-/* line 90, ../sass/_state.scss */
->>>>>>> 959435caf688fd3c2ab0dc2f648bf9ac8caf5388
+/* line 94, ../sass/_state.scss */
 .card-area .span3.show .back {
   -webkit-transform: rotateY(0deg);
   -moz-transform: rotateY(0deg);
@@ -735,35 +682,19 @@ header p, header a, header span {
   transform: rotateY(0deg);
 }
 
-<<<<<<< HEAD
-/* line 95, ../sass/_state.scss */
+/* line 102, ../sass/_state.scss */
 .playground.is-card-1 .pledge-area:before, .playground.is-card-1 .pledge-area:after {
   left: 12.5%;
-}
-/* line 102, ../sass/_state.scss */
-.playground.is-card-2 .pledge-area:before, .playground.is-card-2 .pledge-area:after {
-  left: 38%;
 }
 /* line 109, ../sass/_state.scss */
-.playground.is-card-3 .pledge-area:before, .playground.is-card-3 .pledge-area:after {
-  left: 63.5%;
-}
-/* line 116, ../sass/_state.scss */
-=======
-/* line 98, ../sass/_state.scss */
-.playground.is-card-1 .pledge-area:before, .playground.is-card-1 .pledge-area:after {
-  left: 12.5%;
-}
-/* line 105, ../sass/_state.scss */
 .playground.is-card-2 .pledge-area:before, .playground.is-card-2 .pledge-area:after {
   left: 38%;
 }
-/* line 112, ../sass/_state.scss */
+/* line 116, ../sass/_state.scss */
 .playground.is-card-3 .pledge-area:before, .playground.is-card-3 .pledge-area:after {
   left: 63.5%;
 }
-/* line 119, ../sass/_state.scss */
->>>>>>> 959435caf688fd3c2ab0dc2f648bf9ac8caf5388
+/* line 123, ../sass/_state.scss */
 .playground.is-card-4 .pledge-area:before, .playground.is-card-4 .pledge-area:after {
   left: 89.5%;
 }
