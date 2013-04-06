@@ -1,6 +1,8 @@
 'use strict';
 
 swallyApp.controller('MainCtrl', function ($scope, Pledges) {
+  var shot_played = 0;
+
   $scope.pledges = Pledges.getAll(function () {
     $scope.pledges = $scope.pledges.data;
   });
@@ -8,6 +10,8 @@ swallyApp.controller('MainCtrl', function ($scope, Pledges) {
   $scope.history_pledges_play = [];
   $scope.current_pledges = [];
   $scope.current_categories = [];
+  $scope.show_new_turn = true;
+  $scope.carte = 0;
   $scope.display_pledge = {
     title: "",
     description: ""
@@ -26,12 +30,20 @@ swallyApp.controller('MainCtrl', function ($scope, Pledges) {
 
     generateRandomPledges(4);
 
+    $scope.show_new_turn = false;
     $scope.nb_play += 1;
   };
 
   $scope.reveal = function (index) {
+    shot_played++;
     $scope.current_pledges[index].reveal = ' show';
     $scope.display_pledge = $scope.current_pledges[index].data;
+    $scope.actual_class = (' is-card-[number]').replace('[number]', index + 1);
+
+    if(shot_played >= 4){
+      $scope.show_new_turn = true;
+      shot_played = 0;
+    }
   };
 
   var generateRandomPledges = function(number) {
