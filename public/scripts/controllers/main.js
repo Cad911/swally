@@ -35,15 +35,17 @@ swallyApp.controller('MainCtrl', function ($scope, Pledges) {
   };
 
   $scope.reveal = function (index) {
-    shot_played++;
-    $scope.current_pledges[index].reveal = ' show';
-    $scope.display_pledge = $scope.current_pledges[index].data;
-    $scope.actual_class = (' is-card-[number]').replace('[number]', index + 1);
-
-    if(shot_played >= 4){
-      $scope.show_new_turn = true;
-      shot_played = 0;
+    if($scope.current_pledges[index].reveal == '') {
+      shot_played++;
+      $scope.current_pledges[index].reveal = ' show';
+      $scope.display_pledge = $scope.current_pledges[index].data;
+      $scope.actual_class = (' is-card-[number]').replace('[number]', index + 1);
+      if(shot_played >= 4){
+        $scope.show_new_turn = true;
+        shot_played = 0;
+      }
     }
+
   };
 
   var generateRandomPledges = function(number) {
