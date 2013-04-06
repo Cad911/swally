@@ -5,8 +5,8 @@
   <section class="categories-area box span3">
     <h6 class="title">Catégories mises en jeu:</h6>
     <ul>
-      <li data-ng-repeat="category in current_categories">
-        {{ category.title }}
+      <li data-ng-repeat="category in current_categories" data-ng-class="{active: category.played}">
+        {{ category.data.title }}
       </li>
       <div class="clear"></div>
     </ul>
@@ -29,7 +29,10 @@
       <div class="clear"></div>
     
       <form class="action row-fluid" data-ng-submit="getPledge()" data-ng-show="show_new_turn">
-        <button type='submit' class="btn btn-primary span4 offset4"><i class="icon-repeat"></i> Nouveau tour</button>
+        <button type='submit' class="btn btn-primary span4 offset4">
+          <span data-ng-show="first_shot"><i class='icon-play'></i> Démarrer une partie</span>
+          <span data-ng-hide="first_shot"><i class="icon-repeat"></i> Nouveau tour</span>
+        </button>
       </form>      
 
     </div>

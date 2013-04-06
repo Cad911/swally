@@ -4,6 +4,13 @@
 		@extend .no-shadow;	
 	}
 }
+.categories-area {
+    li.active {
+        color: $text-color;
+        opacity: 0.4;
+        text-decoration: line-through;
+    }
+}
 
 // État des cartes: is-revealed (retournée), is-not-revealed (non retournée)
 .card {
