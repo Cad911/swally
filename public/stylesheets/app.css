@@ -4,7 +4,7 @@
   background: url('/images/sprites-sdd5f21941a.png') no-repeat;
 }
 
-/* line 60, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../.rvm/gems/ruby-1.9.3-p374@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .sprites-Swally-logo {
   background-position: 0 0;
 }
@@ -14,17 +14,17 @@
   background: url('/images/card-s01815f1af0.png') no-repeat;
 }
 
-/* line 60, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../.rvm/gems/ruby-1.9.3-p374@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .card-front {
   background-position: 0 0;
 }
 
-/* line 60, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../.rvm/gems/ruby-1.9.3-p374@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .card-mask-lvl-1 {
   background-position: 0 -577px;
 }
 
-/* line 60, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../.rvm/gems/ruby-1.9.3-p374@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .card-mask-lvl-2 {
   background-position: 0 -297px;
 }
@@ -45,7 +45,7 @@ body {
 body, p {
   margin: 0;
   padding-bottom: 10px;
-  font-family: 'Merriweather', georgia, arial;
+  font-family: "Merriweather", georgia, arial;
   font-size: 16px;
   line-height: 1.5em;
   color: #666666;
@@ -54,7 +54,7 @@ body, p {
 /* line 24, ../sass/_base.scss */
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, .card.is-revealed .category, h6, .h6 {
   margin: 10px 0 10px 0;
-  font-family: 'Merriweather', georgia, arial;
+  font-family: "Merriweather", georgia, arial;
   font-weight: 900;
 }
 
@@ -446,35 +446,40 @@ header p, header a, header span {
 /* line 98, ../sass/_layout.scss */
 .card-area {
   padding: 30px;
+  box-sizing: border-box;
 }
-/* line 100, ../sass/_layout.scss */
+/* line 101, ../sass/_layout.scss */
+.card-area .card {
+  left: 18px;
+}
+/* line 104, ../sass/_layout.scss */
 .card-area ul {
   margin: 0;
 }
-/* line 103, ../sass/_layout.scss */
+/* line 107, ../sass/_layout.scss */
 .card-area .span3 {
   position: relative;
 }
 
-/* line 107, ../sass/_layout.scss */
+/* line 111, ../sass/_layout.scss */
 .categories-area, .playground {
   float: left;
 }
 
-/* line 111, ../sass/_layout.scss */
+/* line 115, ../sass/_layout.scss */
 .categories-area .title {
   color: #ff7d13;
   line-height: 1.5em;
 }
 
-/* line 119, ../sass/_layout.scss */
+/* line 123, ../sass/_layout.scss */
 .pledge-area {
   padding: 30px;
   background: #f7eee2;
   border-top: 1px solid #e8dfd3;
   position: relative;
 }
-/* line 124, ../sass/_layout.scss */
+/* line 128, ../sass/_layout.scss */
 .pledge-area:after, .pledge-area:before {
   bottom: 100%;
   border: solid transparent;
@@ -484,7 +489,7 @@ header p, header a, header span {
   position: absolute;
   pointer-events: none;
 }
-/* line 133, ../sass/_layout.scss */
+/* line 137, ../sass/_layout.scss */
 .pledge-area:before {
   border-color: rgba(194, 225, 245, 0);
   border-bottom-color: #e8dfd3;
@@ -492,7 +497,7 @@ header p, header a, header span {
   margin-left: -11px;
   left: 12.5%;
 }
-/* line 140, ../sass/_layout.scss */
+/* line 144, ../sass/_layout.scss */
 .pledge-area:after {
   border-color: rgba(136, 183, 213, 0);
   border-bottom-color: #f7eee2;
@@ -501,34 +506,34 @@ header p, header a, header span {
   left: 12.5%;
 }
 
-/* line 148, ../sass/_layout.scss */
+/* line 152, ../sass/_layout.scss */
 .activities {
   overflow: hidden;
   margin: 0 30px;
 }
-/* line 151, ../sass/_layout.scss */
+/* line 155, ../sass/_layout.scss */
 .activities .rank {
   width: 20px;
   padding: 12px 30px;
   color: #0b9999;
   font-weight: 700;
 }
-/* line 158, ../sass/_layout.scss */
+/* line 162, ../sass/_layout.scss */
 .activities .rule {
   padding-left: 0;
 }
 
-/* line 165, ../sass/_layout.scss */
+/* line 169, ../sass/_layout.scss */
 .sub-bar .label {
   font-weight: 400;
   color: #666666;
 }
-/* line 169, ../sass/_layout.scss */
+/* line 173, ../sass/_layout.scss */
 .sub-bar .filter {
   margin-right: 60px;
   float: left;
 }
-/* line 172, ../sass/_layout.scss */
+/* line 176, ../sass/_layout.scss */
 .sub-bar .filter:last-child {
   margin-right: 0;
 }
@@ -632,7 +637,7 @@ header p, header a, header span {
 .card.back {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 18px;
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);
@@ -657,19 +662,19 @@ header p, header a, header span {
   transform: rotateY(0deg);
 }
 
-/* line 92, ../sass/_state.scss */
+/* line 91, ../sass/_state.scss */
 .playground.is-card-1 .pledge-area:before, .playground.is-card-1 .pledge-area:after {
   left: 12.5%;
 }
-/* line 99, ../sass/_state.scss */
+/* line 98, ../sass/_state.scss */
 .playground.is-card-2 .pledge-area:before, .playground.is-card-2 .pledge-area:after {
   left: 38%;
 }
-/* line 106, ../sass/_state.scss */
+/* line 105, ../sass/_state.scss */
 .playground.is-card-3 .pledge-area:before, .playground.is-card-3 .pledge-area:after {
   left: 63.5%;
 }
-/* line 113, ../sass/_state.scss */
+/* line 112, ../sass/_state.scss */
 .playground.is-card-4 .pledge-area:before, .playground.is-card-4 .pledge-area:after {
   left: 89.5%;
 }
@@ -939,7 +944,7 @@ header p, header a, header span {
   /* line 126, ../sass/compass_twitter_bootstrap/_responsive-767px-max.scss */
   input[type="checkbox"],
   input[type="radio"] {
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc;
   }
 
   /* line 131, ../sass/compass_twitter_bootstrap/_responsive-767px-max.scss */

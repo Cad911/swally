@@ -97,6 +97,10 @@ header {
 }
 .card-area {
 	padding: $main-gutter;
+	box-sizing: border-box;
+	.card {
+		left: 18px;
+	}
 	ul {
 		margin: 0;
 	}
