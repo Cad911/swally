@@ -113,13 +113,37 @@ header {
 		line-height: 1.5em;
 	}
 	ul {
-		
+
 	}
 }
 .pledge-area {
 	padding: $main-gutter;
 	background: $background-color;	
 	border-top: 1px solid $background-color-dark;
+	position: relative;
+	&:after, &:before {  
+		bottom: 100%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+	}
+	&:before {
+		border-color: rgba(194, 225, 245, 0);
+		border-bottom-color: $background-color-dark;
+		border-width: 11px;
+		margin-left: -11px;
+		left: 50%;
+	}	
+	&:after {
+		border-color: rgba(136, 183, 213, 0);
+		border-bottom-color: $background-color;
+		border-width: 10px;
+		margin-left: -10px;
+		left: 50%;
+	}
 }
 .activities {
 	overflow: hidden;

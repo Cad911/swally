@@ -473,36 +473,63 @@ header p, header a, header span {
   padding: 30px;
   background: #f7eee2;
   border-top: 1px solid #e8dfd3;
+  position: relative;
+}
+/* line 124, ../sass/_layout.scss */
+.pledge-area:after, .pledge-area:before {
+  bottom: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+/* line 133, ../sass/_layout.scss */
+.pledge-area:before {
+  border-color: rgba(194, 225, 245, 0);
+  border-bottom-color: #e8dfd3;
+  border-width: 11px;
+  margin-left: -11px;
+  left: 50%;
+}
+/* line 140, ../sass/_layout.scss */
+.pledge-area:after {
+  border-color: rgba(136, 183, 213, 0);
+  border-bottom-color: #f7eee2;
+  border-width: 10px;
+  margin-left: -10px;
+  left: 50%;
 }
 
-/* line 124, ../sass/_layout.scss */
+/* line 148, ../sass/_layout.scss */
 .activities {
   overflow: hidden;
   margin: 0 30px;
 }
-/* line 127, ../sass/_layout.scss */
+/* line 151, ../sass/_layout.scss */
 .activities .rank {
   width: 20px;
   padding: 12px 30px;
   color: #0b9999;
   font-weight: 700;
 }
-/* line 134, ../sass/_layout.scss */
+/* line 158, ../sass/_layout.scss */
 .activities .rule {
   padding-left: 0;
 }
 
-/* line 141, ../sass/_layout.scss */
+/* line 165, ../sass/_layout.scss */
 .sub-bar .label {
   font-weight: 400;
   color: #666666;
 }
-/* line 145, ../sass/_layout.scss */
+/* line 169, ../sass/_layout.scss */
 .sub-bar .filter {
   margin-right: 60px;
   float: left;
 }
-/* line 148, ../sass/_layout.scss */
+/* line 172, ../sass/_layout.scss */
 .sub-bar .filter:last-child {
   margin-right: 0;
 }
@@ -629,6 +656,23 @@ header p, header a, header span {
   -ms-transform: rotateY(0deg);
   -o-transform: rotateY(0deg);
   transform: rotateY(0deg);
+}
+
+/* line 92, ../sass/_state.scss */
+.playground.is-card-1 .pledge-area:before, .playground.is-card-1 .pledge-area:after {
+  left: 12.5%;
+}
+/* line 99, ../sass/_state.scss */
+.playground.is-card-2 .pledge-area:before, .playground.is-card-2 .pledge-area:after {
+  left: 38%;
+}
+/* line 106, ../sass/_state.scss */
+.playground.is-card-3 .pledge-area:before, .playground.is-card-3 .pledge-area:after {
+  left: 63.5%;
+}
+/* line 113, ../sass/_state.scss */
+.playground.is-card-4 .pledge-area:before, .playground.is-card-4 .pledge-area:after {
+  left: 89.5%;
 }
 
 @media only screen and (max-width: 600px) {
