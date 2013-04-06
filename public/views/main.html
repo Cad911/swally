@@ -1,39 +1,9 @@
 <!--<section class="sub-bar">
   <div class="clear"></div>
 </section>-->
-
-<section class="box playground">
-  <div class="card is-not-revealed">
-    <p class="category">bois</p>
-    <p class="smiley">:)</p>
-    <div class="first-background-color"></div>
-    <div class="first-background-image"></div>
-    <div class="second-background-color"></div>
-    <div class="second-background-image"></div>
-  </div>  
-  <div class="card default is-revealed">
-    <p class="category">couleur test</p>
-    <p class="smiley">:)</p>
-    <div class="first-background-color"></div>
-    <div class="first-background-image"></div>
-    <div class="second-background-color"></div>
-    <div class="second-background-image"></div>
-  </div> 
-  <div class="card is-revealed">
-    <p class="category">couleur test</p>
-    <p class="smiley">:)</p>
-    <div class="first-background-color"></div>
-    <div class="first-background-image"></div>
-    <div class="second-background-color"></div>
-    <div class="second-background-image"></div>
-  </div>  
-  <section class="pledges">
-    <article data-ng-repeat="pledge in current_pledges">
-      <h2>{{ pledge.title }}</h2>
-      <p class="description">{{ pledge.description }}</p>
-    </article>
-  </section>
-  <section class="categories">
+<div class="row-fluid">
+  <section class="categories-area box span3">
+    <h6 class="title">Catégories mise en jeu:</h6>
     <ul>
       <li data-ng-repeat="category in current_categories">
         {{ category.title }}
@@ -41,19 +11,80 @@
     </ul>
   </section>
 
+  <section class="box playground span9">
+    <div class="card-area row-fluid">
+      <ul>
+        <li class="span3">
+      <div class="card is-revealed">
+        <p class="category">couleur test</p>
+        <p class="smiley">:)</p>
+        <div class="first-background-color"></div>
+        <div class="first-background-image"></div>
+        <div class="second-background-color"></div>
+        <div class="second-background-image"></div>
+      </div>      
+        </li>
+        <li class="span3">
+          <div class="card is-not-revealed">
+            <p class="category">bois</p>
+            <p class="smiley">:)</p>
+            <div class="first-background-color"></div>
+            <div class="first-background-image"></div>
+            <div class="second-background-color"></div>
+            <div class="second-background-image"></div>
+          </div>  
+        </li>
+        <li class="span3">
+          <div class="card is-not-revealed">
+            <p class="category">bois</p>
+            <p class="smiley">:)</p>
+            <div class="first-background-color"></div>
+            <div class="first-background-image"></div>
+            <div class="second-background-color"></div>
+            <div class="second-background-image"></div>
+          </div>     
+        </li>
+        <li class="span3">
+        <div class="card default is-revealed">
+          <p class="category">couleur test</p>
+          <p class="smiley">:)</p>
+          <div class="first-background-color"></div>
+          <div class="first-background-image"></div>
+          <div class="second-background-color"></div>
+          <div class="second-background-image"></div>
+        </div> 
+        </li>
+      </ul>
+
+      <div class="clear"></div>
+
+    </div>
+
+    <div class="pledge-area">
+      <section class="pledges">
+        <article data-ng-repeat="pledge in current_pledges">
+          <h2>{{ pledge.title }} Bois </h2>
+          <p class="description">{{ pledge.description }} cul sec</p>
+        </article>
+      </section>
+    </div>
+
+    <div class="clear"></div>
+
+  </section>
+</div>
+
   <form class="action" data-ng-submit="getPledge()">
     <button type='submit' class="btn btn-primary is-huge">Joue !</button>
     <p class="time-played light">{{nb_play}} tours joués</p>
   </form>
-  <div class="clear"></div>
-</section>
 
-<section class="box activities" data-ng-show="history_pledges_play.length > 0">
-  <table class="table">
-    <tbody data-ng-repeat="pledge in history_pledges_play">
-      <tr>
-        <td class="rank">#{{pledge.turn}}</td>
-      </tr>     
-    </tbody>
-  </table>
-</section>
+  <section class="box activities" data-ng-show="history_pledges_play.length > 0">
+    <table class="table">
+      <tbody data-ng-repeat="pledge in history_pledges_play">
+        <tr>
+          <td class="rank">#{{pledge.turn}}</td>
+        </tr>     
+      </tbody>
+    </table>
+  </section>
