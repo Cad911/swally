@@ -64,3 +64,33 @@
 		}
 	}	
 }
+.playground {	
+	&.is-card-1 {
+		.pledge-area {
+			&:before, &:after {
+				left: 12.5%; 			
+			}
+		}
+	}
+	&.is-card-2 {
+		.pledge-area {
+			&:before, &:after {
+				left: 38%; 			
+			}			
+		}
+	}
+	&.is-card-3 {
+		.pledge-area {
+			&:before, &:after {
+				left: 63.5%%; 			
+			}			
+		}
+	}
+	&.is-card-4 {
+		.pledge-area {
+			&:before, &:after {
+				left: 89.5%%; 			
+			}			
+		}
+	}
+}
