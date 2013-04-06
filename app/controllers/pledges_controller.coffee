@@ -22,6 +22,7 @@ before 'edit, new, update and create pledge', ->
 
 action 'new', ->
   @pledge = new Pledge
+  @select = null
   @title = 'New pledge'
   render()
 
@@ -64,6 +65,7 @@ action 'show', ->
 
 action 'edit', ->
   @title = 'Pledge edit'
+  @select = @pledge.category.id
   respondTo (format) =>
     format.json =>
       send code: 200, data: @pledge
