@@ -747,6 +747,13 @@ header p, header a, header span {
     padding: 6px 0 6px 10px;
   }
 }
+@media (max-width: 767px) {
+  /* line 63, ../sass/_responsive.scss */
+  body {
+    padding-left: 00px;
+    padding-right: 00px;
+  }
+}
 /*
  * Bootstrap Responsive v2.1.0
  *
