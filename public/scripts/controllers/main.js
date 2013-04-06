@@ -29,7 +29,6 @@ swallyApp.controller('MainCtrl', function ($scope, Pledges) {
   };
 
   $scope.reveal = function (index_card) {
-    console.log(index_card);
     if(played_card[index_card] == undefined) {
       shot_played++;
 
@@ -40,8 +39,6 @@ swallyApp.controller('MainCtrl', function ($scope, Pledges) {
 
       played_card[index_card] = pledge;
       for(var i = 0; i < nb_card; i++) {
-        console.log($scope.current_categories[i]);
-        console.log(index_card);
         if($scope.current_categories[i].index == index_card) {
           $scope.current_categories[i].played = true;
         }
@@ -82,7 +79,6 @@ swallyApp.controller('MainCtrl', function ($scope, Pledges) {
       });
     }
 
-    console.log(categories);
     // Set in scope.
     $scope.current_pledges = pledges;
     $scope.current_categories = categories;
