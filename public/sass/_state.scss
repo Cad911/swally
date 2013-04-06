@@ -71,7 +71,7 @@
     &.back {
         position: absolute;
         top: 0;
-        left: 0;
+        left: 18px;
         @include transform(rotateY(180deg));
     }
 }
