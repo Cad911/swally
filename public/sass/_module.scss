@@ -97,16 +97,14 @@
 .second-background-color,
 .first-background-image, 
 .second-background-image {
-	width: 156px;
+	width: 100%;
+	max-width: 156px;
 	height: 254px;
-	@include border-radius(10px);
+	@include border-radius(10px);	
 }
 .card {
 	position: relative;
 	border: solid 1px #c4bcb2;
 	@include box-shadow(rgba(0,0,0, 0.20) 0px 0px 3px);
 	text-align: center;
-	&:hover {
-		cursor: pointer;
-	}
 }

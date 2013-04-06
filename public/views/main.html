@@ -8,18 +8,14 @@
       <li data-ng-repeat="category in current_categories">
         {{ category.title }}
       </li>
+      <div class="clear"></div>
     </ul>
   </section>
 
   <section class="box playground span9 container-fluid {{ actual_class }}">
     <div class="card-area row-fluid">
-      <ul>
-        <li class="card-container relative{{ pledge.reveal }}" data-ng-repeat="pledge in current_pledges">
+        <div class="span3 relative{{ pledge.reveal }}" data-ng-repeat="pledge in current_pledges">
           <div class="front card is-not-revealed" data-ng-click="reveal($index)">
-            <div class="first-background-color"></div>
-            <div class="first-background-image"></div>
-            <div class="second-background-color"></div>
-            <div class="second-background-image"></div>
           </div>
           <div class="back card default is-revealed">
             <p class="category">{{ pledge.data.category.title }}</p>
@@ -28,8 +24,7 @@
             <div class="second-background-color"></div>
             <div class="second-background-image"></div>
           </div>
-        </li>
-      </ul>
+        </div>
 
       <div class="clear"></div>
     

@@ -96,7 +96,7 @@ header {
 	}
 }
 .card-area {
-	padding: $main-gutter;
+	padding: 3%;
 	box-sizing: border-box;
 	.card {
 		left: 18px;
@@ -106,9 +106,9 @@ header {
 	}
     .card-container {
         position: relative;
-		margin-left: 2.5641%;	
-		width: 23.07692%; 
-		float: left;
+		//margin-left: 2.5641%;	
+		//width: 23.07692%; 
+		//float: left;
 		&:first-child {
 			margin-left: 0;
 		}       

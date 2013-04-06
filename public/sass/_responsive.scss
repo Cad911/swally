@@ -43,8 +43,6 @@
 	}
 	.playground.box, .activities {
 		margin: $phone-gutter; 
-
-		padding: $phone-gutter; 
 	}
 	.activities {
 		margin-bottom: 51px;
@@ -57,15 +55,141 @@
 		}
 	}
 }
-@media (max-width: 767px) {
+@media (min-width: 1000px) and (max-width: 2000px) {
+	.card,
+	.first-background-color, 
+	.second-background-color,
+	.first-background-image,
+	.second-background-image {
+		max-width: 120px;
+		max-height: 195px;
+		//background-position: top center !important;
+		background-size: cover !important;
+	}	
+	.card.is-revealed .category  {
+		margin: 20px 10px 10px 10px;		
+	}
+	.first-background-image {
+		background-position: 0 -435px !important;
+	}		
+	.second-background-image {
+		background-position: 0 -229px !important;
+	}		
+}
 
-  // Padding to set content in a bit
-  body {
-    padding-left: 00px;
-    padding-right: 00px;
-  }
-	.row-fluid [class*="span"] {
+@media (min-width: 800px) and (max-width: 1000px) {
+	.card,
+	.first-background-color, 
+	.second-background-color,
+	.first-background-image,
+	.second-background-image {
+		max-width: 120px;
+		max-height: 189px;
+		//background-position: top center !important;
+		background-size: cover !important;
+	}	
+	.card.is-revealed .category  {
+		margin: 20px 10px 10px 10px;		
+	}
+	.first-background-image {
+		background-position: 0 -435px !important;
+	}		
+	.second-background-image {
+		background-position: 0 -223px !important;
+	}
+}
+@media (min-width: 500px) and (max-width: 800px) {
+	body {
+		padding: 0 !important;
+	}
+	.categories-area, .playground {
+		float: none !important;
+		width: 100% !important;
+		margin-left: 0 !important; 
+		margin-right: 0 !important; 
+	} 
+	.card,
+	.first-background-color, 
+	.second-background-color,
+	.first-background-image,
+	.second-background-image {
+		max-width: 120px;
+		max-height: 189px;
+		//background-position: top center !important;
+		background-size: cover !important;
+	}	
+	.card.is-revealed .category  {
+		margin: 20px 10px 10px 10px;		
+	}
+	.first-background-image {
+		background-position: 0 -445px !important;
+	}		
+	.second-background-image {
+		background-position: 0 -229px !important;
+	}
+}
+@media (max-width: 500px) {
+	header {
+		height:35px;
+		.logo {
+			height: 35px;
 
-		float: left;
+			h1 {
+				height: 30px;
+				margin: 5px 0;
+			}
+		}
+	}
+	.box, .main-content, .card-area {
+		padding: 10px;
+		margin-bottom: 10px;
+	}
+	.categories-area {
+		ul {
+			margin: 0;
+		}
+		h6 {
+			margin-top: 0;
+		}
+		li {
+			width: 50%;
+			float: left;
+			font-size: 12px;
+			font-weight: bold;			
+		}
+	}
+	.card-area {
+		.card {
+			left: 0;			
+		}
+	}
+	body {
+		padding: 0 !important;
+	}
+	.categories-area, .playground {
+		float: none !important;
+		width: 100% !important;
+		margin-left: 0 !important; 
+		margin-right: 0 !important; 
+	} 
+	.card,
+	.first-background-color, 
+	.second-background-color,
+	.first-background-image,
+	.second-background-image {
+		max-width: 120px;
+		max-height: 136px;
+		min-height: 100px !important;
+		//background-position: top center !important;
+		background-size: cover !important;
+	}	
+	.card.is-revealed .category  {
+		margin: 20px 10px 10px 10px;		
+	}
+	.first-background-image {
+		background-position: 0 -445px !important;
+	}		
+	.second-background-image {
+		background-position: 0 -229px !important;
 	}
 }

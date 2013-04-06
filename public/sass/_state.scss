@@ -23,6 +23,9 @@
 			position: relative;
 			z-index: 100;		
 		}
+		&:hover {
+			cursor: pointer;
+		}
 		.category {
 			margin: 40px 27px 10px 27px;
 			@extend .h5;
@@ -54,6 +57,7 @@
 		.first-background-image,
 		.second-background-image {
 			background-repeat: no-repeat;
+			background-position: top middle
 		}
 		&.default {
 			.first-background-color, 
