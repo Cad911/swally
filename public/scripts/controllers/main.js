@@ -8,6 +8,10 @@ swallyApp.controller('MainCtrl', function ($scope, Pledges) {
   $scope.history_pledges_play = [];
   $scope.current_pledges = [];
   $scope.current_categories = [];
+  $scope.display_pledge = {
+    title: "",
+    description: ""
+  };
 
   $scope.nb_play = 0;
 
@@ -16,13 +20,18 @@ swallyApp.controller('MainCtrl', function ($scope, Pledges) {
 
     if(nb_play !== 0){
       $scope.history_pledges_play.unshift({
-        'turn': nb_play,
+        'turn': nb_play
       });
     }
 
     generateRandomPledges(4);
 
     $scope.nb_play += 1;
+  };
+
+  $scope.reveal = function (index) {
+    $scope.current_pledges[index].reveal = ' show';
+    $scope.display_pledge = $scope.current_pledges[index].data;
   };
 
   var generateRandomPledges = function(number) {
@@ -43,7 +52,10 @@ swallyApp.controller('MainCtrl', function ($scope, Pledges) {
       
       // Push datas.
       categories[index] = pledge.category;
-      pledges.push(pledge);
+      pledges.push({
+        data: pledge,
+        reveal : ''
+      });
     }
 
     // Set in scope.

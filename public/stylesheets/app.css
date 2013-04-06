@@ -4,7 +4,7 @@
   background: url('/images/sprites-sdd5f21941a.png') no-repeat;
 }
 
-/* line 60, ../../../../.rvm/gems/ruby-1.9.3-p374@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .sprites-Swally-logo {
   background-position: 0 0;
 }
@@ -14,17 +14,17 @@
   background: url('/images/card-s01815f1af0.png') no-repeat;
 }
 
-/* line 60, ../../../../.rvm/gems/ruby-1.9.3-p374@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .card-front {
   background-position: 0 0;
 }
 
-/* line 60, ../../../../.rvm/gems/ruby-1.9.3-p374@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .card-mask-lvl-1 {
   background-position: 0 -577px;
 }
 
-/* line 60, ../../../../.rvm/gems/ruby-1.9.3-p374@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .card-mask-lvl-2 {
   background-position: 0 -297px;
 }
@@ -45,7 +45,7 @@ body {
 body, p {
   margin: 0;
   padding-bottom: 10px;
-  font-family: "Merriweather", georgia, arial;
+  font-family: 'Merriweather', georgia, arial;
   font-size: 16px;
   line-height: 1.5em;
   color: #666666;
@@ -54,7 +54,7 @@ body, p {
 /* line 24, ../sass/_base.scss */
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, .card.is-revealed .category, h6, .h6 {
   margin: 10px 0 10px 0;
-  font-family: "Merriweather", georgia, arial;
+  font-family: 'Merriweather', georgia, arial;
   font-weight: 900;
 }
 
@@ -451,26 +451,30 @@ header p, header a, header span {
 .card-area ul {
   margin: 0;
 }
+/* line 103, ../sass/_layout.scss */
+.card-area .span3 {
+  position: relative;
+}
 
-/* line 104, ../sass/_layout.scss */
+/* line 107, ../sass/_layout.scss */
 .categories-area, .playground {
   float: left;
 }
 
-/* line 108, ../sass/_layout.scss */
+/* line 111, ../sass/_layout.scss */
 .categories-area .title {
   color: #ff7d13;
   line-height: 1.5em;
 }
 
-/* line 116, ../sass/_layout.scss */
+/* line 119, ../sass/_layout.scss */
 .pledge-area {
   padding: 30px;
   background: #f7eee2;
   border-top: 1px solid #e8dfd3;
   position: relative;
 }
-/* line 121, ../sass/_layout.scss */
+/* line 124, ../sass/_layout.scss */
 .pledge-area:after, .pledge-area:before {
   bottom: 100%;
   border: solid transparent;
@@ -480,7 +484,7 @@ header p, header a, header span {
   position: absolute;
   pointer-events: none;
 }
-/* line 130, ../sass/_layout.scss */
+/* line 133, ../sass/_layout.scss */
 .pledge-area:before {
   border-color: rgba(194, 225, 245, 0);
   border-bottom-color: #e8dfd3;
@@ -488,7 +492,7 @@ header p, header a, header span {
   margin-left: -11px;
   left: 12.5%;
 }
-/* line 137, ../sass/_layout.scss */
+/* line 140, ../sass/_layout.scss */
 .pledge-area:after {
   border-color: rgba(136, 183, 213, 0);
   border-bottom-color: #f7eee2;
@@ -497,34 +501,34 @@ header p, header a, header span {
   left: 12.5%;
 }
 
-/* line 145, ../sass/_layout.scss */
+/* line 148, ../sass/_layout.scss */
 .activities {
   overflow: hidden;
   margin: 0 30px;
 }
-/* line 148, ../sass/_layout.scss */
+/* line 151, ../sass/_layout.scss */
 .activities .rank {
   width: 20px;
   padding: 12px 30px;
   color: #0b9999;
   font-weight: 700;
 }
-/* line 155, ../sass/_layout.scss */
+/* line 158, ../sass/_layout.scss */
 .activities .rule {
   padding-left: 0;
 }
 
-/* line 162, ../sass/_layout.scss */
+/* line 165, ../sass/_layout.scss */
 .sub-bar .label {
   font-weight: 400;
   color: #666666;
 }
-/* line 166, ../sass/_layout.scss */
+/* line 169, ../sass/_layout.scss */
 .sub-bar .filter {
   margin-right: 60px;
   float: left;
 }
-/* line 169, ../sass/_layout.scss */
+/* line 172, ../sass/_layout.scss */
 .sub-bar .filter:last-child {
   margin-right: 0;
 }
@@ -534,25 +538,47 @@ header p, header a, header span {
   background: #0b9999;
 }
 
-/* line 10, ../sass/_state.scss */
+/* line 9, ../sass/_state.scss */
+.card {
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: center top 50%;
+  -moz-transform-origin: center top 50%;
+  -ms-transform-origin: center top 50%;
+  -o-transform-origin: center top 50%;
+  transform-origin: center top 50%;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+/* line 15, ../sass/_state.scss */
 .card.is-not-revealed {
   background-position: 0 0;
 }
-/* line 12, ../sass/_state.scss */
+/* line 17, ../sass/_state.scss */
 .card.is-not-revealed .category, .card.is-not-revealed .smiley {
   display: none;
 }
-/* line 17, ../sass/_state.scss */
+/* line 22, ../sass/_state.scss */
 .card.is-revealed .category, .card.is-revealed .smiley {
   position: relative;
   z-index: 100;
 }
-/* line 21, ../sass/_state.scss */
+/* line 26, ../sass/_state.scss */
 .card.is-revealed .category {
   margin: 40px 27px 10px 27px;
   color: #ff7d13;
 }
-/* line 26, ../sass/_state.scss */
+/* line 31, ../sass/_state.scss */
 .card.is-revealed .smiley {
   color: rgba(255, 125, 19, 0.6);
   font-weight: bold;
@@ -562,7 +588,7 @@ header p, header a, header span {
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-/* line 34, ../sass/_state.scss */
+/* line 39, ../sass/_state.scss */
 .card.is-revealed .first-background-color,
 .card.is-revealed .second-background-color,
 .card.is-revealed .first-background-image,
@@ -571,53 +597,81 @@ header p, header a, header span {
   top: 0;
   left: 0;
 }
-/* line 40, ../sass/_state.scss */
+/* line 45, ../sass/_state.scss */
 .card.is-revealed .first-background-color,
 .card.is-revealed .second-background-color {
   background-color: rgba(255, 125, 19, 0.3);
 }
-/* line 43, ../sass/_state.scss */
+/* line 48, ../sass/_state.scss */
 .card.is-revealed .first-background-image {
   background-position: 0 -577px;
 }
-/* line 46, ../sass/_state.scss */
+/* line 51, ../sass/_state.scss */
 .card.is-revealed .second-background-image {
   background-position: 0 -297px;
 }
-/* line 50, ../sass/_state.scss */
+/* line 55, ../sass/_state.scss */
 .card.is-revealed .first-background-image,
 .card.is-revealed .second-background-image {
   background-repeat: no-repeat;
 }
-/* line 55, ../sass/_state.scss */
+/* line 60, ../sass/_state.scss */
 .card.is-revealed.default .first-background-color,
 .card.is-revealed.default .second-background-color {
   background-color: rgba(102, 102, 102, 0.3);
 }
-/* line 58, ../sass/_state.scss */
+/* line 63, ../sass/_state.scss */
 .card.is-revealed.default .category {
   color: #666666;
 }
-/* line 61, ../sass/_state.scss */
+/* line 66, ../sass/_state.scss */
 .card.is-revealed.default .smiley {
   color: rgba(102, 102, 102, 0.6);
 }
+/* line 71, ../sass/_state.scss */
+.card.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
 
-/* line 70, ../sass/_state.scss */
+/* line 80, ../sass/_state.scss */
+.card-area .span3.show .front {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+/* line 83, ../sass/_state.scss */
+.card-area .span3.show .back {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+
+/* line 92, ../sass/_state.scss */
 .playground.is-card-1 .pledge-area:before, .playground.is-card-1 .pledge-area:after {
   left: 12.5%;
 }
-/* line 77, ../sass/_state.scss */
+/* line 99, ../sass/_state.scss */
 .playground.is-card-2 .pledge-area:before, .playground.is-card-2 .pledge-area:after {
   left: 38%;
 }
-/* line 84, ../sass/_state.scss */
+/* line 106, ../sass/_state.scss */
 .playground.is-card-3 .pledge-area:before, .playground.is-card-3 .pledge-area:after {
-  left: 63.5%%;
+  left: 63.5%;
 }
-/* line 91, ../sass/_state.scss */
+/* line 113, ../sass/_state.scss */
 .playground.is-card-4 .pledge-area:before, .playground.is-card-4 .pledge-area:after {
-  left: 89.5%%;
+  left: 89.5%;
 }
 
 @media only screen and (max-width: 600px) {
@@ -885,7 +939,7 @@ header p, header a, header span {
   /* line 126, ../sass/compass_twitter_bootstrap/_responsive-767px-max.scss */
   input[type="checkbox"],
   input[type="radio"] {
-    border: 1px solid #cccccc;
+    border: 1px solid #ccc;
   }
 
   /* line 131, ../sass/compass_twitter_bootstrap/_responsive-767px-max.scss */
