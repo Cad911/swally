@@ -7,6 +7,11 @@
 
 // État des cartes: is-revealed (retournée), is-not-revealed (non retournée)
 .card {
+    @include transition(all 0.5s linear);
+    @include transform-style(preserve-3d);
+    @include transform-origin(center top);
+    @include backface-visibility( hidden );
+
 	&.is-not-revealed {
 		@include card-sprite(front);
 		.category, .smiley {
@@ -62,5 +67,20 @@
 				color: rgba($text-color, 0.6);
 			}
 		}
-	}	
+	}
+    &.back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include transform(rotateY(180deg));
+    }
+}
+
+.card-area .span3.show {
+    .front {
+        @include transform(rotateY(180deg));
+    }
+    .back {
+        @include transform(rotateY(0deg));
+    }
 }
