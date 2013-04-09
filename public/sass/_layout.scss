@@ -14,15 +14,18 @@ header {
 		vertical-align: middle;
 		text-align: center;
 
-		background-image: url(../images/logo.svg);
-		background-size: 116px;
-		background-repeat: no-repeat;
 	}
 	td {
 		height: 100%;
 		vertical-align: middle;
 	}
 	.logo {
+		height: 30px;
+		background-image: url(../images/logo.svg);
+		background-size: 116px;
+		background-repeat: no-repeat;
+		background-position: center 7px;
+		background-size: 80px;
 		width: 140px;
 		padding: 3px $main-gutter 0 $main-gutter;			
 	}

@@ -5,7 +5,7 @@
   background: url('/images/sprites-sdd5f21941a.png') no-repeat;
 }
 
-/* line 60, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../.rvm/gems/ruby-1.9.3-p374@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .sprites-Swally-logo {
   background-position: 0 0;
 }
@@ -15,17 +15,17 @@
   background: url('/images/card-s01815f1af0.png') no-repeat;
 }
 
-/* line 60, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../.rvm/gems/ruby-1.9.3-p374@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .card-front {
   background-position: 0 0;
 }
 
-/* line 60, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../.rvm/gems/ruby-1.9.3-p374@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .card-mask-lvl-1 {
   background-position: 0 -577px;
 }
 
-/* line 60, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../.rvm/gems/ruby-1.9.3-p374@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .card-mask-lvl-2 {
   background-position: 0 -297px;
 }
@@ -46,7 +46,7 @@ body {
 body, p {
   margin: 0;
   padding-bottom: 10px;
-  font-family: 'Merriweather', georgia, arial;
+  font-family: "Merriweather", georgia, arial;
   font-size: 16px;
   line-height: 1.5em;
   color: #666666;
@@ -55,7 +55,7 @@ body, p {
 /* line 24, ../sass/_base.scss */
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, .card.is-revealed .category, h6, .h6 {
   margin: 10px 0 10px 0;
-  font-family: 'Merriweather', georgia, arial;
+  font-family: "Merriweather", georgia, arial;
   font-weight: 900;
 }
 
@@ -352,37 +352,40 @@ header h1 {
   width: 137px;
   vertical-align: middle;
   text-align: center;
-  background-image: url(../images/logo.svg);
-  background-size: 116px;
-  background-repeat: no-repeat;
 }
-/* line 21, ../sass/_layout.scss */
+/* line 18, ../sass/_layout.scss */
 header td {
   height: 100%;
   vertical-align: middle;
 }
-/* line 25, ../sass/_layout.scss */
+/* line 22, ../sass/_layout.scss */
 header .logo {
+  height: 30px;
+  background-image: url(../images/logo.svg);
+  background-size: 116px;
+  background-repeat: no-repeat;
+  background-position: center 7px;
+  background-size: 80px;
   width: 140px;
   padding: 3px 30px 0 30px;
 }
-/* line 29, ../sass/_layout.scss */
+/* line 32, ../sass/_layout.scss */
 header .quote {
   padding-left: 30px;
 }
-/* line 33, ../sass/_layout.scss */
+/* line 36, ../sass/_layout.scss */
 header .user {
   text-align: right;
   padding-right: 60px;
 }
-/* line 37, ../sass/_layout.scss */
+/* line 40, ../sass/_layout.scss */
 header p, header a, header span {
   vertical-align: middle;
   color: #ffffff;
   padding-bottom: 0;
 }
 
-/* line 44, ../sass/_layout.scss */
+/* line 47, ../sass/_layout.scss */
 .navigation {
   width: 140px;
   padding: 30px;
@@ -391,45 +394,45 @@ header p, header a, header span {
   -moz-box-shadow: rgba(0, 0, 0, 0.25) -2px 3px 3px inset;
   box-shadow: rgba(0, 0, 0, 0.25) -2px 3px 3px inset;
 }
-/* line 50, ../sass/_layout.scss */
+/* line 53, ../sass/_layout.scss */
 .navigation a {
   display: inline-block;
   padding: 5px 15px 6px 15px;
 }
-/* line 53, ../sass/_layout.scss */
+/* line 56, ../sass/_layout.scss */
 .navigation a:hover {
   padding-bottom: 5px;
 }
 
-/* line 60, ../sass/_layout.scss */
+/* line 63, ../sass/_layout.scss */
 .main-content {
   padding: 30px;
 }
-/* line 62, ../sass/_layout.scss */
+/* line 65, ../sass/_layout.scss */
 .main-content .box {
   margin: inherit 30px 30px 30px;
 }
-/* line 65, ../sass/_layout.scss */
+/* line 68, ../sass/_layout.scss */
 .main-content .activities {
   padding: 0;
 }
 
-/* line 71, ../sass/_layout.scss */
+/* line 74, ../sass/_layout.scss */
 .playground {
   padding: 0;
 }
-/* line 73, ../sass/_layout.scss */
+/* line 76, ../sass/_layout.scss */
 .playground .name {
   font-size: 16px;
   font-weight: 400;
 }
-/* line 77, ../sass/_layout.scss */
+/* line 80, ../sass/_layout.scss */
 .playground .content {
   width: 75%;
   float: left;
   padding-right: 5%;
 }
-/* line 84, ../sass/_layout.scss */
+/* line 87, ../sass/_layout.scss */
 .playground .btn {
   margin-bottom: 15px;
   margin-top: 20px;
@@ -437,56 +440,56 @@ header p, header a, header span {
   font-weight: normal;
   padding: 10px inherit;
 }
-/* line 91, ../sass/_layout.scss */
+/* line 94, ../sass/_layout.scss */
 .playground .btn i {
   font-weight: normal;
 }
-/* line 94, ../sass/_layout.scss */
+/* line 97, ../sass/_layout.scss */
 .playground .time-played {
   text-align: center;
 }
 
-/* line 98, ../sass/_layout.scss */
+/* line 101, ../sass/_layout.scss */
 .card-area {
   padding: 3%;
   box-sizing: border-box;
 }
-/* line 101, ../sass/_layout.scss */
+/* line 104, ../sass/_layout.scss */
 .card-area .card {
   left: 18px;
 }
-/* line 104, ../sass/_layout.scss */
+/* line 107, ../sass/_layout.scss */
 .card-area ul {
   margin: 0;
 }
-/* line 107, ../sass/_layout.scss */
+/* line 110, ../sass/_layout.scss */
 .card-area .card-container {
   position: relative;
 }
-/* line 112, ../sass/_layout.scss */
+/* line 115, ../sass/_layout.scss */
 .card-area .card-container:first-child {
   margin-left: 0;
 }
 
-/* line 117, ../sass/_layout.scss */
+/* line 120, ../sass/_layout.scss */
 .categories-area, .playground {
   float: left;
 }
 
-/* line 121, ../sass/_layout.scss */
+/* line 124, ../sass/_layout.scss */
 .categories-area .title {
   color: #ff7d13;
   line-height: 1.5em;
 }
 
-/* line 129, ../sass/_layout.scss */
+/* line 132, ../sass/_layout.scss */
 .pledge-area {
   padding: 30px;
   background: #f7eee2;
   border-top: 1px solid #e8dfd3;
   position: relative;
 }
-/* line 134, ../sass/_layout.scss */
+/* line 137, ../sass/_layout.scss */
 .pledge-area:after, .pledge-area:before {
   bottom: 100%;
   border: solid transparent;
@@ -496,7 +499,7 @@ header p, header a, header span {
   position: absolute;
   pointer-events: none;
 }
-/* line 143, ../sass/_layout.scss */
+/* line 146, ../sass/_layout.scss */
 .pledge-area:before {
   border-color: rgba(194, 225, 245, 0);
   border-bottom-color: #e8dfd3;
@@ -505,7 +508,7 @@ header p, header a, header span {
   left: 12.5%;
   display: none;
 }
-/* line 151, ../sass/_layout.scss */
+/* line 154, ../sass/_layout.scss */
 .pledge-area:after {
   border-color: rgba(136, 183, 213, 0);
   border-bottom-color: #f7eee2;
@@ -515,34 +518,34 @@ header p, header a, header span {
   display: none;
 }
 
-/* line 160, ../sass/_layout.scss */
+/* line 163, ../sass/_layout.scss */
 .activities {
   overflow: hidden;
   margin: 0 30px;
 }
-/* line 163, ../sass/_layout.scss */
+/* line 166, ../sass/_layout.scss */
 .activities .rank {
   width: 20px;
   padding: 12px 30px;
   color: #0b9999;
   font-weight: 700;
 }
-/* line 170, ../sass/_layout.scss */
+/* line 173, ../sass/_layout.scss */
 .activities .rule {
   padding-left: 0;
 }
 
-/* line 177, ../sass/_layout.scss */
+/* line 180, ../sass/_layout.scss */
 .sub-bar .label {
   font-weight: 400;
   color: #666666;
 }
-/* line 181, ../sass/_layout.scss */
+/* line 184, ../sass/_layout.scss */
 .sub-bar .filter {
   margin-right: 60px;
   float: left;
 }
-/* line 184, ../sass/_layout.scss */
+/* line 187, ../sass/_layout.scss */
 .sub-bar .filter:last-child {
   margin-right: 0;
 }
@@ -594,24 +597,16 @@ header p, header a, header span {
   position: relative;
   z-index: 100;
 }
-<<<<<<< HEAD
-/* line 26, ../sass/_state.scss */
+/* line 33, ../sass/_state.scss */
 .card.is-revealed:hover {
   cursor: pointer;
 }
-/* line 29, ../sass/_state.scss */
-=======
-/* line 33, ../sass/_state.scss */
->>>>>>> 959435caf688fd3c2ab0dc2f648bf9ac8caf5388
+/* line 36, ../sass/_state.scss */
 .card.is-revealed .category {
   margin: 40px 27px 10px 27px;
   color: #ff7d13;
 }
-<<<<<<< HEAD
-/* line 34, ../sass/_state.scss */
-=======
-/* line 38, ../sass/_state.scss */
->>>>>>> 959435caf688fd3c2ab0dc2f648bf9ac8caf5388
+/* line 41, ../sass/_state.scss */
 .card.is-revealed .smiley {
   color: rgba(255, 125, 19, 0.6);
   font-weight: bold;
@@ -621,11 +616,7 @@ header p, header a, header span {
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-<<<<<<< HEAD
-/* line 42, ../sass/_state.scss */
-=======
-/* line 46, ../sass/_state.scss */
->>>>>>> 959435caf688fd3c2ab0dc2f648bf9ac8caf5388
+/* line 49, ../sass/_state.scss */
 .card.is-revealed .first-background-color,
 .card.is-revealed .second-background-color,
 .card.is-revealed .first-background-image,
@@ -634,71 +625,39 @@ header p, header a, header span {
   top: 0;
   left: 0;
 }
-<<<<<<< HEAD
-/* line 48, ../sass/_state.scss */
-=======
-/* line 52, ../sass/_state.scss */
->>>>>>> 959435caf688fd3c2ab0dc2f648bf9ac8caf5388
+/* line 55, ../sass/_state.scss */
 .card.is-revealed .first-background-color,
 .card.is-revealed .second-background-color {
   background-color: rgba(255, 125, 19, 0.3);
 }
-<<<<<<< HEAD
-/* line 51, ../sass/_state.scss */
+/* line 58, ../sass/_state.scss */
 .card.is-revealed .first-background-image {
   background-position: 0 -577px;
 }
-/* line 54, ../sass/_state.scss */
+/* line 61, ../sass/_state.scss */
 .card.is-revealed .second-background-image {
   background-position: 0 -297px;
 }
-/* line 58, ../sass/_state.scss */
-=======
-/* line 55, ../sass/_state.scss */
-.card.is-revealed .first-background-image {
-  background-position: 0 -577px;
-}
-/* line 58, ../sass/_state.scss */
-.card.is-revealed .second-background-image {
-  background-position: 0 -297px;
-}
-/* line 62, ../sass/_state.scss */
->>>>>>> 959435caf688fd3c2ab0dc2f648bf9ac8caf5388
+/* line 65, ../sass/_state.scss */
 .card.is-revealed .first-background-image,
 .card.is-revealed .second-background-image {
   background-repeat: no-repeat;
   background-position: top middle;
 }
-<<<<<<< HEAD
-/* line 64, ../sass/_state.scss */
-=======
-/* line 67, ../sass/_state.scss */
->>>>>>> 959435caf688fd3c2ab0dc2f648bf9ac8caf5388
+/* line 71, ../sass/_state.scss */
 .card.is-revealed.default .first-background-color,
 .card.is-revealed.default .second-background-color {
   background-color: rgba(102, 102, 102, 0.3);
 }
-<<<<<<< HEAD
-/* line 67, ../sass/_state.scss */
+/* line 74, ../sass/_state.scss */
 .card.is-revealed.default .category {
   color: #666666;
 }
-/* line 70, ../sass/_state.scss */
+/* line 77, ../sass/_state.scss */
 .card.is-revealed.default .smiley {
   color: rgba(102, 102, 102, 0.6);
 }
-/* line 75, ../sass/_state.scss */
-=======
-/* line 70, ../sass/_state.scss */
-.card.is-revealed.default .category {
-  color: #666666;
-}
-/* line 73, ../sass/_state.scss */
-.card.is-revealed.default .smiley {
-  color: rgba(102, 102, 102, 0.6);
-}
-/* line 78, ../sass/_state.scss */
->>>>>>> 959435caf688fd3c2ab0dc2f648bf9ac8caf5388
+/* line 82, ../sass/_state.scss */
 .card.back {
   position: absolute;
   top: 0;
@@ -710,11 +669,7 @@ header p, header a, header span {
   transform: rotateY(180deg);
 }
 
-<<<<<<< HEAD
-/* line 84, ../sass/_state.scss */
-=======
-/* line 87, ../sass/_state.scss */
->>>>>>> 959435caf688fd3c2ab0dc2f648bf9ac8caf5388
+/* line 91, ../sass/_state.scss */
 .card-area .span3.show .front {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
@@ -722,11 +677,7 @@ header p, header a, header span {
   -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
-<<<<<<< HEAD
-/* line 87, ../sass/_state.scss */
-=======
-/* line 90, ../sass/_state.scss */
->>>>>>> 959435caf688fd3c2ab0dc2f648bf9ac8caf5388
+/* line 94, ../sass/_state.scss */
 .card-area .span3.show .back {
   -webkit-transform: rotateY(0deg);
   -moz-transform: rotateY(0deg);
@@ -735,35 +686,19 @@ header p, header a, header span {
   transform: rotateY(0deg);
 }
 
-<<<<<<< HEAD
-/* line 95, ../sass/_state.scss */
+/* line 102, ../sass/_state.scss */
 .playground.is-card-1 .pledge-area:before, .playground.is-card-1 .pledge-area:after {
   left: 12.5%;
-}
-/* line 102, ../sass/_state.scss */
-.playground.is-card-2 .pledge-area:before, .playground.is-card-2 .pledge-area:after {
-  left: 38%;
 }
 /* line 109, ../sass/_state.scss */
-.playground.is-card-3 .pledge-area:before, .playground.is-card-3 .pledge-area:after {
-  left: 63.5%;
-}
-/* line 116, ../sass/_state.scss */
-=======
-/* line 98, ../sass/_state.scss */
-.playground.is-card-1 .pledge-area:before, .playground.is-card-1 .pledge-area:after {
-  left: 12.5%;
-}
-/* line 105, ../sass/_state.scss */
 .playground.is-card-2 .pledge-area:before, .playground.is-card-2 .pledge-area:after {
   left: 38%;
 }
-/* line 112, ../sass/_state.scss */
+/* line 116, ../sass/_state.scss */
 .playground.is-card-3 .pledge-area:before, .playground.is-card-3 .pledge-area:after {
   left: 63.5%;
 }
-/* line 119, ../sass/_state.scss */
->>>>>>> 959435caf688fd3c2ab0dc2f648bf9ac8caf5388
+/* line 123, ../sass/_state.scss */
 .playground.is-card-4 .pledge-area:before, .playground.is-card-4 .pledge-area:after {
   left: 89.5%;
 }
@@ -881,12 +816,12 @@ header p, header a, header span {
 
   /* line 94, ../sass/_responsive.scss */
   .first-background-image {
-    background-position: 0 -435px !important;
+    background-position: 0 -446px !important;
   }
 
   /* line 97, ../sass/_responsive.scss */
   .second-background-image {
-    background-position: 0 -223px !important;
+    background-position: 0 -229px !important;
   }
 }
 @media (min-width: 500px) and (max-width: 800px) {
@@ -929,7 +864,7 @@ header p, header a, header span {
     background-position: 0 -229px !important;
   }
 }
-@media (max-width: 500px) {
+@media (min-width: 10px) and (max-width: 500px) {
   /* line 132, ../sass/_responsive.scss */
   header {
     height: 35px;
@@ -939,26 +874,26 @@ header p, header a, header span {
     height: 35px;
   }
   /* line 137, ../sass/_responsive.scss */
-  header .logo h1  {
+  header td .logoh1  {
     height: 30px;
     margin: 5px 0;
   }
 
-  /* line 143, ../sass/_responsive.scss */
+  /* line 142, ../sass/_responsive.scss */
   .box, .main-content, .card-area {
     padding: 10px;
     margin-bottom: 10px;
   }
 
-  /* line 148, ../sass/_responsive.scss */
+  /* line 147, ../sass/_responsive.scss */
   .categories-area ul {
     margin: 0;
   }
-  /* line 151, ../sass/_responsive.scss */
+  /* line 150, ../sass/_responsive.scss */
   .categories-area h6 {
     margin-top: 0;
   }
-  /* line 154, ../sass/_responsive.scss */
+  /* line 153, ../sass/_responsive.scss */
   .categories-area li {
     width: 50%;
     float: left;
@@ -966,17 +901,17 @@ header p, header a, header span {
     font-weight: bold;
   }
 
-  /* line 162, ../sass/_responsive.scss */
+  /* line 161, ../sass/_responsive.scss */
   .card-area .card {
     left: 0;
   }
 
-  /* line 166, ../sass/_responsive.scss */
+  /* line 165, ../sass/_responsive.scss */
   body {
     padding: 0 !important;
   }
 
-  /* line 169, ../sass/_responsive.scss */
+  /* line 168, ../sass/_responsive.scss */
   .categories-area, .playground {
     float: none !important;
     width: 100% !important;
@@ -984,7 +919,7 @@ header p, header a, header span {
     margin-right: 0 !important;
   }
 
-  /* line 179, ../sass/_responsive.scss */
+  /* line 178, ../sass/_responsive.scss */
   .card,
   .first-background-color,
   .second-background-color,
@@ -996,17 +931,17 @@ header p, header a, header span {
     background-size: cover !important;
   }
 
-  /* line 186, ../sass/_responsive.scss */
+  /* line 185, ../sass/_responsive.scss */
   .card.is-revealed .category {
     margin: 20px 10px 10px 10px;
   }
 
-  /* line 189, ../sass/_responsive.scss */
+  /* line 188, ../sass/_responsive.scss */
   .first-background-image {
     background-position: 0 -445px !important;
   }
 
-  /* line 192, ../sass/_responsive.scss */
+  /* line 191, ../sass/_responsive.scss */
   .second-background-image {
     background-position: 0 -229px !important;
   }
@@ -1208,7 +1143,7 @@ header p, header a, header span {
   /* line 126, ../sass/compass_twitter_bootstrap/_responsive-767px-max.scss */
   input[type="checkbox"],
   input[type="radio"] {
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc;
   }
 
   /* line 131, ../sass/compass_twitter_bootstrap/_responsive-767px-max.scss */

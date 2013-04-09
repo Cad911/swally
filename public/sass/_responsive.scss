@@ -92,10 +92,10 @@
 		margin: 20px 10px 10px 10px;		
 	}
 	.first-background-image {
-		background-position: 0 -435px !important;
+		background-position: 0 -446px !important;
 	}		
 	.second-background-image {
-		background-position: 0 -223px !important;
+		background-position: 0 -229px !important;
 	}
 }
 @media (min-width: 500px) and (max-width: 800px) {
@@ -128,18 +128,17 @@
 		background-position: 0 -229px !important;
 	}
 }
-@media (max-width: 500px) {
+@media (min-width: 10px) and (max-width: 500px) {
 	header {
 		height:35px;
 		.logo {
 			height: 35px;
-
-			h1 {
-				height: 30px;
-				margin: 5px 0;
-			}
 		}
-	}
+		td .logoh1 {
+			height: 30px;
+			margin: 5px 0;
+		}
+	}	
 	.box, .main-content, .card-area {
 		padding: 10px;
 		margin-bottom: 10px;
