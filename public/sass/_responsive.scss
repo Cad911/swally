@@ -27,6 +27,7 @@
 			border-top: $background-color-dark solid 1px;
 			background: $background-color;
 			@include box-shadow(rgba(0,0,0,0.55) 0px -2px 1px);
+			z-index: 80;
 			.btn {
 				display: block;
 				width: 90%;
@@ -132,6 +133,13 @@
 	.box, .main-content, .card-area {
 		padding: 10px;
 		margin-bottom: 10px;
+	}
+	.action.row-fluid {
+		padding: 2%;		
+		.offset4:first-child  {
+			margin-left: 0 !important;
+			width: 96% !important;
+		}
 	}
 	.categories-area {
 		ul {
