@@ -62,6 +62,8 @@ $break-phone: "only screen and (max-width : 600px)";
 @import "tools";
 @import "module";
 @import "layout";
+@import "game/animation";
+@import "game/tap-tap";
 @import "state";
 @import "responsive";
 @import "bootstrap.min.css";
