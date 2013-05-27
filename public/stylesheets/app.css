@@ -271,20 +271,20 @@ td {
   font-weight: 700;
   text-align: center;
 }
-/* line 53, ../sass/_module.scss */
+/* line 52, ../sass/_module.scss */
 .btn.btn-primary {
   border: solid 1px #d96a10;
   color: #fff6eb;
   background-color: #ff7d13;
 }
-/* line 58, ../sass/_module.scss */
+/* line 57, ../sass/_module.scss */
 .btn.btn-primary:hover {
   cursor: pointer;
   -webkit-box-shadow: rgba(0, 0, 0, 0.55) 0px 1px 1px;
   -moz-box-shadow: rgba(0, 0, 0, 0.55) 0px 1px 1px;
   box-shadow: rgba(0, 0, 0, 0.55) 0px 1px 1px;
 }
-/* line 63, ../sass/_module.scss */
+/* line 62, ../sass/_module.scss */
 .btn.btn-primary:active {
   background-image: none;
   background-color: #d96a10;
@@ -293,34 +293,34 @@ td {
   box-shadow: rgba(0, 0, 0, 0.45) 0 0px 1px 1px inset;
   border: solid 1px rgba(0, 0, 0, 0);
 }
-/* line 70, ../sass/_module.scss */
+/* line 69, ../sass/_module.scss */
 .btn.btn-large {
   padding: 7px 20px;
 }
-/* line 73, ../sass/_module.scss */
+/* line 72, ../sass/_module.scss */
 .btn.btn-huge {
   font-size: 20px;
   font-weight: normal;
-  padding: 10px inherit;
+  padding: 10px 15px;
 }
 
-/* line 81, ../sass/_module.scss */
+/* line 80, ../sass/_module.scss */
 .table tr, .table th {
   background-color: white;
 }
-/* line 84, ../sass/_module.scss */
+/* line 83, ../sass/_module.scss */
 .table tbody:nth-child(odd) td, .table tbody:nth-child(odd) th {
   background-color: #fffcf7;
 }
-/* line 87, ../sass/_module.scss */
+/* line 86, ../sass/_module.scss */
 .table tbody, .table tr {
   vertical-align: middle;
 }
-/* line 91, ../sass/_module.scss */
+/* line 90, ../sass/_module.scss */
 .table tbody:first-child td {
   border: none;
 }
-/* line 95, ../sass/_module.scss */
+/* line 94, ../sass/_module.scss */
 .table td {
   display: table-cell;
   padding: 12px;
@@ -328,7 +328,7 @@ td {
   text-align: left;
 }
 
-/* line 107, ../sass/_module.scss */
+/* line 106, ../sass/_module.scss */
 .card,
 .first-background-color,
 .second-background-color,
@@ -344,7 +344,7 @@ td {
   border-radius: 10px;
 }
 
-/* line 113, ../sass/_module.scss */
+/* line 112, ../sass/_module.scss */
 .card {
   position: relative;
   border: solid 1px #c4bcb2;
@@ -572,7 +572,7 @@ td {
   top: 0;
   left: 0;
   z-index: 100;
-  margin: -35px 0 0 0;
+  margin: 0 0 0 0;
   padding: 30px;
   box-sizing: border-box;
   background: rgba(255, 252, 247, 0.95);
