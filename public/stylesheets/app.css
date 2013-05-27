@@ -187,7 +187,7 @@ td {
 }
 
 /* line 16, ../sass/_tools.scss */
-.rounded, .box, .tag {
+.rounded, .box, .tag, .border-radius, .mini-game .tap-tap .gauge li {
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   -ms-border-radius: 8px;
@@ -615,58 +615,90 @@ td {
 .mini-game .sreen-game .instruction {
   text-align: center;
   position: absolute;
-  bottom: 30px;
+  bottom: -20px;
   left: 49%;
 }
-/* line 235, ../sass/_layout.scss */
+/* line 233, ../sass/_layout.scss */
+.mini-game .sreen-game .instruction, .mini-game .sreen-game .timer, .mini-game .sreen-game .gauge {
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 400ms;
+  -moz-transition-duration: 400ms;
+  -o-transition-duration: 400ms;
+  transition-duration: 400ms;
+  -webkit-transition-timing-function: ease-in;
+  -moz-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+}
+/* line 239, ../sass/_layout.scss */
+.mini-game .sreen-game.interface-is-displayed .gauge {
+  left: 30px;
+  opacity: 1;
+}
+/* line 243, ../sass/_layout.scss */
+.mini-game .sreen-game.interface-is-displayed .timer {
+  right: 30px;
+  opacity: 1;
+}
+/* line 247, ../sass/_layout.scss */
+.mini-game .sreen-game.interface-is-displayed .instruction {
+  bottom: 30px;
+  opacity: 1;
+}
+/* line 254, ../sass/_layout.scss */
 .mini-game .tap-tap .timer {
   font-size: 60px;
   position: absolute;
-  right: 30px;
+  right: -100px;
+  opacity: 0;
   color: #ff7d13;
 }
-/* line 241, ../sass/_layout.scss */
+/* line 261, ../sass/_layout.scss */
 .mini-game .tap-tap .gauge {
   position: absolute;
   top: 30px;
-  left: 30px;
+  left: -45px;
+  opacity: 0;
   margin: 0;
 }
-/* line 246, ../sass/_layout.scss */
+/* line 267, ../sass/_layout.scss */
 .mini-game .tap-tap .gauge li {
   height: 20px;
   display: block;
-  margin: 0 0 10px 0;
+  margin: 0 0 7.5px 0;
 }
-/* line 251, ../sass/_layout.scss */
+/* line 273, ../sass/_layout.scss */
 .mini-game .tap-tap .gauge .level-1 {
   width: 45px;
   background: #ff7d13;
 }
-/* line 255, ../sass/_layout.scss */
+/* line 277, ../sass/_layout.scss */
 .mini-game .tap-tap .gauge .level-2 {
   width: 40px;
-  background: #ff7d13;
+  background: #ff9036;
 }
-/* line 259, ../sass/_layout.scss */
+/* line 281, ../sass/_layout.scss */
 .mini-game .tap-tap .gauge .level-3 {
   width: 35px;
-  background: #ff9036;
+  background: #ffa459;
 }
-/* line 263, ../sass/_layout.scss */
+/* line 285, ../sass/_layout.scss */
 .mini-game .tap-tap .gauge .level-4 {
   width: 30px;
-  background: #ff9036;
+  background: #ffb87d;
 }
-/* line 267, ../sass/_layout.scss */
+/* line 289, ../sass/_layout.scss */
 .mini-game .tap-tap .gauge .level-5 {
   width: 25px;
-  background: #ffa459;
+  background: #ffcba1;
 }
-/* line 271, ../sass/_layout.scss */
+/* line 293, ../sass/_layout.scss */
 .mini-game .tap-tap .gauge .level-6 {
   width: 20px;
-  background: #ffa459;
+  background: #ffdec4;
 }
 
 /* line 2, ../sass/_state.scss */

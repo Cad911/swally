@@ -13,7 +13,7 @@
 	@include box-shadow(rgba(0,0,0,0) 0px 0px 0px);
 }
 // Coins arrondis de 8px selon la charte graphique
-.rounded {
+.rounded, .border-radius {
 	@include border-radius(8px);
 }
 // réduit un texte classique en texte moins important
