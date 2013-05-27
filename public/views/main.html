@@ -2,14 +2,16 @@
   <div class="clear"></div>
 </section>-->
 <div class="row-fluid">
-  <section class="categories-area box span3">
-    <h6 class="title">Catégories mises en jeu:</h6>
-    <ul>
-      <li data-ng-repeat="category in current_categories" data-ng-class="{active: category.played}">
-        {{ category.data.title }}
-      </li>
-      <div class="clear"></div>
-    </ul>
+  <section class="categories-area box span3 container-fluid">
+    <div class="row-fluid">
+      <h6 class="title">Catégories mises en jeu:</h6>
+      <ul>
+        <li data-ng-repeat="category in current_categories" data-ng-class="{active: category.played}">
+          {{ category.data.title }}
+        </li>
+        <div class="clear"></div>
+      </ul>      
+    </div>
   </section>
 
   <section class="box playground span9 container-fluid {{ actual_class }}">

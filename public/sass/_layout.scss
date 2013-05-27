@@ -1,5 +1,5 @@
 //Menu Bar
-header {
+.main-bar {
 	width: 100%;
 	height: 35px;
 	position: relative;
@@ -187,6 +187,91 @@ header {
 		float: left;
 		&:last-child {
 			margin-right: 0;
+		}
+	}
+}
+.mini-game {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top:0;
+	left: 0;
+	z-index: 100;
+	padding: $main-gutter;
+	box-sizing:border-box;
+	background: rgba($background-color-light-2,0.95);
+	.container {
+		margin: 0 auto;
+	}
+	.introduction-wrapper {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+	.introduction {
+		text-align: center; 
+		text-align: justify; 
+		h1, footer {
+			text-align: center;
+		}
+		header {
+			margin:$main-gutter auto $main-gutter * 1.5 auto;
+		}
+		.content {
+			margin: 0 0 $main-gutter * 1.25 0;
+		}
+		footer {
+			margin-bottom: $main-gutter;
+		}
+	}		
+	.sreen-game {
+		.instruction {
+			text-align: center;
+			position: absolute;
+			bottom: $main-gutter;
+			left: 49%;
+		}		
+	}
+	.tap-tap {
+		.timer {
+			font-size: 60px;
+			position: absolute;
+			right: $main-gutter;
+			color: $primary-color;
+		}
+		.gauge {
+			position: absolute;
+			top: $main-gutter;
+			left: $main-gutter;
+			margin: 0;
+			li {
+				height: 20px;
+				display: block;
+				margin: 0 0 $main-gutter / 3 0;
+			}
+			.level-1 {
+				width: 45px;
+				background: $primary-color;
+			}
+			.level-2 {
+				width: 40px;
+				background: $primary-color;
+			}
+			.level-3 {
+				width: 35px;
+				background: $primary-color-light;
+			}
+			.level-4 {
+				width: 30px;
+				background: $primary-color-light;
+			}
+			.level-5 {
+				width: 25px;
+				background: $primary-color-light-2;
+			}
+			.level-6 {
+				width: 20px;
+				background: $primary-color-light-2;
+			}															
 		}
 	}
 }

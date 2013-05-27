@@ -37,7 +37,6 @@ $text-color-light: #7d7c7c;
 $text-color-light-2: #939392;
 $text-color-dark: #565656;
 
-
 // Importe la google WebFont Meriweahter en normal et bold
 @import url(http://fonts.googleapis.com/css?family=Merriweather:400,700);
 
@@ -59,12 +58,14 @@ $phone-gutter: 10px;
 $break-phone: "only screen and (max-width : 600px)";
 
 @import "base";
+@import "theme";
 @import "tools";
 @import "module";
 @import "layout";
 @import "state";
-@import "theme";
 @import "responsive";
-@import "compass_twitter_bootstrap_responsive";
-@import "compass_twitter_bootstrap/grid";
+@import "bootstrap.min.css";
+@import "bootstrap-responsive.min.css";
+//@import "compass_twitter_bootstrap_responsive";
+//@import "compass_twitter_bootstrap/grid";
 @import "compass_twitter_bootstrap/font-awesome";
