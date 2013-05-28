@@ -699,11 +699,11 @@ td {
   background: #ffdec4;
 }
 
-/* line 4, ../sass/game/_animation.scss */
-.mini-game header, .mini-game .content {
+/* line 3, ../sass/game/_animation.scss */
+.mini-game {
   -webkit-backface-hidden: hidden;
-  -webkit-animation-name: game-header-body;
-  -webkit-animation-duration: 1200ms;
+  -webkit-animation-name: game-background;
+  -webkit-animation-duration: 12000ms;
   -webkit-animation-timing-function: ease-in;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-direction: normal;
@@ -711,12 +711,24 @@ td {
   -webkit-animation-play-state: running;
   -webkit-animation-fill-mode: forwards;
 }
-/* line 15, ../sass/game/_animation.scss */
+/* line 13, ../sass/game/_animation.scss */
+.mini-game header, .mini-game .content {
+  -webkit-backface-hidden: hidden;
+  -webkit-animation-name: game-header-body;
+  -webkit-animation-duration: 12000ms;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+  -webkit-animation-delay: 0;
+  -webkit-animation-play-state: running;
+  -webkit-animation-fill-mode: forwards;
+}
+/* line 24, ../sass/game/_animation.scss */
 .mini-game footer {
   position: relative;
   -webkit-backface-hidden: hidden;
   -webkit-animation-name: game-footer;
-  -webkit-animation-duration: 1200ms;
+  -webkit-animation-duration: 12000ms;
   -webkit-animation-timing-function: ease-in;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-direction: normal;
@@ -725,48 +737,70 @@ td {
   -webkit-animation-fill-mode: forwards;
 }
 
-@-webkit-keyframes game-header-body {
-  /* line 29, ../sass/game/_animation.scss */
+@-webkit-keyframes game-background {
+  /* line 38, ../sass/game/_animation.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 33, ../sass/game/_animation.scss */
+  /* line 42, ../sass/game/_animation.scss */
   33% {
     opacity: 1;
   }
 
-  /* line 37, ../sass/game/_animation.scss */
+  /* line 46, ../sass/game/_animation.scss */
   66% {
     opacity: 1;
   }
 
-  /* line 41, ../sass/game/_animation.scss */
+  /* line 50, ../sass/game/_animation.scss */
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes game-header-body {
+  /* line 55, ../sass/game/_animation.scss */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 59, ../sass/game/_animation.scss */
+  33% {
+    opacity: 0;
+  }
+
+  /* line 63, ../sass/game/_animation.scss */
+  66% {
+    opacity: 1;
+  }
+
+  /* line 67, ../sass/game/_animation.scss */
   100% {
     opacity: 1;
   }
 }
 
 @-webkit-keyframes game-footer {
-  /* line 46, ../sass/game/_animation.scss */
+  /* line 72, ../sass/game/_animation.scss */
   0% {
     opacity: 0;
     top: 20px;
   }
 
-  /* line 51, ../sass/game/_animation.scss */
+  /* line 77, ../sass/game/_animation.scss */
   33% {
     opacity: 0;
     top: 20px;
   }
 
-  /* line 56, ../sass/game/_animation.scss */
+  /* line 82, ../sass/game/_animation.scss */
   66% {
-    opacity: 1;
-    top: 0;
+    opacity: 0;
+    top: 20px;
   }
 
-  /* line 61, ../sass/game/_animation.scss */
+  /* line 87, ../sass/game/_animation.scss */
   100% {
     opacity: 1;
     top: 0;

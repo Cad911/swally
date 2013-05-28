@@ -1,10 +1,19 @@
 @import "tap-tap";
 
 .mini-game {
+     -webkit-backface-hidden: hidden;
+     -webkit-animation-name: game-background;
+     -webkit-animation-duration: 12000ms;
+     -webkit-animation-timing-function: ease-in;
+     -webkit-animation-iteration-count: 1;
+     -webkit-animation-direction: normal;
+     -webkit-animation-delay: 0;
+     -webkit-animation-play-state: running;
+     -webkit-animation-fill-mode: forwards;   
    header, .content {   
      -webkit-backface-hidden: hidden;
      -webkit-animation-name: game-header-body;
-     -webkit-animation-duration: 1200ms;
+     -webkit-animation-duration: 12000ms;
      -webkit-animation-timing-function: ease-in;
      -webkit-animation-iteration-count: 1;
      -webkit-animation-direction: normal;
@@ -16,7 +25,7 @@
       position: relative;
      -webkit-backface-hidden: hidden;
      -webkit-animation-name: game-footer;
-     -webkit-animation-duration: 1200ms;
+     -webkit-animation-duration: 12000ms;
      -webkit-animation-timing-function: ease-in;
      -webkit-animation-iteration-count: 1;
      -webkit-animation-direction: normal;
@@ -25,13 +34,30 @@
      -webkit-animation-fill-mode: forwards;       
    }
 }
-@-webkit-keyframes game-header-body {
+@-webkit-keyframes game-background {
    0% {
       opacity: 0;
    }
 
    33% {
       opacity: 1;
+   }
+
+   66% {
+      opacity: 1;
+   } 
+
+   100% {
+      opacity: 1;
+   }
+}
+@-webkit-keyframes game-header-body {
+   0% {
+      opacity: 0;
+   }
+
+   33% {
+      opacity: 0;
    }
 
    66% {
@@ -54,8 +80,8 @@
    }
 
    66% {
-      opacity: 1;
-      top: 0;
+      opacity: 0;
+      top: 20px;
    } 
 
    100% {
