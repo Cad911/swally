@@ -3,95 +3,75 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title></title>
-    <meta name="description" content=""/>
-    <meta name="viewport" content="width=device-width"/>
-    <link rel="stylesheet" href="stylesheets/app.css"/>
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-</head>
-<body ng-app="swallyApp" id="page">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <title></title>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width"/>
 
+        <!-- <link rel="stylesheet" href="assets/stylesheets/app.css"/> -->
+        <link rel="stylesheet" href="http://swally.herokuapp.com/stylesheets/app.css"/>
+    </head>
+    <body ng-app="swallyApp" id="page">
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-            <![endif]-->
-
+        <![endif]-->
+        
         <!--[if lt IE 9]>
             <script src="scripts/vendor/es5-shim.min.js"></script>
             <script src="scripts/vendor/json3.min.js"></script>
-            <![endif]-->
+        <![endif]-->
 
-            <!-- Add your site or application content here -->
-            <header class="main-bar">
-                <table>
-                    <tbody>
-                        <tr>
-                            <td class="logo">
-                                <h1></h1>
-                            </td>
-          <!--              <td class="quote"><p>"Ouhh, ça n'a pas du passer ça"</p></td>
-          <td class="user"><a href="">connexion</a><span> / </span><a href="">inscription</a></td>-->    
-      </tr>
-  </tbody>
-</table>    
-</header>
+        <!-- Add your site or application content here -->
+        <header>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="logo">
+                            <h1></h1>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>    
+        </header>
 
-<div class="mini-game">
-    <div class="container">        
-        <div class="row-fluid">
-<!--             <div class="introduction span8 offset2">
-                <div class="introduction-wrapper">
-                    <header>
-                        <h1>Tap-tap</h1>
-                    </header>
-                    <div class="content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, nihil, amet error quod porro mollitia rerum vitae explicabo vel animi sed adipisci architecto iste quo iusto saepe cupiditate iure laborum!</p>   
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio omnis magnam neque mollitia nemo natus.</p>               
-                    </div>       
-                    <footer>
-                        <p><a href="" class="btn btn-primary btn-large">commencer le jeu !</a></p>
-                      <p class="small light">joueur 1: à toi de jouer</p>
-                  </footer>               
-              </div>
-          </div>  -->
-          <div class="sreen-game tap-tap interface-is-displayed">
-            <div class="timer">
-                <span>1</span>
-            </div>
-            <ul class="gauge">
-                <li class="level-1"></li>
-                <li class="level-2"></li>
-                <li class="level-3"></li>
-                <li class="level-4"></li>
-                <li class="level-5"></li>
-                <li class="level-6"></li>
-            </ul>
-            <p class="light small instruction">Tap !!</p>
-          </div>
-      </div>
-  </div>
-</div>
 
-<table>
-    <tbody>
-        <tr>
-            <td>
-                <div class="main-content" data-ng-view></div>
-            </td>
-        </tr>
-    </tbody>
-</table> 
+        <div ng-controller="GamesCtrl" ng-include src="current_mini_game.url" ng-show="show_mini_game" class="mini-game" ></div>        
 
-<script src="scripts/vendor/angular.js"></script>
+        <table class="table-main-content">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="main-content" data-ng-view></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table> 
 
-<!-- build:js scripts/scripts.js -->
-<script src="scripts/vendor/angular-resource.js"></script>
-<script src="scripts/service.js"></script>
-<script src="scripts/app.js"></script>
-<script src="scripts/controllers/main.js"></script>
-<!-- endbuild -->
-</body>
+
+        <!-- build:js scripts/scripts.js -->
+        <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+        <script type="text/javascript" src="scripts/vendor/angular.min.js"></script>
+        <script type="text/javascript" src="scripts/vendor/angular-resource.min.js"></script>
+        <script type="text/javascript" src="scripts/app.js"></script>
+        <script type="text/javascript" src="scripts/services/services.js"></script>
+        <script type="text/javascript" src="scripts/directives/directives.js"></script>
+        <script type="text/javascript" src="scripts/controllers/controllers.js"></script> -->
+        <!-- endbuild -->
+
+        <!-- build:js scripts/scripts.js -->
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+        <script type="text/javascript" src="http://swally.herokuapp.com/scripts/vendor/angular.js"></script>
+        <script type="text/javascript" src="http://swally.herokuapp.com/scripts/vendor/angular-resource.js"></script>
+        
+    	<script type="text/javascript" src="scripts/app.js"></script>
+    	<script type="text/javascript" src="scripts/services/services.js"></script>
+        <script type="text/javascript" src="scripts/directives/directives.js"></script>
+    	<script type="text/javascript" src="scripts/controllers/controllers.js"></script>
+        <!-- endbuild -->
+
+        
+        
+    </body>
 </html>

@@ -1,0 +1,16 @@
+<div>
+    <div style="position:relative;z-index:1;"></div>
+    <h1> Tap tap game </h1>
+
+    <button ng-click="initTapTap()"> Jouer </button>
+
+    <div class="tap-tap" style="width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:2;position:absolute;top:57px;left:0;display:{{display_tap_tap}}" ng-click="addTapTap()">
+        <h2> Au tour du joueur {{actual_player}} </h2>
+
+        <p ng-repeat="(key,sco) in score"> Score player {{key}} : {{sco}} </p>
+
+        <h3 style = "display:{{display_winner}}"> Player {{win_player}} win the game </h3>
+        <button ng-click="playTapTap()" style="display:{{display_button_play}}"> Jouer </button>
+
+    </div>
+</div>
