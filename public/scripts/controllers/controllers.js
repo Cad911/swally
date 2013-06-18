@@ -133,7 +133,6 @@
         $scope.pledges = $scope.pledges.data;
         return console.log($scope.pledges);
       });
-      $scope.pledges = Pledges.query();
       $scope.current_pledges = [];
       $scope.current_categories = [];
       $scope.show_new_turn = true;
