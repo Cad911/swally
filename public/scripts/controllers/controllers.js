@@ -124,7 +124,7 @@
   ]);
 
   window.ourApp.controller('PledgesCtrl', [
-    '$scope', 'Pleges', 'sharedServices', '$q', '$http', function($scope, Pledges, sharedServices, $q, $http) {
+    '$scope', 'Pledges', 'sharedServices', '$q', '$http', function($scope, Pledges, sharedServices, $q, $http) {
       var generateRandomPledges, nb_card, played_card, shot_played;
       shot_played = 0;
       played_card = [];
