@@ -1,4 +1,4 @@
-window.ourApp.controller('PledgesCtrl', ['$scope','Pleges', 'sharedServices','$q','$http', ($scope, Pledges, sharedServices, $q, $http)->
+window.ourApp.controller('PledgesCtrl', ['$scope','Pledges', 'sharedServices','$q','$http', ($scope, Pledges, sharedServices, $q, $http)->
 
   # one_pledge = {
   #       __v:0
