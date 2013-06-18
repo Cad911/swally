@@ -131,7 +131,7 @@
       nb_card = 4;
       $scope.pledges = Pledges.getAll(function() {
         $scope.pledges = $scope.pledges.data;
-        return console.log($scope.pledges);
+        return true;
       });
       $scope.current_pledges = [];
       $scope.current_categories = [];
