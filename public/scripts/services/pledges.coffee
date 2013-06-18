@@ -4,9 +4,8 @@
 #     });
 # ])
 
-angular.module('pledgeServices', ['ngResource']).
-  factory('Pledges', ($resource)->
+window.ourApp.factory('Pledges', ['$resource', ($resource)->
     return $resource('pledges.json', {}, {
       getAll: {method: 'GET'}
     });
-  );
+  ]);
