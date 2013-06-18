@@ -130,7 +130,8 @@
       played_card = [];
       nb_card = 4;
       $scope.pledges = Pledges.getAll(function() {
-        return $scope.pledges = $scope.pledges.data;
+        $scope.pledges = $scope.pledges.data;
+        return console.log($scope.pledges);
       });
       $scope.current_pledges = [];
       $scope.current_categories = [];
