@@ -4,7 +4,6 @@
 #     })
 # ])
 
-angular.module('categoryServices', ['ngResource']).
-    factory('Categories', ($resource)->
-        return $resource('categories/:categoryId.json',{categoryId: '@id'}, {getById: {method: 'GET'}})
-    )
+window.ourApp.factory('Categories', ['$resource',($resource)->
+    return $resource('categories/:categoryId.json',{categoryId: '@id'}, {getById: {method: 'GET'}})
+])
