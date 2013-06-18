@@ -34,10 +34,10 @@ window.ourApp.controller('PledgesCtrl', ['$scope','Pledges', 'sharedServices','$
 
   $scope.pledges = Pledges.getAll(()->
     $scope.pledges = $scope.pledges.data;
-    console.log $scope.pledges
+    # console.log $scope.pledges
   )
 
-  $scope.pledges =  Pledges.query() #pledges_static
+  # $scope.pledges =  Pledges.query() #pledges_static
 
 
   $scope.current_pledges = []
