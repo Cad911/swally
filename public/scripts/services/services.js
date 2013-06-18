@@ -2,7 +2,7 @@
 (function() {
   window.ourApp.factory('Categories', [
     '$resource', function($resource) {
-      return $resource('categories/:categoryId.json', {
+      return $resource('http://swally.herokuapp.com/categories/:categoryId.json', {
         categoryId: '@id'
       }, {
         getById: {
@@ -14,7 +14,7 @@
 
   window.ourApp.factory('Pledges', [
     '$resource', function($resource) {
-      return $resource('pledges.json', {}, {
+      return $resource('http://swally.herokuapp.com/pledges.json', {}, {
         getAll: {
           method: 'GET'
         }
