@@ -12,7 +12,7 @@
   ]);
 
   window.ourApp.controller('TapTapCtrl', [
-    '$scope', 'Pleges', 'sharedServices', '$q', function($scope, Pledges, sharedServices, $q) {
+    '$scope', 'Pledges', 'sharedServices', '$q', function($scope, Pledges, sharedServices, $q) {
       var i, _i, _ref;
       $scope.nb_player = 2;
       $scope.actual_player = 1;

@@ -1,4 +1,4 @@
-window.ourApp.controller('TapTapCtrl', ['$scope','Pleges', 'sharedServices' ,'$q', ($scope, Pledges, sharedServices, $q)->
+window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$q', ($scope, Pledges, sharedServices, $q)->
   
   $scope.nb_player = 2
   $scope.actual_player = 1
