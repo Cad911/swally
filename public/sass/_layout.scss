@@ -87,10 +87,7 @@
 	}
 	.btn {
 		margin-bottom: 15px;
-		margin-top: 20px;				
-		font-size: 20px;
-		font-weight: normal;
-		padding: 10px inherit		
+		margin-top: 20px;					
 	}
 	.btn i {
 		font-weight: normal;		
@@ -197,6 +194,7 @@
 	top:0;
 	left: 0;
 	z-index: 100;
+	margin: 0 0 0 0; 
 	padding: $main-gutter;
 	box-sizing:border-box;
 	background: rgba($background-color-light-2,0.95);
@@ -210,11 +208,12 @@
 	.introduction {
 		text-align: center; 
 		text-align: justify; 
+		padding-top: $main-gutter;
 		h1, footer {
 			text-align: center;
 		}
 		header {
-			margin:$main-gutter auto $main-gutter * 1.5 auto;
+			margin:0 auto $main-gutter * 1.5 auto;
 		}
 		.content {
 			margin: 0 0 $main-gutter * 1.25 0;
@@ -249,51 +248,5 @@
 				opacity: 1;				
 			}
 		}		
-	}
-	.tap-tap {
-		.timer {
-			font-size: 60px;
-			position: absolute;
-			right: -100px;
-			opacity: 0;
-			color: $primary-color;
-		}
-		.gauge {
-			position: absolute;
-			top: $main-gutter;
-			left: -45px;
-			opacity: 0;
-			margin: 0;	
-			li {
-				height: 20px;
-				display: block;
-				margin: 0 0 $main-gutter / 4 0;
-				@extend .border-radius;
-			}
-			.level-1 {
-				width: 45px;
-				background: $primary-color;
-			}
-			.level-2 {
-				width: 40px;
-				background: $primary-color-light;
-			}
-			.level-3 {
-				width: 35px;
-				background: $primary-color-light-2;
-			}
-			.level-4 {
-				width: 30px;
-				background: $primary-color-light-3;
-			}
-			.level-5 {
-				width: 25px;
-				background: $primary-color-light-4;
-			}
-			.level-6 {
-				width: 20px;
-				background: $primary-color-light-5;
-			}															
-		}
 	}
 }

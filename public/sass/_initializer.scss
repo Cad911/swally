@@ -3,6 +3,7 @@ $orange: #ff7d13;
 $blue: #0B9999;
 $beige: #f7eee2;
 $grey: #666666;
+$green: #0fcc0f;
 
 // Couleur sémantique
 
@@ -22,6 +23,17 @@ $secondary-color-light-2: #53b7b6;
 $secondary-color-light-3: #78c6c4;
 $secondary-color-light-4: #9cd4d3;
 $secondary-color-dark: #0a8989;
+
+// Couleur de VALIDATION et ses teintes dérivées
+$validated-color: $green;
+$validated-color-light: #33d433;
+$validated-color-light-2: #57db57;
+$validated-color-light-3: #7be37b;
+$validated-color-light-4: #9feb9f;
+$validated-color-dark: #0dae0d;
+$validated-color-dark-2: #0a8e0a;
+$validated-color-dark-3: #087008;
+$validated-color-dark-4: #065206;
 
 // Couleur de FOND et ses teintes dérivées
 $background-color: $beige;
@@ -58,10 +70,11 @@ $phone-gutter: 10px;
 $break-phone: "only screen and (max-width : 600px)";
 
 @import "base";
-@import "theme";
 @import "tools";
 @import "module";
 @import "layout";
+@import "game/game";
+@import "game/tap-tap";
 @import "state";
 @import "responsive";
 @import "bootstrap.min.css";

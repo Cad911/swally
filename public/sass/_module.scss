@@ -42,7 +42,6 @@
 	display: inline-block;
 	padding: 4px 12px;
 
-//	@extend .classic-gradient;
 	border: solid 1px $background-color-dark-3;
 	@include border-radius(8px);	
 	background-color: $primary-color;
@@ -69,6 +68,11 @@
 	}
 	&.btn-large {
 		padding: 7px 20px;
+	}
+	&.btn-huge {
+		font-size: 20px;
+		font-weight: normal;
+		padding: 10px 15px;	
 	}
 }
 // élément table servant de tableau de données et non de mise en page
