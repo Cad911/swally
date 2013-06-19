@@ -80,9 +80,10 @@
 		}
 	}
     &.back {
-        position: absolute;
+    	display: none;
+        position: relative;
         top: 0;
-        left: 18px;
+        margin: 0 auto;
         @include transform(rotateY(180deg));
     }
 }
@@ -90,9 +91,11 @@
 .card-area .span3.show {
     .front {
         @include transform(rotateY(180deg));
+        display: none;
     }
     .back {
         @include transform(rotateY(0deg));
+        display: block
     }
 }
 

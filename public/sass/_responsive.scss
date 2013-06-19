@@ -166,6 +166,9 @@
 			width: 96% !important;
 		}
 	}
+	.pledge-area {
+		padding: 10px;
+	}
 	.categories-area {
 		ul {
 			margin: 0;
@@ -183,7 +186,7 @@
 	.card-area {
 		//padding: 0;
 		.card {
-			left: 0;
+			//left: 0;
 		}
 		div.span3 {
 			width: inherit;
@@ -240,6 +243,13 @@
 			div.card {
 				width: 65px;
 				height: 105px;
+				overflow: hidden;
+				.first-background-image {
+					background-position: 0 -238px !important;
+				}
+				.second-background-image {
+					background-position: 0 -249px !important;
+				}
 			}
 		}
 }

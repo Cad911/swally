@@ -122,4 +122,10 @@
 .card-is-small {
 	width: 70px;
 	height: 105px;
+	.first-background-image {
+		background-image: 0 -238px !important;
+	}
+	.second-background-image {
+		background-image: 0 -249px !important;
+	}
 }

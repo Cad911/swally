@@ -365,6 +365,14 @@ td {
   width: 70px;
   height: 105px;
 }
+/* line 125, ../sass/_module.scss */
+.card-is-small .first-background-image {
+  background-image: 0 -238px !important;
+}
+/* line 128, ../sass/_module.scss */
+.card-is-small .second-background-image {
+  background-image: 0 -249px !important;
+}
 
 /* line 2, ../sass/_layout.scss */
 .main-bar {
@@ -981,9 +989,10 @@ td {
 }
 /* line 82, ../sass/_state.scss */
 .card.back {
-  position: absolute;
+  display: none;
+  position: relative;
   top: 0;
-  left: 18px;
+  margin: 0 auto;
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);
@@ -991,36 +1000,38 @@ td {
   transform: rotateY(180deg);
 }
 
-/* line 91, ../sass/_state.scss */
+/* line 92, ../sass/_state.scss */
 .card-area .span3.show .front {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);
   -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
+  display: none;
 }
-/* line 94, ../sass/_state.scss */
+/* line 96, ../sass/_state.scss */
 .card-area .span3.show .back {
   -webkit-transform: rotateY(0deg);
   -moz-transform: rotateY(0deg);
   -ms-transform: rotateY(0deg);
   -o-transform: rotateY(0deg);
   transform: rotateY(0deg);
+  display: block;
 }
 
-/* line 102, ../sass/_state.scss */
+/* line 105, ../sass/_state.scss */
 .playground.is-card-1 .pledge-area:before, .playground.is-card-1 .pledge-area:after {
   left: 12.5%;
 }
-/* line 109, ../sass/_state.scss */
+/* line 112, ../sass/_state.scss */
 .playground.is-card-2 .pledge-area:before, .playground.is-card-2 .pledge-area:after {
   left: 38%;
 }
-/* line 116, ../sass/_state.scss */
+/* line 119, ../sass/_state.scss */
 .playground.is-card-3 .pledge-area:before, .playground.is-card-3 .pledge-area:after {
   left: 63.5%;
 }
-/* line 123, ../sass/_state.scss */
+/* line 126, ../sass/_state.scss */
 .playground.is-card-4 .pledge-area:before, .playground.is-card-4 .pledge-area:after {
   left: 89.5%;
 }
@@ -1233,15 +1244,20 @@ td {
     width: 96% !important;
   }
 
-  /* line 170, ../sass/_responsive.scss */
+  /* line 169, ../sass/_responsive.scss */
+  .pledge-area {
+    padding: 10px;
+  }
+
+  /* line 173, ../sass/_responsive.scss */
   .categories-area ul {
     margin: 0;
   }
-  /* line 173, ../sass/_responsive.scss */
+  /* line 176, ../sass/_responsive.scss */
   .categories-area h6 {
     margin-top: 0;
   }
-  /* line 176, ../sass/_responsive.scss */
+  /* line 179, ../sass/_responsive.scss */
   .categories-area li {
     width: 50%;
     float: left;
@@ -1249,28 +1265,24 @@ td {
     font-weight: bold;
   }
 
-  /* line 185, ../sass/_responsive.scss */
-  .card-area .card {
-    left: 0;
-  }
-  /* line 188, ../sass/_responsive.scss */
+  /* line 191, ../sass/_responsive.scss */
   .card-area div.span3 {
     width: inherit;
     float: left;
     width: 23.40426%;
     margin-left: 2.127659574468085%;
   }
-  /* line 193, ../sass/_responsive.scss */
+  /* line 196, ../sass/_responsive.scss */
   .card-area div.span3 p {
     display: none;
   }
 
-  /* line 208, ../sass/_responsive.scss */
+  /* line 211, ../sass/_responsive.scss */
   body {
     padding: 0 !important;
   }
 
-  /* line 211, ../sass/_responsive.scss */
+  /* line 214, ../sass/_responsive.scss */
   .categories-area, .playground {
     float: none !important;
     width: 100% !important;
@@ -1278,7 +1290,7 @@ td {
     margin-right: 0 !important;
   }
 
-  /* line 221, ../sass/_responsive.scss */
+  /* line 224, ../sass/_responsive.scss */
   .card,
   .first-background-color,
   .second-background-color,
@@ -1290,26 +1302,35 @@ td {
     background-size: cover !important;
   }
 
-  /* line 228, ../sass/_responsive.scss */
+  /* line 231, ../sass/_responsive.scss */
   .card.is-revealed .category {
     margin: 20px 10px 10px 10px;
   }
 
-  /* line 231, ../sass/_responsive.scss */
+  /* line 234, ../sass/_responsive.scss */
   .first-background-image {
     background-position: 0 -448px !important;
   }
 
-  /* line 234, ../sass/_responsive.scss */
+  /* line 237, ../sass/_responsive.scss */
   .second-background-image {
     background-position: 0 -229px !important;
   }
 }
 @media (min-width: 10px) and (max-width: 550px) {
-  /* line 240, ../sass/_responsive.scss */
+  /* line 243, ../sass/_responsive.scss */
   .card-area div.card {
     width: 65px;
     height: 105px;
+    overflow: hidden;
+  }
+  /* line 247, ../sass/_responsive.scss */
+  .card-area div.card .first-background-image {
+    background-position: 0 -238px !important;
+  }
+  /* line 250, ../sass/_responsive.scss */
+  .card-area div.card .second-background-image {
+    background-position: 0 -249px !important;
   }
 }
 /*  Font Awesome
