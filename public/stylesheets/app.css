@@ -486,6 +486,8 @@ td {
 /* line 99, ../sass/_layout.scss */
 .card-area {
   padding: 3%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 /* line 102, ../sass/_layout.scss */
@@ -594,6 +596,8 @@ td {
   z-index: 100;
   margin: 0 0 0 0;
   padding: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   background: rgba(255, 252, 247, 0.95);
 }

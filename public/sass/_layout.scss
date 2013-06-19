@@ -98,7 +98,7 @@
 }
 .card-area {
 	padding: 3%;
-	box-sizing: border-box;
+	@include box-sizing(border-box);
 	.card {
 		@extend .card-is-huge;
 		margin: 0 auto;
@@ -197,7 +197,7 @@
 	z-index: 100;
 	margin: 0 0 0 0; 
 	padding: $main-gutter;
-	box-sizing:border-box;
+	@include box-sizing(border-box);
 	background: rgba($background-color-light-2,0.95);
 	.container {
 		margin: 0 auto;
