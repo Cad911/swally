@@ -5,7 +5,7 @@
 # ])
 
 window.ourApp.factory('Pledges', ['$resource', ($resource)->
-    return $resource('http://swally.herokuapp.com/pledges.json', {}, {
+    return $resource('/pledges.json', {}, {
       getAll: {method: 'GET'}
     });
   ]);

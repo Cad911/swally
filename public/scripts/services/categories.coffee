@@ -5,5 +5,5 @@
 # ])
 
 window.ourApp.factory('Categories', ['$resource',($resource)->
-    return $resource('http://swally.herokuapp.com/categories/:categoryId.json',{categoryId: '@id'}, {getById: {method: 'GET'}})
+    return $resource('/categories/:categoryId.json',{categoryId: '@id'}, {getById: {method: 'GET'}})
 ])
