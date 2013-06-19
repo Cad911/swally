@@ -11,6 +11,15 @@
     }
   ]);
 
+  window.ourApp.controller('globalCtrl', [
+    '$scope', function($scope) {
+      $scope.is_first_screen = true;
+      return $scope.nextScreen = function() {
+        return $scope.is_first_screen = false;
+      };
+    }
+  ]);
+
   window.ourApp.controller('TapTapCtrl', [
     '$scope', 'Pledges', 'sharedServices', '$q', function($scope, Pledges, sharedServices, $q) {
       var i, _i, _ref;

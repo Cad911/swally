@@ -16,7 +16,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     </head>
-    <body ng-app="swallyApp" id="page">
+    <body ng-app="swallyApp" id="page" ng-controller="globalCtrl">
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
         <![endif]-->
@@ -40,9 +40,13 @@
         </header>
 
 
-        <div ng-controller="GamesCtrl" ng-include src="current_mini_game.url" ng-show="show_mini_game" class="mini-game" ></div>        
+        <div ng-controller="GamesCtrl" ng-include src="current_mini_game.url" ng-show="show_mini_game" class="mini-game" ></div>
 
-        <table class="table-main-content">
+        <div class="first-screen" ng-show="is_first_screen" style="margin-top:50px"> 
+            <button ng-click="nextScreen()"> Commencer la partie </button>
+        </div>
+
+        <table class="table-main-content" ng-hide="is_first_screen">
             <tbody>
                 <tr>
                     <td>
