@@ -1252,16 +1252,25 @@ td {
   .pledge-area {
     padding: 10px;
   }
+  /* line 171, ../sass/_responsive.scss */
+  .pledge-area h2 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  /* line 175, ../sass/_responsive.scss */
+  .pledge-area .description {
+    font-size: 12px;
+  }
 
-  /* line 173, ../sass/_responsive.scss */
+  /* line 180, ../sass/_responsive.scss */
   .categories-area ul {
     margin: 0;
   }
-  /* line 176, ../sass/_responsive.scss */
+  /* line 183, ../sass/_responsive.scss */
   .categories-area h6 {
     margin-top: 0;
   }
-  /* line 179, ../sass/_responsive.scss */
+  /* line 186, ../sass/_responsive.scss */
   .categories-area li {
     width: 50%;
     float: left;
@@ -1269,24 +1278,24 @@ td {
     font-weight: bold;
   }
 
-  /* line 191, ../sass/_responsive.scss */
+  /* line 198, ../sass/_responsive.scss */
   .card-area div.span3 {
     width: inherit;
     float: left;
     width: 23.40426%;
     margin-left: 2.127659574468085%;
   }
-  /* line 196, ../sass/_responsive.scss */
+  /* line 203, ../sass/_responsive.scss */
   .card-area div.span3 p {
     display: none;
   }
 
-  /* line 211, ../sass/_responsive.scss */
+  /* line 218, ../sass/_responsive.scss */
   body {
     padding: 0 !important;
   }
 
-  /* line 214, ../sass/_responsive.scss */
+  /* line 221, ../sass/_responsive.scss */
   .categories-area, .playground {
     float: none !important;
     width: 100% !important;
@@ -1294,7 +1303,7 @@ td {
     margin-right: 0 !important;
   }
 
-  /* line 224, ../sass/_responsive.scss */
+  /* line 231, ../sass/_responsive.scss */
   .card,
   .first-background-color,
   .second-background-color,
@@ -1306,33 +1315,33 @@ td {
     background-size: cover !important;
   }
 
-  /* line 231, ../sass/_responsive.scss */
+  /* line 238, ../sass/_responsive.scss */
   .card.is-revealed .category {
     margin: 20px 10px 10px 10px;
   }
 
-  /* line 234, ../sass/_responsive.scss */
+  /* line 241, ../sass/_responsive.scss */
   .first-background-image {
     background-position: 0 -448px !important;
   }
 
-  /* line 237, ../sass/_responsive.scss */
+  /* line 244, ../sass/_responsive.scss */
   .second-background-image {
     background-position: 0 -229px !important;
   }
 }
 @media (min-width: 10px) and (max-width: 550px) {
-  /* line 243, ../sass/_responsive.scss */
+  /* line 250, ../sass/_responsive.scss */
   .card-area div.card {
     width: 65px;
     height: 105px;
     overflow: hidden;
   }
-  /* line 247, ../sass/_responsive.scss */
+  /* line 254, ../sass/_responsive.scss */
   .card-area div.card .first-background-image {
     background-position: 0 -238px !important;
   }
-  /* line 250, ../sass/_responsive.scss */
+  /* line 257, ../sass/_responsive.scss */
   .card-area div.card .second-background-image {
     background-position: 0 -249px !important;
   }
