@@ -100,7 +100,8 @@
 	padding: 3%;
 	box-sizing: border-box;
 	.card {
-		left: 18px;
+		@extend .card-is-huge;
+		margin: 0 auto;
 	}	
 	ul {
 		margin: 0;

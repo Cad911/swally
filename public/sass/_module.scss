@@ -115,3 +115,11 @@
 	@include box-shadow(rgba(0,0,0, 0.20) 0px 0px 3px);
 	text-align: center;
 }
+.card-is-huge {
+	width: 120px;
+	height: 195px;
+}
+.card-is-small {
+	width: 70px;
+	height: 105px;
+}
