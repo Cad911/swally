@@ -90,12 +90,12 @@
 
 .card-area .span3.show {
     .front {
-        @include transform(rotateY(180deg));
         display: none;
+        @include transform(rotateY(180deg));
     }
     .back {
+        display: block;
         @include transform(rotateY(0deg));
-        display: block
     }
 }
 

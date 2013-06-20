@@ -44,6 +44,18 @@
 		padding-bottom: 0;
 	}
 }
+.first-screen {
+	margin-top: 30px;
+	text-align: center;
+	h1 {
+		margin-bottom: 50px;
+	}
+	.btn {
+		width: 100%;
+		margin-top: 50px;
+		@include box-sizing(border-box);
+	}
+}
 // Navigation latérale
 .navigation {
 	width: 140px;
@@ -99,6 +111,11 @@
 .card-area {
 	padding: 3%;
 	@include box-sizing(border-box);
+	.span3 {
+		.card:hover {
+			cursor: pointer;
+		}
+	}
 	.card {
 		@extend .card-is-huge;
 		margin: 0 auto;
