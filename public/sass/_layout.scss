@@ -206,7 +206,8 @@
 	}
 }
 .mini-game {
-	position: absolute;
+	position: fixed;
+	overflow: scroll;
 	width: 100%;
 	height: 100%;
 	top:0;

@@ -610,7 +610,8 @@ td {
 
 /* line 208, ../sass/_layout.scss */
 .mini-game {
-  position: absolute;
+  position: fixed;
+  overflow: scroll;
   width: 100%;
   height: 100%;
   top: 0;
@@ -623,45 +624,45 @@ td {
   box-sizing: border-box;
   background: rgba(255, 252, 247, 0.95);
 }
-/* line 219, ../sass/_layout.scss */
+/* line 220, ../sass/_layout.scss */
 .mini-game .container {
   margin: 0 auto;
 }
-/* line 222, ../sass/_layout.scss */
+/* line 223, ../sass/_layout.scss */
 .mini-game .introduction-wrapper {
   max-width: 600px;
   margin: 0 auto;
 }
-/* line 226, ../sass/_layout.scss */
+/* line 227, ../sass/_layout.scss */
 .mini-game .introduction {
   text-align: center;
   text-align: justify;
   padding-top: 30px;
 }
-/* line 230, ../sass/_layout.scss */
+/* line 231, ../sass/_layout.scss */
 .mini-game .introduction h1, .mini-game .introduction footer {
   text-align: center;
 }
-/* line 233, ../sass/_layout.scss */
+/* line 234, ../sass/_layout.scss */
 .mini-game .introduction header {
   margin: 0 auto 45px auto;
 }
-/* line 236, ../sass/_layout.scss */
+/* line 237, ../sass/_layout.scss */
 .mini-game .introduction .content {
   margin: 0 0 37.5px 0;
 }
-/* line 239, ../sass/_layout.scss */
+/* line 240, ../sass/_layout.scss */
 .mini-game .introduction footer {
   margin-bottom: 30px;
 }
-/* line 244, ../sass/_layout.scss */
+/* line 245, ../sass/_layout.scss */
 .mini-game .sreen-game .instruction {
   text-align: center;
   position: absolute;
   bottom: -20px;
   left: 49%;
 }
-/* line 250, ../sass/_layout.scss */
+/* line 251, ../sass/_layout.scss */
 .mini-game .sreen-game .instruction, .mini-game .sreen-game .timer, .mini-game .sreen-game .gauge {
   -webkit-transition-property: all;
   -moz-transition-property: all;
@@ -676,17 +677,17 @@ td {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-/* line 256, ../sass/_layout.scss */
+/* line 257, ../sass/_layout.scss */
 .mini-game .sreen-game.interface-is-displayed .gauge {
   left: 30px;
   opacity: 1;
 }
-/* line 260, ../sass/_layout.scss */
+/* line 261, ../sass/_layout.scss */
 .mini-game .sreen-game.interface-is-displayed .timer {
   right: 30px;
   opacity: 1;
 }
-/* line 264, ../sass/_layout.scss */
+/* line 265, ../sass/_layout.scss */
 .mini-game .sreen-game.interface-is-displayed .instruction {
   bottom: 30px;
   opacity: 1;
