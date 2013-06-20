@@ -145,7 +145,7 @@
       $scope.current_pledges = [];
       $scope.current_categories = [];
       $scope.show_new_turn = true;
-      $scope.first_shot = true;
+      $scope.first_shot = false;
       $scope.display_pledge = {
         title: "",
         description: ""
@@ -188,7 +188,7 @@
           }
         }
       };
-      return generateRandomPledges = function(number) {
+      generateRandomPledges = function(number) {
         var all_pledges, categories, i, index, pledge, pledges, pledges_length, _i;
         all_pledges = $scope.pledges;
         pledges_length = all_pledges.length;
@@ -213,6 +213,7 @@
         $scope.current_pledges = pledges;
         return $scope.current_categories = categories;
       };
+      return $scope.getPledge();
     }
   ]);
 
