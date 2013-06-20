@@ -1,0 +1,110 @@
+@import "tap-tap";
+
+.mini-game {
+     -webkit-backface-hidden: hidden;
+     -webkit-animation-name: game-background;
+     -webkit-animation-duration: 1600ms;
+     -webkit-animation-timing-function: ease-in;
+     -webkit-animation-iteration-count: 1;
+     -webkit-animation-direction: normal;
+     -webkit-animation-delay: 0;
+     -webkit-animation-play-state: running;
+     -webkit-animation-fill-mode: forwards;   
+   header, .content {   
+     -webkit-backface-hidden: hidden;
+     -webkit-animation-name: game-header-body;
+     -webkit-animation-duration: 1600ms;
+     -webkit-animation-timing-function: ease-in;
+     -webkit-animation-iteration-count: 1;
+     -webkit-animation-direction: normal;
+     -webkit-animation-delay: 0;
+     -webkit-animation-play-state: running;
+     -webkit-animation-fill-mode: forwards; 
+   }
+   footer {
+      position: relative;
+     -webkit-backface-hidden: hidden;
+     -webkit-animation-name: game-footer;
+     -webkit-animation-duration: 1600ms;
+     -webkit-animation-timing-function: ease-in;
+     -webkit-animation-iteration-count: 1;
+     -webkit-animation-direction: normal;
+     -webkit-animation-delay: 0;
+     -webkit-animation-play-state: running;
+     -webkit-animation-fill-mode: forwards;       
+   }
+   * {
+      -moz-user-select: -moz-none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+   }
+}
+@-webkit-keyframes game-background {
+   0% {
+      opacity: 0;
+   }
+
+   25% {
+      opacity: 1;
+   }
+
+   50% {
+      opacity: 1;
+   } 
+
+   75% {
+      opacity: 1;
+   } 
+
+   100% {
+      opacity: 1;
+   }
+}
+@-webkit-keyframes game-header-body {
+   0% {
+      opacity: 0;
+   }
+
+   25% {
+      opacity: 0;
+   }
+
+   50% {
+      opacity: 0;
+   }
+
+   75% {
+      opacity: 1;
+   } 
+
+   100% {
+      opacity: 1;
+   }
+}
+@-webkit-keyframes game-footer {
+   0% {
+      opacity: 0;
+      top: 20px;
+   }
+
+   25% {
+      opacity: 0;
+      top: 20px;
+   }
+
+   50% {
+      opacity: 0;
+      top: 20px;
+   } 
+
+   75% {
+      opacity: 0;
+      top: 20px;
+   }    
+
+   100% {
+      opacity: 1;
+      top: 0;
+   }
+}
