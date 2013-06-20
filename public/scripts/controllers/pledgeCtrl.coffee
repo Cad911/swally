@@ -34,6 +34,8 @@ window.ourApp.controller('PledgesCtrl', ['$scope','Pledges', 'sharedServices','$
 
   $scope.pledges = Pledges.getAll(()->
     $scope.pledges = $scope.pledges.data;
+    # INIT TO SHOW CARD 
+    $scope.getPledge()
     true
   )
 
@@ -42,7 +44,7 @@ window.ourApp.controller('PledgesCtrl', ['$scope','Pledges', 'sharedServices','$
 
   $scope.current_pledges = []
   $scope.current_categories = []
-  $scope.show_new_turn = true
+  $scope.show_new_turn = false
   # CHANGE HERE
   $scope.first_shot = false
   $scope.display_pledge =
@@ -132,9 +134,6 @@ window.ourApp.controller('PledgesCtrl', ['$scope','Pledges', 'sharedServices','$
     $scope.current_pledges = pledges;
     $scope.current_categories = categories;
 
-
-  # INIT TO SHOW CARD 
-  $scope.getPledge()
 
     
 ])

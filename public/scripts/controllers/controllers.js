@@ -140,11 +140,12 @@
       nb_card = 4;
       $scope.pledges = Pledges.getAll(function() {
         $scope.pledges = $scope.pledges.data;
+        $scope.getPledge();
         return true;
       });
       $scope.current_pledges = [];
       $scope.current_categories = [];
-      $scope.show_new_turn = true;
+      $scope.show_new_turn = false;
       $scope.first_shot = false;
       $scope.display_pledge = {
         title: "",
@@ -188,7 +189,7 @@
           }
         }
       };
-      generateRandomPledges = function(number) {
+      return generateRandomPledges = function(number) {
         var all_pledges, categories, i, index, pledge, pledges, pledges_length, _i;
         all_pledges = $scope.pledges;
         pledges_length = all_pledges.length;
@@ -213,7 +214,6 @@
         $scope.current_pledges = pledges;
         return $scope.current_categories = categories;
       };
-      return $scope.getPledge();
     }
   ]);
 

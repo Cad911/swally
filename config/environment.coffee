@@ -5,6 +5,15 @@ module.exports = (compound) ->
 
   require('./mongoose').init(compound)
 
+
+  # ALLOW ACCESS TO URL LIKE A WEBSERVICE
+  allowCrossDomain = (req, res, next) ->
+    res.header 'Access-Control-Allow-Origin', '*'
+    res.header 'Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE'
+    res.header 'Access-Control-Allow-Headers', 'Content-Type, X-Requested-With'
+    next()
+
+
   app.configure ->
     app.enable 'coffee'
 
@@ -14,6 +23,7 @@ module.exports = (compound) ->
 
     # make sure you run `npm install railway-routes browserify`
     # app.enable 'clientside'
+    app.use allowCrossDomain
     app.use express.static(app.root + '/public', maxAge: 86400000)
     app.use express.bodyParser()
     app.use express.cookieParser 'secret'
