@@ -240,7 +240,7 @@
 			margin-bottom: $main-gutter;
 		}
 	}		
-	.timer, .gauge, .count { // transition pour l'apparition de l'interface de jeu
+	.timer, .gauge, .count, .timer-during-game { // transition pour l'apparition de l'interface de jeu
 		@include transition-property(all);
 		@include transition-duration(400ms);
 		@include transition-timing-function(ease-in);
@@ -269,6 +269,10 @@
 			right: $main-gutter;
 			opacity: 0;
 		}
+		.timer-during-game {
+			top: $main-gutter;
+			opacity: 0;
+		}
 		.instruction {
 			bottom: $main-gutter;
 			opacity: 0;				
@@ -290,6 +294,10 @@
 				bottom: $main-gutter;
 				opacity: 1;				
 			}
+			.timer-during-game {
+				opacity: 1;
+				top: $main-gutter;
+			}			
 		}		
 	}
 }
