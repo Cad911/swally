@@ -7,7 +7,6 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$
   $scope.score = {}
   $scope.is_playing = false
 
-  $scope.display_winner = 'none'
   $scope.display_tap_tap = 'none';
   $scope.count_down = 3
 
@@ -128,13 +127,17 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$
     if score_equal
       $scope.score = score_equal_tab
     else
+      $scope.step = 4
       $scope.win_player = local_win_player
-      $scope.display_winner = 'block'
       
-      setTimeout(()->
-        sharedServices.hideMiniGame()
-        $scope.$apply($scope.initVar())
-      , 2000)
+      # setTimeout(()->
+      #   sharedServices.hideMiniGame()
+      #   $scope.$apply($scope.initVar())
+      # , 2000)
+
+  $scope.gameOver = ()->
+    sharedServices.hideMiniGame()
+    $scope.initVar()
 
 
 ])

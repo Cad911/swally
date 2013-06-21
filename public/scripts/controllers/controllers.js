@@ -28,7 +28,6 @@
       $scope.win_player = false;
       $scope.score = {};
       $scope.is_playing = false;
-      $scope.display_winner = 'none';
       $scope.display_tap_tap = 'none';
       $scope.count_down = 3;
       $scope.step = 1;
@@ -103,7 +102,7 @@
           return $scope.actual_player = actual_player_next;
         }
       };
-      return $scope.endGame = function() {
+      $scope.endGame = function() {
         var higher_score, local_win_player, player, score, score_equal, score_equal_tab, _ref1, _ref2;
         higher_score = 0;
         score_equal = false;
@@ -136,13 +135,13 @@
         if (score_equal) {
           return $scope.score = score_equal_tab;
         } else {
-          $scope.win_player = local_win_player;
-          $scope.display_winner = 'block';
-          return setTimeout(function() {
-            sharedServices.hideMiniGame();
-            return $scope.$apply($scope.initVar());
-          }, 2000);
+          $scope.step = 4;
+          return $scope.win_player = local_win_player;
         }
+      };
+      return $scope.gameOver = function() {
+        sharedServices.hideMiniGame();
+        return $scope.initVar();
       };
     }
   ]);

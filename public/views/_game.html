@@ -48,7 +48,7 @@
 	        <div class="timer_time">
 	        	{{timer_show}}
 	        </div>
-	        
+
 	        <ul class="gauge">
 	            <li class="level-1"></li>
 	            <li class="level-2"></li>
@@ -63,9 +63,15 @@
 
 	      <!-- STEP 4 -->
 	  	
-	  	  <div class="span8 offset2">
-	  	  	<div class="winner" ng-show="win_player">
+	  	  <div class="span8 offset2" ng-show="checkStep(4)">
+	  	  	<div class="winner">
             	The winner is player n° {{win_player}}
+
+            	<p>
+                	<a href="" class="btn btn-primary btn-huge" ng-click="gameOver()"> 
+                		Reprendre les gages 
+                	</a>
+                </p>
             </div> 
 	  	  </div>
 	  </div>
