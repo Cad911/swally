@@ -24,3 +24,35 @@ window.ourApp.directive('clickEffect',()->
           $(element).append(div)
       )
 )
+
+
+
+window.ourApp.directive('ngShowClass',($timeout)->
+  (scope, element, attrs)->
+    show = ()->
+      element.css('display', 'block')
+      $timeout(()->
+        element.addClass('interface-is-displayed')
+      ,10)
+
+    hide = ()->
+      element.removeClass('interface-is-displayed')
+      $timeout(()->
+        element.css('display', 'none')
+      ,400)
+
+    value_attr = scope.$eval(attrs.ngShowClass)
+
+    if value_attr
+      show()
+    else
+      hide()
+
+    scope.$watch(attrs.ngShowClass, (value)->
+      if value
+        show()
+      else
+        hide()
+    )
+
+)
