@@ -11,6 +11,10 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$
   $scope.display_tap_tap = 'none';
   $scope.count_down = 3
 
+  $scope.step = 1
+  timer = 5000
+  $scope.timer_show = timer / 1000
+
 
   for i in [1..$scope.nb_player]
     $scope.score[i] = 1
@@ -32,17 +36,29 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$
   # $scope.initTapTap = ()->
   #   $scope.display_tap_tap = 'block';
 
+  $scope.checkStep =(right_step)->
+    return right_step == $scope.step
 
   # FUNCTION WHICH DETERMINE THE BEGINNING OF THE GAME OF ONE PLAYER
   $scope.playTapTap = ()->
+    $scope.step = 2
+
     $scope.is_playing = true
     interval_ = setInterval(()->
       $scope.$apply($scope.count_down--)
       if $scope.count_down == 0
+        $scope.$apply($scope.step = 3)
+        
+        # TIMER SHOW ON THE PAGE
+        timer_intval = setInterval(()->
+          $scope.$apply($scope.timer_show = Math.round(($scope.timer_show - 0.1)*100)/100)
+        ,100)
+
         setTimeout(()->
+          clearInterval(timer_intval)
           $scope.count_down = 3
           $scope.$apply($scope.showScore())
-        , 2000)
+        , timer)
         clearInterval(interval_)
     ,1000)
 
@@ -57,8 +73,10 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$
 
   # FUNCTION WHICH SHOW THE SCORE AND DEFINE IF THE GAME IS OVER OR NOT IF ALL PLAYER PLAYED
   $scope.showScore = ()->
+    $scope.timer_show = timer / 1000
+    $scope.step = 1
     $scope.is_playing = false
-    
+
     if $scope.actual_player == $scope.nb_player
       $scope.endGame()
     else
@@ -82,6 +100,9 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$
     higher_score = 0
     score_equal = false
     local_win_player = 1
+
+    # RECORD HIGHER SCORE
+    # RECORD PLAYER WITH HIGHER SCORE
     for player, score of $scope.score
       if score > higher_score
         local_win_player = parseInt(player)
@@ -90,6 +111,7 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$
     score_equal_tab = {}
     score_equal_tab[local_win_player] = higher_score
     $scope.actual_player = local_win_player
+
     # VERIFY IF SCORE EQUAL
     for player, score of $scope.score
       player = parseInt(player)

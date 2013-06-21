@@ -1,7 +1,8 @@
-<div class="" ng-controller="TapTapCtrl" ng-click="addTapTap()" click-effect="">
+<div class="" ng-controller="TapTapCtrl" ng-click="addTapTap()" click-effect="" style="height:100%;">
 	<div class="container" >        
 	    <div class="row-fluid">
-	         <div class="introduction span8 offset2">
+	    	<!-- STEP 1 -->
+	         <div class="introduction span8 offset2" ng-show="checkStep(1)">
 	            <div class="introduction-wrapper">
 	                <header>
 	                    <h1>Tap-tap</h1>
@@ -17,9 +18,7 @@
 
 
 
-	                <div class="winner" ng-show="win_player">
-	                	The winner is player n° {{win_player}}
-	                </div>   
+	                  
 
 	                <footer>
 	                    <p>
@@ -28,16 +27,28 @@
 	                    	</a>
 	                    </p>
 
-	                  <p ng-show="is_playing && count_down != 0"> {{count_down}} </p>
 	                  
 	                  <p class="small light">joueur {{actual_player}}: à toi de jouer</p>
 	              </footer>               
 	          </div>
 	      </div>
-	   <!--   <div class="sreen-game tap-tap interface-is-displayed">
+
+	      <!-- STEP 2 -->
+	      <div class="span8 offset2" ng-show="checkStep(2)">
+	      	<p ng-show="is_playing && count_down != 0"> {{count_down}} </p>
+	      </div>
+
+
+	      <!-- STEP 3 -->
+	      <div class="sreen-game tap-tap interface-is-displayed" ng-show="checkStep(3)">
 	        <div class="timer">
-	            <span>1</span>
+	            <span> {{score[actual_player]}} </span>
 	        </div>
+
+	        <div class="timer_time">
+	        	{{timer_show}}
+	        </div>
+	        
 	        <ul class="gauge">
 	            <li class="level-1"></li>
 	            <li class="level-2"></li>
@@ -47,7 +58,16 @@
 	            <li class="level-6"></li>
 	        </ul>
 	        <p class="light small instruction">Tap !!</p>
-	      </div> -->
+	      </div>
+
+
+	      <!-- STEP 4 -->
+	  	
+	  	  <div class="span8 offset2">
+	  	  	<div class="winner" ng-show="win_player">
+            	The winner is player n° {{win_player}}
+            </div> 
+	  	  </div>
 	  </div>
 	</div>
-</div>
+</div> 

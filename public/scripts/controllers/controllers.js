@@ -22,7 +22,7 @@
 
   window.ourApp.controller('TapTapCtrl', [
     '$scope', 'Pledges', 'sharedServices', '$q', function($scope, Pledges, sharedServices, $q) {
-      var i, _i, _ref;
+      var i, timer, _i, _ref;
       $scope.nb_player = 2;
       $scope.actual_player = 1;
       $scope.win_player = false;
@@ -31,6 +31,9 @@
       $scope.display_winner = 'none';
       $scope.display_tap_tap = 'none';
       $scope.count_down = 3;
+      $scope.step = 1;
+      timer = 5000;
+      $scope.timer_show = timer / 1000;
       for (i = _i = 1, _ref = $scope.nb_player; 1 <= _ref ? _i <= _ref : _i >= _ref; i = 1 <= _ref ? ++_i : --_i) {
         $scope.score[i] = 1;
       }
@@ -48,16 +51,26 @@
         }
         return _results;
       };
+      $scope.checkStep = function(right_step) {
+        return right_step === $scope.step;
+      };
       $scope.playTapTap = function() {
         var interval_;
+        $scope.step = 2;
         $scope.is_playing = true;
         return interval_ = setInterval(function() {
+          var timer_intval;
           $scope.$apply($scope.count_down--);
           if ($scope.count_down === 0) {
+            $scope.$apply($scope.step = 3);
+            timer_intval = setInterval(function() {
+              return $scope.$apply($scope.timer_show = Math.round(($scope.timer_show - 0.1) * 100) / 100);
+            }, 100);
             setTimeout(function() {
+              clearInterval(timer_intval);
               $scope.count_down = 3;
               return $scope.$apply($scope.showScore());
-            }, 2000);
+            }, timer);
             return clearInterval(interval_);
           }
         }, 1000);
@@ -69,6 +82,8 @@
       };
       $scope.showScore = function() {
         var actual_player_next, _j, _ref1, _ref2;
+        $scope.timer_show = timer / 1000;
+        $scope.step = 1;
         $scope.is_playing = false;
         if ($scope.actual_player === $scope.nb_player) {
           return $scope.endGame();
@@ -157,6 +172,9 @@
       $scope.$on('show-mini-game', function() {
         $scope.show_mini_game = sharedServices.show_mini_game;
         return $scope.current_mini_game = sharedServices.current_mini_game;
+      });
+      sharedServices.showMiniGame({
+        url: './views/_game.html'
       });
       $scope.getPledge = function() {
         generateRandomPledges(nb_card);
