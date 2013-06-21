@@ -4,6 +4,11 @@
     height: 100%;
   }
   .tap-tap {
+    .timer-during-game {
+      position: absolute;
+      top: -100px;
+      opacity: 0;
+    }
     .count {
       font-size: 60px;
       position: absolute;
@@ -51,7 +56,6 @@
   }
   .timer-during-game, .timer-before-start {
     position: absolute;
-    top: 30px;
     left: 49%;
   }
   .winner {
