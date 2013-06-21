@@ -30,13 +30,13 @@
 
 	      <!-- STEP 2 - décompte avant le jeu -->
 	      <div class="span8 offset2" ng-show="checkStep(2)">
-	      	<p ng-show="is_playing && count_down != 0"> {{count_down}} </p>
+	      	<p class="timer-before-start" ng-show="is_playing && count_down != 0"> {{count_down}} </p>
 	      </div>
 
 
 	      <!-- STEP 3 - écran de jeu -->
 	      <div class="sreen-game tap-tap" ng-show-class="checkStep(3)">
-	        <div class="timer">
+	        <div class="count">
 	            <span> {{score[actual_player]}} </span>
 	        </div>
 
@@ -55,14 +55,14 @@
 	        <p class="light small instruction">Tap !!</p>
 	      </div>
 
-	      <!-- STEP 5 - score finaux 
+	      <!-- STEP 5 - score finaux--> 
 	         <div class="introduction span8 offset2" ng-show="checkStep(1)">
 	            <div class="introduction-wrapper">
 	                <header>
-	                    <h1>Tap-tap</h1>
+	                    <h1>Premier round fini !</h1>
 	                </header>
 	                <div class="content">
-	                    <p>Joueur 1: <span class="score">7</span></p>   	                                  
+	                    <p>Ton score: <span class="score">7</span> points</p>   	                                  
 	                </div>         
 
 	                <footer>
@@ -75,19 +75,30 @@
 	                  <p class="small light">joueur {{actual_player}}: à toi de jouer</p>
 	              </footer>               
 	          </div>
-	      </div>-->
+	      </div>
 
 	      <!-- STEP 5 - score finaux -->
 	  	
 	  	  <div class="span8 offset2" ng-show="checkStep(4)">
 	  	  	<div class="winner">
-            	The winner is player n° {{win_player}}
+	                <header>
+	                    <h1>Résultats:</h1>
+	                </header>
+	                <div class="content">
+	                    <p>Joueur 1: <span class="score">7</span> points</p>   	                                  
+	                    <p>Joueur 2: <span class="score">12</span> points</p>   
+	                	<h6>Houra ! Joueur {{win_player}} remporte la victoire !</h6>        
+	                </div> 
 
-            	<p>
-                	<a href="" class="btn btn-primary btn-huge" ng-click="gameOver()"> 
-                		Reprendre les gages 
-                	</a>
-                </p>
+
+	                <footer>
+	                    <p>
+		                	<a href="" class="btn btn-primary btn-huge" ng-click="gameOver()"> 
+		                		Reprendre les gages 
+		                	</a>
+	                    </p>
+	              </footer>   
+
             </div> 
 	  	  </div>
 	  </div>
