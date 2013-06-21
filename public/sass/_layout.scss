@@ -220,11 +220,11 @@
 	.container {
 		margin: 0 auto;
 	}
-	.introduction-wrapper {
+	.introduction-wrapper, .winner {
 		max-width: 600px;
 		margin: 0 auto;
 	}
-	.introduction {
+	.introduction, .winner {
 		text-align: center;  
 		padding-top: $main-gutter;
 		h1, footer {
@@ -240,6 +240,11 @@
 			margin-bottom: $main-gutter;
 		}
 	}		
+	.timer, .gauge, .count { // transition pour l'apparition de l'interface de jeu
+		@include transition-property(all);
+		@include transition-duration(400ms);
+		@include transition-timing-function(ease-in);
+	}		
 	.sreen-game {
 		.instruction {
 			text-align: center;
@@ -247,17 +252,37 @@
 			bottom: -20px;
 			left: 49%;
 		}	
-		.instruction, .timer, .gauge { // transition pour l'apparition de l'interface de jeu
+		.instruction { // transition pour l'apparition de l'interface de jeu
 			@include transition-property(all);
 			@include transition-duration(400ms);
 			@include transition-timing-function(ease-in);
 		}	
+		.gauge {
+			left: $main-gutter;
+			opacity: 0;
+		}
+		.timer {
+			right: $main-gutter;
+			opacity: 0;
+		}
+		.count {
+			right: $main-gutter;
+			opacity: 0;
+		}
+		.instruction {
+			bottom: $main-gutter;
+			opacity: 0;				
+		}
 		&.interface-is-displayed {
 			.gauge {
 				left: $main-gutter;
 				opacity: 1;
 			}
 			.timer {
+				right: $main-gutter;
+				opacity: 1;
+			}
+			.count {
 				right: $main-gutter;
 				opacity: 1;
 			}
