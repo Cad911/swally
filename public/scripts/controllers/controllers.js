@@ -11,6 +11,15 @@
     }
   ]);
 
+  window.ourApp.controller('globalCtrl', [
+    '$scope', function($scope) {
+      $scope.is_first_screen = true;
+      return $scope.nextScreen = function() {
+        return $scope.is_first_screen = false;
+      };
+    }
+  ]);
+
   window.ourApp.controller('TapTapCtrl', [
     '$scope', 'Pledges', 'sharedServices', '$q', function($scope, Pledges, sharedServices, $q) {
       var i, _i, _ref;
@@ -131,12 +140,13 @@
       nb_card = 4;
       $scope.pledges = Pledges.getAll(function() {
         $scope.pledges = $scope.pledges.data;
+        $scope.getPledge();
         return true;
       });
       $scope.current_pledges = [];
       $scope.current_categories = [];
-      $scope.show_new_turn = true;
-      $scope.first_shot = true;
+      $scope.show_new_turn = false;
+      $scope.first_shot = false;
       $scope.display_pledge = {
         title: "",
         description: ""

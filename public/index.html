@@ -3,46 +3,65 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-        <title></title>
-        <meta name="description" content=""/>
-        <meta name="viewport" content="width=device-width"/>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title></title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width"/>
 
-        <!-- <link rel="stylesheet" href="assets/stylesheets/app.css"/> -->
-        <link rel="stylesheet" href="/stylesheets/app.css"/>
-        <!-- retire l'UI sur safari iPhone -->
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    </head>
-    <body ng-app="swallyApp" id="page">
+    <!-- <link rel="stylesheet" href="assets/stylesheets/app.css"/> -->
+    <link rel="stylesheet" href="/stylesheets/app.css"/>
+    <!-- retire l'UI sur safari iPhone -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+<body ng-app="swallyApp" id="page" ng-controller="globalCtrl">
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-        <![endif]-->
-        
+            <![endif]-->
+
         <!--[if lt IE 9]>
             <script src="scripts/vendor/es5-shim.min.js"></script>
             <script src="scripts/vendor/json3.min.js"></script>
-        <![endif]-->
+            <![endif]-->
 
-        <!-- Add your site or application content here -->
-        <header class="main-bar">
-            <table>
-                <tbody>
-                    <tr>
-                        <td class="logo">
-                            <h1></h1>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>    
-        </header>
+            <!-- Add your site or application content here -->
+            <header class="main-bar">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="logo">
+                                <h1></h1>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>    
+            </header>
 
 
-        <div ng-controller="GamesCtrl" ng-include src="current_mini_game.url" ng-show="show_mini_game" class="mini-game" ></div>        
+            <div ng-controller="GamesCtrl" ng-include src="current_mini_game.url" ng-show="show_mini_game" class="mini-game" ></div>
 
-        <table class="table-main-content">
+            <div class="first-screen main-content " ng-show="is_first_screen"> 
+                <div class="row-fluid">
+                    <div class="span6 offset3 box">
+                        <h1>Let's drink!!</h1>
+                        <h6>Comment qu'on joue ?</h6>
+                        <ul>
+                            <li>1 - Tu tires une carte</li>
+                            <li>2 - Tu fais le gage</li>
+                            <li>3 - Au suivant!</li>
+                        </ul>
+                        <form class="">
+                            <button type='submit' ng-click="nextScreen()" class="btn btn-primary btn-huge btn-block">
+                              <span><i class='icon-play'></i> Démarrer une partie</span>
+                          </button>
+                        </form>                        
+                    </div>
+              </div>    
+          </div>
+
+          <table class="table-main-content" ng-hide="is_first_screen">
             <tbody>
                 <tr>
                     <td>
@@ -53,56 +72,18 @@
         </table> 
 
 
-<!--<div class="mini-game">
-    <div class="container">        
-        <div class="row-fluid">
-             <div class="introduction span8 offset2">
-                <div class="introduction-wrapper">
-                    <header>
-                        <h1>Tap-tap</h1>
-                    </header>
-                    <div class="content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, nihil, amet error quod porro mollitia rerum vitae explicabo vel animi sed adipisci architecto iste quo iusto saepe cupiditate iure laborum!</p>   
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio omnis magnam neque mollitia nemo natus.</p>               
-                    </div>       
-                    <footer>
-                        <p><a href="" class="btn btn-primary btn-huge">commencer le jeu !</a></p>
-                      <p class="small light">joueur 1: à toi de jouer</p>
-                  </footer>               
-              </div>
-          </div>
-         <div class="sreen-game tap-tap interface-is-displayed">
-            <div class="timer">
-                <span>1</span>
-            </div>
-            <ul class="gauge">
-                <li class="level-1"></li>
-                <li class="level-2"></li>
-                <li class="level-3"></li>
-                <li class="level-4"></li>
-                <li class="level-5"></li>
-                <li class="level-6"></li>
-            </ul>
-            <p class="light small instruction">Tap !!</p>
-          </div> 
-      </div>
-  </div>
-</div>
--->
+<!-- build:js scripts/scripts.js -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+<script type="text/javascript" src="http://swally.herokuapp.com/scripts/vendor/angular.js"></script>
+<script type="text/javascript" src="http://swally.herokuapp.com/scripts/vendor/angular-resource.js"></script>
+
+<script type="text/javascript" src="scripts/app.js"></script>
+<script type="text/javascript" src="scripts/services/services.js"></script>
+<script type="text/javascript" src="scripts/directives/directives.js"></script>
+<script type="text/javascript" src="scripts/controllers/controllers.js"></script>
+<!-- endbuild -->
 
 
-        <!-- build:js scripts/scripts.js -->
-        <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
-        <script type="text/javascript" src="http://swally.herokuapp.com/scripts/vendor/angular.js"></script>
-        <script type="text/javascript" src="http://swally.herokuapp.com/scripts/vendor/angular-resource.js"></script>
-        
-    	<script type="text/javascript" src="scripts/app.js"></script>
-    	<script type="text/javascript" src="scripts/services/services.js"></script>
-        <script type="text/javascript" src="scripts/directives/directives.js"></script>
-    	<script type="text/javascript" src="scripts/controllers/controllers.js"></script>
-        <!-- endbuild -->
 
-        
-        
-    </body>
+</body>
 </html>

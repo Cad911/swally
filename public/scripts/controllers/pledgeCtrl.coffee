@@ -34,6 +34,8 @@ window.ourApp.controller('PledgesCtrl', ['$scope','Pledges', 'sharedServices','$
 
   $scope.pledges = Pledges.getAll(()->
     $scope.pledges = $scope.pledges.data;
+    # INIT TO SHOW CARD 
+    $scope.getPledge()
     true
   )
 
@@ -42,8 +44,9 @@ window.ourApp.controller('PledgesCtrl', ['$scope','Pledges', 'sharedServices','$
 
   $scope.current_pledges = []
   $scope.current_categories = []
-  $scope.show_new_turn = true
-  $scope.first_shot = true
+  $scope.show_new_turn = false
+  # CHANGE HERE
+  $scope.first_shot = false
   $scope.display_pledge =
     title: "",
     description: ""
@@ -55,6 +58,7 @@ window.ourApp.controller('PledgesCtrl', ['$scope','Pledges', 'sharedServices','$
   $scope.current_mini_game = []
   $scope.show_mini_game = false
 
+  # LISTEN EVENT FOR SHOW MINI GAME
   $scope.$on('show-mini-game', ()->
     $scope.show_mini_game = sharedServices.show_mini_game
     $scope.current_mini_game = sharedServices.current_mini_game
@@ -129,6 +133,7 @@ window.ourApp.controller('PledgesCtrl', ['$scope','Pledges', 'sharedServices','$
     # // Set in scope.
     $scope.current_pledges = pledges;
     $scope.current_categories = categories;
+
 
     
 ])
