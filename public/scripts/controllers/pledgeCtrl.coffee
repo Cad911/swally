@@ -65,8 +65,9 @@ window.ourApp.controller('PledgesCtrl', ['$scope','Pledges', 'sharedServices','$
   )
 
   # TO DELETE WHEN THE SCREEN OF TAPTAP GAME WILL BE OVER
+  date_cache = Math.random(1,100)
   sharedServices.showMiniGame({
-      url: './views/_game.html'
+      url: './views/_game.html?'+date_cache
   })
   # ------------------------------------------------------
 

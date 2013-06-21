@@ -750,7 +750,7 @@ td {
   background: #ffdec4;
 }
 /* line 52, ../sass/game/_tap-tap.scss */
-.mini-game .timer-during-game, .mini-game .timber-before-start {
+.mini-game .timer-during-game, .mini-game .timer-before-start {
   position: absolute;
   top: 0;
   left: 49%;
@@ -945,7 +945,7 @@ td {
   background: #ffdec4;
 }
 /* line 52, ../sass/game/_tap-tap.scss */
-.mini-game .timer-during-game, .mini-game .timber-before-start {
+.mini-game .timer-during-game, .mini-game .timer-before-start {
   position: absolute;
   top: 0;
   left: 49%;
