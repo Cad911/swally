@@ -3,7 +3,7 @@
 	    <div class="row-fluid">
 	    	<!-- STEP 1 - présentation du jeu -->
 	         <div class="introduction span8 offset2" ng-show="checkStep(1)">
-	            <div class="introduction-wrapper">
+	            <div class="introduction-wrapper" ng-show="checkForScreen('intro')">
 	                <header>
 	                    <h1>Tap-tap</h1>
 	                </header>
@@ -20,6 +20,28 @@
 	                    <p>
 	                    	<a href="" class="btn btn-primary btn-huge" ng-hide="is_playing" ng-click="playTapTap()"> 
 	                    		commencer le jeu ! 
+	                    	</a>
+	                    </p>
+	                  
+	                  <p class="small light">joueur {{actual_player}}: à toi de jouer</p>
+	              </footer>               
+	          </div>
+
+
+
+	          <!-- DIV SHOW IF NOT PLAYER 1 WHICH PLAY -->
+	          <div class="introduction-wrapper" ng-show="checkForScreen('intermediate')">
+	                <header>
+	                    <h1>Premier round fini !</h1>
+	                </header>
+	                <div class="content">
+	                    <p>Ton score: <span class="score">{{score[previous_player]}}</span> points</p> 	                                  
+	                </div>         
+
+	                <footer>
+	                    <p>
+	                    	<a href="" class="btn btn-primary btn-huge" ng-hide="is_playing" ng-click="playTapTap()"> 
+	                    		Deuxième round ! 
 	                    	</a>
 	                    </p>
 	                  
@@ -56,26 +78,26 @@
 	      </div>
 
 	      <!-- STEP 5 - score finaux--> 
-	         <div class="introduction span8 offset2" ng-show="checkStep(1)">
-	            <div class="introduction-wrapper">
-	                <header>
-	                    <h1>Premier round fini !</h1>
-	                </header>
-	                <div class="content">
-	                    <p>Ton score: <span class="score">7</span> points</p>   	                                  
-	                </div>         
+         <!-- <div class="introduction span8 offset2" ng-show="checkStep(1)">
+            <div class="introduction-wrapper">
+                <header>
+                    <h1>Premier round fini !</h1>
+                </header>
+                <div class="content">
+                    <p>Ton score: <span class="score">7</span> points</p>   	                                  
+                </div>         
 
-	                <footer>
-	                    <p>
-	                    	<a href="" class="btn btn-primary btn-huge" ng-hide="is_playing" ng-click="playTapTap()"> 
-	                    		Deuxième round ! 
-	                    	</a>
-	                    </p>
-	                  
-	                  <p class="small light">joueur {{actual_player}}: à toi de jouer</p>
-	              </footer>               
-	          </div>
-	      </div>
+                <footer>
+                    <p>
+                    	<a href="" class="btn btn-primary btn-huge" ng-hide="is_playing" ng-click="playTapTap()"> 
+                    		Deuxième round ! 
+                    	</a>
+                    </p>
+                  
+                  <p class="small light">joueur {{actual_player}}: à toi de jouer</p>
+              </footer>               
+          </div>
+      </div> -->
 
 	      <!-- STEP 5 - score finaux -->
 	  	
@@ -85,8 +107,7 @@
 	                    <h1>Résultats:</h1>
 	                </header>
 	                <div class="content">
-	                    <p>Joueur 1: <span class="score">7</span> points</p>   	                                  
-	                    <p>Joueur 2: <span class="score">12</span> points</p>   
+	                    <p ng-repeat="(key, sco) in score">Joueur {{key}}: <span class="score">{{sco}}</span> points</p>   	                                  
 	                	<h6>Houra ! Joueur {{win_player}} remporte la victoire !</h6>        
 	                </div> 
 

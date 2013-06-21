@@ -2,6 +2,9 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$
   
   $scope.nb_player = 2
   $scope.actual_player = 1
+  $scope.previous_player = 1
+
+  $scope.score_are_equal = false
 
   $scope.win_player = false
   $scope.score = {}
@@ -28,6 +31,8 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$
 
     $scope.display_winner = 'none'
     $scope.display_tap_tap = 'none';
+
+    $scope.score_are_equal = false
 
     for i in [1..$scope.nb_player]
       $scope.score[i] = 1
@@ -76,6 +81,8 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$
     $scope.step = 1
     $scope.is_playing = false
 
+    $scope.previous_player = $scope.actual_player
+    
     if $scope.actual_player == $scope.nb_player
       $scope.endGame()
     else
@@ -99,7 +106,7 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$
   # FUNCTION WHICH CALCULATE THE WINNER AND DEFINE IF SOME PLAYER ARE THE SAME SCORE
   $scope.endGame = ()->
     higher_score = 0
-    score_equal = false
+    $scope.score_are_equal = false
     local_win_player = 1
 
     # RECORD HIGHER SCORE
@@ -118,8 +125,8 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$
       player = parseInt(player)
       score = parseInt(score)
       if score == higher_score && local_win_player != player
+        $scope.score_are_equal = true
         score_equal_tab[player] = higher_score
-        score_equal = true
         $scope.actual_player = player if local_win_player > player
         break
 
@@ -127,7 +134,7 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$
 
     # IF SCORE IS EQUAL, WE INIT VAR score WITH THE PLAYER WHO HAVE THE SAME HIGHEST SCORE
     # ELSE THE GAME IS OVER
-    if score_equal
+    if $scope.score_are_equal
       $scope.score = score_equal_tab
     else
       $scope.step = 4
@@ -141,6 +148,13 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$
   $scope.gameOver = ()->
     sharedServices.hideMiniGame()
     $scope.initVar()
+
+  $scope.checkForScreen = (screen)->
+    if screen == 'intro'
+      return $scope.actual_player == 1 && !$scope.score_are_equal
+    else if screen == 'intermediate'
+      return $scope.actual_player != 1 || $scope.score_are_equal
+
 
 
 ])

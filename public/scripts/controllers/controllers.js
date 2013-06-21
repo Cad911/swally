@@ -25,6 +25,8 @@
       var i, timer, _i, _ref;
       $scope.nb_player = 2;
       $scope.actual_player = 1;
+      $scope.previous_player = 1;
+      $scope.score_are_equal = false;
       $scope.win_player = false;
       $scope.score = {};
       $scope.is_playing = false;
@@ -44,6 +46,7 @@
         $scope.is_playing = false;
         $scope.display_winner = 'none';
         $scope.display_tap_tap = 'none';
+        $scope.score_are_equal = false;
         _results = [];
         for (i = _j = 1, _ref1 = $scope.nb_player; 1 <= _ref1 ? _j <= _ref1 : _j >= _ref1; i = 1 <= _ref1 ? ++_j : --_j) {
           _results.push($scope.score[i] = 1);
@@ -84,6 +87,7 @@
         $scope.timer_show = timer / 1000;
         $scope.step = 1;
         $scope.is_playing = false;
+        $scope.previous_player = $scope.actual_player;
         if ($scope.actual_player === $scope.nb_player) {
           return $scope.endGame();
         } else {
@@ -103,9 +107,9 @@
         }
       };
       $scope.endGame = function() {
-        var higher_score, local_win_player, player, score, score_equal, score_equal_tab, _ref1, _ref2;
+        var higher_score, local_win_player, player, score, score_equal_tab, _ref1, _ref2;
         higher_score = 0;
-        score_equal = false;
+        $scope.score_are_equal = false;
         local_win_player = 1;
         _ref1 = $scope.score;
         for (player in _ref1) {
@@ -124,24 +128,31 @@
           player = parseInt(player);
           score = parseInt(score);
           if (score === higher_score && local_win_player !== player) {
+            $scope.score_are_equal = true;
             score_equal_tab[player] = higher_score;
-            score_equal = true;
             if (local_win_player > player) {
               $scope.actual_player = player;
             }
             break;
           }
         }
-        if (score_equal) {
+        if ($scope.score_are_equal) {
           return $scope.score = score_equal_tab;
         } else {
           $scope.step = 4;
           return $scope.win_player = local_win_player;
         }
       };
-      return $scope.gameOver = function() {
+      $scope.gameOver = function() {
         sharedServices.hideMiniGame();
         return $scope.initVar();
+      };
+      return $scope.checkForScreen = function(screen) {
+        if (screen === 'intro') {
+          return $scope.actual_player === 1 && !$scope.score_are_equal;
+        } else if (screen === 'intermediate') {
+          return $scope.actual_player !== 1 || $scope.score_are_equal;
+        }
       };
     }
   ]);
