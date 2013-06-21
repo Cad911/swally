@@ -6,7 +6,10 @@
       right: -100px;
       opacity: 0;
       color: $primary-color;
-
+    }
+    .interactive-area {
+      padding: $main-gutter;
+      height: 100%;
     }
     .gauge {
       position: absolute;
@@ -45,5 +48,10 @@
         background: $primary-color-light-5;
       }                             
     }
+  }
+  .timer-during-game, .timber-before-start {
+    position: absolute;
+    top: 0;
+    left: 49%;
   }
 }

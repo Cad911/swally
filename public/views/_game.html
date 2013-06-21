@@ -1,24 +1,20 @@
-<div class="" ng-controller="TapTapCtrl" ng-click="addTapTap()" click-effect="" style="height:100%;">
+<div class="" ng-controller="TapTapCtrl" ng-click="addTapTap()" click-effect="" class="interactive-area">
 	<div class="container" >        
 	    <div class="row-fluid">
-	    	<!-- STEP 1 -->
+	    	<!-- STEP 1 - présentation du jeu -->
 	         <div class="introduction span8 offset2" ng-show="checkStep(1)">
 	            <div class="introduction-wrapper">
 	                <header>
 	                    <h1>Tap-tap</h1>
 	                </header>
 	                <div class="content">
-	                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, nihil, amet error quod porro mollitia rerum vitae explicabo vel animi sed adipisci architecto iste quo iusto saepe cupiditate iure laborum!</p>   	                                  
+	                    <p>Tap / clique le plus possible dans le temps imparti! Le plus bourrins gagne</p>   	                                  
 <!-- 		                <div class="score">
 		                	<ul>
 		                		<li ng-repeat="(key, sco) in score"> Player {{key}} : {{sco}}</li>
 		                	</ul>
 		                </div> -->
-	                </div>
-
-
-
-	                  
+	                </div>         
 
 	                <footer>
 	                    <p>
@@ -26,26 +22,25 @@
 	                    		commencer le jeu ! 
 	                    	</a>
 	                    </p>
-
 	                  
 	                  <p class="small light">joueur {{actual_player}}: à toi de jouer</p>
 	              </footer>               
 	          </div>
 	      </div>
 
-	      <!-- STEP 2 -->
+	      <!-- STEP 2 - décompte avant le jeu -->
 	      <div class="span8 offset2" ng-show="checkStep(2)">
 	      	<p ng-show="is_playing && count_down != 0"> {{count_down}} </p>
 	      </div>
 
 
-	      <!-- STEP 3 -->
+	      <!-- STEP 3 - écran de jeu -->
 	      <div class="sreen-game tap-tap interface-is-displayed" ng-show="checkStep(3)">
-	        <div class="timer">
+	        <div class="timer-before-start">
 	            <span> {{score[actual_player]}} </span>
 	        </div>
 
-	        <div class="timer_time">
+	        <div class="timer-during-game">
 	        	{{timer_show}}
 	        </div>
 
@@ -60,8 +55,29 @@
 	        <p class="light small instruction">Tap !!</p>
 	      </div>
 
+	      <!-- STEP 5 - score finaux 
+	         <div class="introduction span8 offset2" ng-show="checkStep(1)">
+	            <div class="introduction-wrapper">
+	                <header>
+	                    <h1>Tap-tap</h1>
+	                </header>
+	                <div class="content">
+	                    <p>Joueur 1: <span class="score">7</span></p>   	                                  
+	                </div>         
 
-	      <!-- STEP 4 -->
+	                <footer>
+	                    <p>
+	                    	<a href="" class="btn btn-primary btn-huge" ng-hide="is_playing" ng-click="playTapTap()"> 
+	                    		Deuxième round ! 
+	                    	</a>
+	                    </p>
+	                  
+	                  <p class="small light">joueur {{actual_player}}: à toi de jouer</p>
+	              </footer>               
+	          </div>
+	      </div>-->
+
+	      <!-- STEP 5 - score finaux -->
 	  	
 	  	  <div class="span8 offset2" ng-show="checkStep(4)">
 	  	  	<div class="winner">
