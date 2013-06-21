@@ -1,5 +1,6 @@
 window.ourApp = angular.module('swallyApp', ['ngResource'])
 
+
 window.ourApp.config(['$routeProvider', ($routeProvider)->
     $routeProvider
       .when('/', {

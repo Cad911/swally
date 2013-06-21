@@ -148,7 +148,7 @@
 
   window.ourApp.controller('PledgesCtrl', [
     '$scope', 'Pledges', 'sharedServices', '$q', '$http', function($scope, Pledges, sharedServices, $q, $http) {
-      var generateRandomPledges, nb_card, played_card, shot_played;
+      var date_cache, generateRandomPledges, nb_card, played_card, shot_played;
       shot_played = 0;
       played_card = [];
       nb_card = 4;
@@ -172,8 +172,9 @@
         $scope.show_mini_game = sharedServices.show_mini_game;
         return $scope.current_mini_game = sharedServices.current_mini_game;
       });
+      date_cache = Math.random(1, 100);
       sharedServices.showMiniGame({
-        url: './views/_game.html'
+        url: './views/_game.html?' + date_cache
       });
       $scope.getPledge = function() {
         generateRandomPledges(nb_card);

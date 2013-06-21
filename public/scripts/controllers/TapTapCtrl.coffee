@@ -83,10 +83,12 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$
       
       # CONTINUE HERE FOR PLAYER WHEN SCORE IS EQUAL
       for i in [(parseInt($scope.actual_player) + 1)..$scope.nb_player]
+        # SI PLAYER IN THE GAME
         if $scope.score[i]?
           actual_player_next = i
           break
         else
+          # IF NO PLAYER IN THE GAME AND LOOP IS OVER
           if $scope.nb_player == i
             $scope.endGame()
             return true
@@ -123,7 +125,8 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$
 
 
 
-    
+    # IF SCORE IS EQUAL, WE INIT VAR score WITH THE PLAYER WHO HAVE THE SAME HIGHEST SCORE
+    # ELSE THE GAME IS OVER
     if score_equal
       $scope.score = score_equal_tab
     else
