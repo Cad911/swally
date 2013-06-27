@@ -22,7 +22,7 @@
 
   window.ourApp.controller('TapTapCtrl', [
     '$scope', 'Pledges', 'sharedServices', '$q', function($scope, Pledges, sharedServices, $q) {
-      var i, timer, _i, _ref;
+      var date_before, date_now, i, timer, _i, _ref;
       $scope.nb_player = 2;
       $scope.actual_player = 1;
       $scope.previous_player = 1;
@@ -30,13 +30,15 @@
       $scope.win_player = false;
       $scope.score = {};
       $scope.is_playing = false;
+      $scope.taptap_seconde = 0;
+      $scope.level_jauge = 6;
       $scope.display_tap_tap = 'none';
       $scope.count_down = 3;
       $scope.step = 1;
       timer = 5000;
       $scope.timer_show = timer / 1000;
       for (i = _i = 1, _ref = $scope.nb_player; 1 <= _ref ? _i <= _ref : _i >= _ref; i = 1 <= _ref ? ++_i : --_i) {
-        $scope.score[i] = 1;
+        $scope.score[i] = 0;
       }
       $scope.initVar = function() {
         var _j, _ref1, _results;
@@ -49,7 +51,7 @@
         $scope.score_are_equal = false;
         _results = [];
         for (i = _j = 1, _ref1 = $scope.nb_player; 1 <= _ref1 ? _j <= _ref1 : _j >= _ref1; i = 1 <= _ref1 ? ++_j : --_j) {
-          _results.push($scope.score[i] = 1);
+          _results.push($scope.score[i] = 0);
         }
         return _results;
       };
@@ -77,9 +79,16 @@
           }
         }, 1000);
       };
+      date_now = new Date();
+      date_before = new Date();
       $scope.addTapTap = function() {
+        var interval_clic;
+        date_now = new Date();
         if ($scope.is_playing && $scope.count_down === 0) {
-          return $scope.score[$scope.actual_player]++;
+          $scope.score[$scope.actual_player]++;
+          interval_clic = date_now - date_before;
+          $scope.jauge(interval_clic);
+          return date_before = date_now;
         }
       };
       $scope.showScore = function() {
@@ -147,12 +156,36 @@
         sharedServices.hideMiniGame();
         return $scope.initVar();
       };
-      return $scope.checkForScreen = function(screen) {
+      $scope.checkForScreen = function(screen) {
         if (screen === 'intro') {
           return $scope.actual_player === 1 && !$scope.score_are_equal;
         } else if (screen === 'intermediate') {
           return $scope.actual_player !== 1 || $scope.score_are_equal;
         }
+      };
+      return $scope.jauge = function(interval_clic) {
+        var intval_test, nb_clic;
+        nb_clic = $scope.score[$scope.actual_player];
+        if (interval_clic > 1000) {
+          $scope.level_jauge = 6;
+        } else if (interval_clic < 999 && interval_clic > 800) {
+          $scope.level_jauge = 5;
+        } else if (interval_clic < 799 && interval_clic > 500) {
+          $scope.level_jauge = 4;
+        } else if (interval_clic < 499 && interval_clic > 250) {
+          $scope.level_jauge = 3;
+        } else if (interval_clic < 249 && interval_clic > 100) {
+          $scope.level_jauge = 2;
+        } else if (interval_clic < 99) {
+          $scope.level_jauge = 1;
+        }
+        return intval_test = setInterval(function() {
+          if (nb_clic === $scope.score[$scope.actual_player] && $scope.level_jauge < 6) {
+            return $scope.$apply($scope.level_jauge++);
+          } else {
+            return clearInterval(intval_test);
+          }
+        }, interval_clic);
       };
     }
   ]);

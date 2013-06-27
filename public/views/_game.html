@@ -67,12 +67,12 @@
 	        </div>
 
 	        <ul class="gauge">
-	            <li class="level-1"></li>
-	            <li class="level-2"></li>
+	            <li ng-repeat="n in [] | range: level_jauge" class="level-{{n}}"></li>
+	            <!-- <li class="level-2"></li>
 	            <li class="level-3"></li>
 	            <li class="level-4"></li>
 	            <li class="level-5"></li>
-	            <li class="level-6"></li>
+	            <li class="level-6"></li> -->
 	        </ul>
 	        <p class="light small instruction">Tap !!</p>
 	      </div>
