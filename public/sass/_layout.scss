@@ -240,11 +240,16 @@
 			margin-bottom: $main-gutter;
 		}
 	}		
-	.timer, .gauge, .count, .timer-during-game { // transition pour l'apparition de l'interface de jeu
+	.timer, .count, .timer-during-game { // transition pour l'apparition de l'interface de jeu
 		@include transition-property(all);
 		@include transition-duration(400ms);
 		@include transition-timing-function(ease-in);
-	}		
+	}	
+	.gauge {
+		@include transition-property(left, opacity);
+		@include transition-duration(400ms);
+		@include transition-timing-function(ease-in);
+	}	
 	.sreen-game {
 		.instruction {
 			text-align: center;
@@ -258,7 +263,7 @@
 			@include transition-timing-function(ease-in);
 		}	
 		.gauge {
-			left: $main-gutter;
+			//left: $main-gutter;
 			opacity: 0;
 		}
 		.timer {
