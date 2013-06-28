@@ -30,18 +30,28 @@
 
 
 	          <!-- DIV SHOW IF NOT PLAYER 1 WHICH PLAY -->
+	          <!-- HERE THE DISPLAY CAN BE DIFFERENT IN FUNCTION OF IF IT'S THE EQUALITY SCREEN OR NOT -->
 	          <div class="introduction-wrapper" ng-show="checkForScreen('intermediate')">
 	                <header>
-	                    <h1>Premier round fini !</h1>
+	                    <h1 ng-hide="score_are_equal">Premier round fini !</h1>
+	                    <h1 ng-show="score_are_equal"> Egalité </h1>
 	                </header>
 	                <div class="content">
 	                    <p>Ton score: <span class="score">{{score[previous_player]}}</span> points</p> 	                                  
-	                </div>         
+	                	
+	                	<p ng-show="score_are_equal">
+	                		<span ng-repeat="(player, sc) in score"> Joueur {{player}}, </span> sont à égalités ! C'est reparti pour un tour
+	                	</p>
+	                </div>
 
 	                <footer>
 	                    <p>
-	                    	<a href="" class="btn btn-primary btn-huge" ng-hide="is_playing" ng-click="playTapTap()"> 
+	                    	<a href="" class="btn btn-primary btn-huge" ng-hide="is_playing || score_are_equal" ng-click="playTapTap()"> 
 	                    		Deuxième round ! 
+	                    	</a>
+
+	                    	<a href="" class="btn btn-primary btn-huge" ng-show="score_are_equal" ng-click="playTapTap()"> 
+	                    		C'est reparti
 	                    	</a>
 	                    </p>
 	                  
