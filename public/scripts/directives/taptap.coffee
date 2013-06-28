@@ -1,6 +1,6 @@
 window.ourApp.directive('clickEffect',()->
   (scope, element)->
-      $(element).on('click',(e)->
+      $(element).on('click touchstart',(e)->
         if scope.is_playing && scope.count_down == 0
           positionX = e.clientX - 3
           positionY = e.clientY - 3
