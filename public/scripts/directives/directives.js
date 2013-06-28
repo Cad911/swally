@@ -10,7 +10,11 @@
         return scope.real_distance = elm.scrollTop();
       });
       scope.$on('scroll-to-zero', function() {
+        elm.css('overflow', 'hidden');
         elm.scrollTop(0);
+        setTimeout(function() {
+          return elm.css('overflow', 'auto');
+        }, 1000);
         return true;
       });
       return true;
