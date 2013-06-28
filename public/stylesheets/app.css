@@ -633,28 +633,32 @@ td {
   max-width: 600px;
   margin: 0 auto;
 }
-/* line 227, ../sass/_layout.scss */
+/* line 226, ../sass/_layout.scss */
+.mini-game .introduction-wrapper header, .mini-game .winner header {
+  height: inherit;
+}
+/* line 230, ../sass/_layout.scss */
 .mini-game .introduction, .mini-game .winner {
   text-align: center;
   padding-top: 30px;
 }
-/* line 230, ../sass/_layout.scss */
+/* line 233, ../sass/_layout.scss */
 .mini-game .introduction h1, .mini-game .introduction footer, .mini-game .winner h1, .mini-game .winner footer {
   text-align: center;
 }
-/* line 233, ../sass/_layout.scss */
+/* line 236, ../sass/_layout.scss */
 .mini-game .introduction header, .mini-game .winner header {
   margin: 0 auto 45px auto;
 }
-/* line 236, ../sass/_layout.scss */
+/* line 239, ../sass/_layout.scss */
 .mini-game .introduction .content, .mini-game .winner .content {
   margin: 0 0 37.5px 0;
 }
-/* line 239, ../sass/_layout.scss */
+/* line 242, ../sass/_layout.scss */
 .mini-game .introduction footer, .mini-game .winner footer {
   margin-bottom: 30px;
 }
-/* line 243, ../sass/_layout.scss */
+/* line 246, ../sass/_layout.scss */
 .mini-game .timer, .mini-game .count, .mini-game .timer-during-game {
   -webkit-transition-property: all;
   -moz-transition-property: all;
@@ -669,7 +673,7 @@ td {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-/* line 248, ../sass/_layout.scss */
+/* line 251, ../sass/_layout.scss */
 .mini-game .gauge {
   -webkit-transition-property: left, opacity;
   -moz-transition-property: left, opacity;
@@ -684,14 +688,14 @@ td {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-/* line 254, ../sass/_layout.scss */
+/* line 257, ../sass/_layout.scss */
 .mini-game .sreen-game .instruction {
   text-align: center;
   position: absolute;
   bottom: -20px;
   left: 49%;
 }
-/* line 260, ../sass/_layout.scss */
+/* line 263, ../sass/_layout.scss */
 .mini-game .sreen-game .instruction {
   -webkit-transition-property: all;
   -moz-transition-property: all;
@@ -706,51 +710,51 @@ td {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-/* line 265, ../sass/_layout.scss */
+/* line 268, ../sass/_layout.scss */
 .mini-game .sreen-game .gauge {
   opacity: 0;
 }
-/* line 269, ../sass/_layout.scss */
+/* line 272, ../sass/_layout.scss */
 .mini-game .sreen-game .timer {
   right: 30px;
   opacity: 0;
 }
-/* line 273, ../sass/_layout.scss */
+/* line 276, ../sass/_layout.scss */
 .mini-game .sreen-game .count {
   right: 30px;
   opacity: 0;
 }
-/* line 277, ../sass/_layout.scss */
+/* line 280, ../sass/_layout.scss */
 .mini-game .sreen-game .timer-during-game {
   top: 30px;
   opacity: 0;
 }
-/* line 281, ../sass/_layout.scss */
+/* line 284, ../sass/_layout.scss */
 .mini-game .sreen-game .instruction {
   bottom: 30px;
   opacity: 0;
 }
-/* line 286, ../sass/_layout.scss */
+/* line 289, ../sass/_layout.scss */
 .mini-game .sreen-game.interface-is-displayed .gauge {
   left: 30px;
   opacity: 1;
 }
-/* line 290, ../sass/_layout.scss */
+/* line 293, ../sass/_layout.scss */
 .mini-game .sreen-game.interface-is-displayed .timer {
   right: 30px;
   opacity: 1;
 }
-/* line 294, ../sass/_layout.scss */
+/* line 297, ../sass/_layout.scss */
 .mini-game .sreen-game.interface-is-displayed .count {
   right: 30px;
   opacity: 1;
 }
-/* line 298, ../sass/_layout.scss */
+/* line 301, ../sass/_layout.scss */
 .mini-game .sreen-game.interface-is-displayed .instruction {
   bottom: 30px;
   opacity: 1;
 }
-/* line 302, ../sass/_layout.scss */
+/* line 305, ../sass/_layout.scss */
 .mini-game .sreen-game.interface-is-displayed .timer-during-game {
   opacity: 1;
   top: 30px;

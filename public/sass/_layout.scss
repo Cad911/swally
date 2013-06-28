@@ -223,6 +223,9 @@
 	.introduction-wrapper, .winner {
 		max-width: 600px;
 		margin: 0 auto;
+		header {
+			height: inherit;
+		}
 	}
 	.introduction, .winner {
 		text-align: center;  
