@@ -44,6 +44,9 @@
       sharedBroadcoast = function() {
         return $rootScope.$broadcast('show-mini-game');
       };
+      sharedVar.sharedScrollToZero = function() {
+        return $rootScope.$broadcast('scroll-to-zero');
+      };
       return sharedVar;
     }
   ]);

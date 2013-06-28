@@ -10,41 +10,52 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$
   $scope.score = {}
   $scope.is_playing = false
 
-  $scope.display_tap_tap = 'none';
+  # FOR THE JAUGE VIEW
+  $scope.level_jauge = 6
+
+
   $scope.count_down = 3
 
   $scope.step = 1
   timer = 5000
   $scope.timer_show = timer / 1000
 
-
+  # INIT THE SCORE TO O
   for i in [1..$scope.nb_player]
-    $scope.score[i] = 1
+    $scope.score[i] = 0
 
   # FUNCTION WHICH INIT THE VAR FOR THE BEGINNING
   $scope.initVar = ()->
-    $scope.nb_player = 4
+    $scope.nb_player = 2
     $scope.actual_player = 1
+    $scope.previous_player = 1
+    
+    $scope.score_are_equal = false
 
+    $scope.win_player = false
     $scope.score = {}
     $scope.is_playing = false
 
-    $scope.display_winner = 'none'
-    $scope.display_tap_tap = 'none';
+    $scope.level_jauge = 6
 
-    $scope.score_are_equal = false
+    $scope.count_down = 3
 
+    $scope.step = 1
+    timer = 5000
+    $scope.timer_show = timer / 1000
+
+    # INIT THE SCORE TO O
     for i in [1..$scope.nb_player]
-      $scope.score[i] = 1
+      $scope.score[i] = 0
 
-  # $scope.initTapTap = ()->
-  #   $scope.display_tap_tap = 'block';
 
   $scope.checkStep =(right_step)->
     return right_step == $scope.step
 
   # FUNCTION WHICH DETERMINE THE BEGINNING OF THE GAME OF ONE PLAYER
   $scope.playTapTap = ()->
+    $scope.score_are_equal = false
+
     $scope.step = 2
 
     $scope.is_playing = true
@@ -58,8 +69,10 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$
           $scope.$apply($scope.timer_show = Math.round(($scope.timer_show - 0.1)*100)/100)
         ,100)
 
+
         setTimeout(()->
           clearInterval(timer_intval)
+
           $scope.count_down = 3
           $scope.$apply($scope.showScore())
         , timer)
@@ -70,9 +83,17 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$
 
 
   # ADD SCORE WHEN PLAYER CLICK AND WHEN CAN PLAYING
+  date_now = new Date()
+  date_before = new Date()
   $scope.addTapTap = ()->
+    date_now = new Date()
     if $scope.is_playing && $scope.count_down == 0
       $scope.score[$scope.actual_player]++
+      # CALCUL THE INTERVAL BETWEEN TWO TAPTAP && CALCUL WHICH JAUGE TO SHOW
+      interval_clic = date_now - date_before
+      $scope.jauge(interval_clic)
+      date_before = date_now
+      
 
 
   # FUNCTION WHICH SHOW THE SCORE AND DEFINE IF THE GAME IS OVER OR NOT IF ALL PLAYER PLAYED
@@ -88,7 +109,8 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$
     else
       actual_player_next = $scope.actual_player
       
-      # CONTINUE HERE FOR PLAYER WHEN SCORE IS EQUAL
+      # CONTINUE HERE FOR PLAYER WHEN SCORE IS EQUAL => IF THERE ARE MORE THAN TWO PLAYER -> BECAUSE the index
+      # of the array can be 2, 5 because the player 2 and the player 5 have the same score
       for i in [(parseInt($scope.actual_player) + 1)..$scope.nb_player]
         # SI PLAYER IN THE GAME
         if $scope.score[i]?
@@ -145,6 +167,7 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$
       #   $scope.$apply($scope.initVar())
       # , 2000)
 
+
   $scope.gameOver = ()->
     sharedServices.hideMiniGame()
     $scope.initVar()
@@ -154,6 +177,33 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$
       return $scope.actual_player == 1 && !$scope.score_are_equal
     else if screen == 'intermediate'
       return $scope.actual_player != 1 || $scope.score_are_equal
+
+
+  # CALCUL WHICH IS THE LEVEL OF THE JAUGE TO SHOW IN FUNCTION OF THE INTERVAL BETWEEN THE CLIC
+  $scope.jauge = (interval_clic)->
+    nb_clic = $scope.score[$scope.actual_player]
+    if (interval_clic>1000)
+        $scope.level_jauge = 6
+    else if (interval_clic<999 && interval_clic>700)
+        $scope.level_jauge = 5
+    else if (interval_clic<699 && interval_clic>400)
+        $scope.level_jauge = 4
+    else if (interval_clic<399 && interval_clic>200)
+        $scope.level_jauge = 3
+    else if (interval_clic<199 && interval_clic>50)
+        $scope.level_jauge = 2
+    else if (interval_clic<49)
+        $scope.level_jauge = 1
+    
+
+    intval_test = setInterval(()->
+        if nb_clic == $scope.score[$scope.actual_player] && $scope.level_jauge < 6
+          $scope.$apply($scope.level_jauge++)
+        else
+          clearInterval(intval_test)
+    ,interval_clic)
+
+    
 
 
 

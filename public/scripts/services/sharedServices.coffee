@@ -16,6 +16,10 @@ window.ourApp.factory('sharedServices', ['$rootScope', ($rootScope)->
 
 	sharedBroadcoast = ()->
 		$rootScope.$broadcast('show-mini-game')
+
+
+	sharedVar.sharedScrollToZero = ()->
+		$rootScope.$broadcast('scroll-to-zero')
 		
 	sharedVar
 ])
