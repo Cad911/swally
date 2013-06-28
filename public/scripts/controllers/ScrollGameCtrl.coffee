@@ -32,15 +32,23 @@ window.ourApp.controller('ScrollGameCtrl', ['$scope','Pledges', 'sharedServices'
 
   # FUNCTION WHICH INIT THE VAR FOR THE BEGINNING
   $scope.initVar = ()->
-    $scope.nb_player = 4
+    $scope.nb_player = 2
     $scope.actual_player = 1
+    $scope.previous_player = 1
+    
+    $scope.score_are_equal = false
 
+    $scope.win_player = false
     $scope.score = {}
     $scope.is_playing = false
 
-    $scope.display_winner = 'none'
+    $scope.level_jauge = 6
 
-    $scope.score_are_equal = false
+    $scope.count_down = 3
+
+    $scope.step = 1
+    timer = 5000
+    $scope.timer_show = timer / 1000
 
     initCounter()
 
@@ -54,6 +62,8 @@ window.ourApp.controller('ScrollGameCtrl', ['$scope','Pledges', 'sharedServices'
 
   # FUNCTION WHICH DETERMINE THE BEGINNING OF THE GAME OF ONE PLAYER
   $scope.playTapTap = ()->
+    $scope.score_are_equal = false
+    
     $scope.step = 2
 
     $scope.is_playing = true

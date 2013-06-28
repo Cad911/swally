@@ -43,12 +43,18 @@
       }
       $scope.initVar = function() {
         var _j, _ref1, _results;
-        $scope.nb_player = 4;
+        $scope.nb_player = 2;
         $scope.actual_player = 1;
+        $scope.previous_player = 1;
+        $scope.score_are_equal = false;
+        $scope.win_player = false;
         $scope.score = {};
         $scope.is_playing = false;
-        $scope.display_winner = 'none';
-        $scope.score_are_equal = false;
+        $scope.level_jauge = 6;
+        $scope.count_down = 3;
+        $scope.step = 1;
+        timer = 5000;
+        $scope.timer_show = timer / 1000;
         initCounter();
         _results = [];
         for (i = _j = 1, _ref1 = $scope.nb_player; 1 <= _ref1 ? _j <= _ref1 : _j >= _ref1; i = 1 <= _ref1 ? ++_j : --_j) {
@@ -61,6 +67,7 @@
       };
       $scope.playTapTap = function() {
         var interval_;
+        $scope.score_are_equal = false;
         $scope.step = 2;
         $scope.is_playing = true;
         return interval_ = setInterval(function() {
