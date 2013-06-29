@@ -2,7 +2,8 @@
 (function() {
   window.ourApp.directive('clickEffect', function() {
     return function(scope, element) {
-      return $(element).on('click touchstart', function(e) {
+      var agent, desktop_event, function_todo, mobile_event;
+      function_todo = function(e) {
         var div, positionX, positionY;
         if (scope.is_playing && scope.count_down === 0) {
           positionX = e.clientX - 3;
@@ -25,7 +26,27 @@
           });
           return $(element).append(div);
         }
-      });
+      };
+      mobile_event = function() {
+        return $(element).hammer().on('tap', function(e) {
+          return function_todo(e);
+        });
+      };
+      desktop_event = function() {
+        return $(element).on('click', function(e) {
+          return function_todo(e);
+        });
+      };
+      agent = navigator.userAgent.toLowerCase();
+      if (agent.search("iphone") > -1) {
+        return mobile_event();
+      } else if (agent.search("ipod") > -1) {
+        return mobile_event();
+      } else if (agent.search("android") > -1) {
+        return mobile_event();
+      } else {
+        return desktop_event();
+      }
     };
   });
 

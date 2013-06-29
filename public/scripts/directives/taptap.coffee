@@ -1,6 +1,7 @@
 window.ourApp.directive('clickEffect',()->
   (scope, element)->
-      $(element).on('click touchstart',(e)->
+
+      function_todo = (e)->
         if scope.is_playing && scope.count_down == 0
           positionX = e.clientX - 3
           positionY = e.clientY - 3
@@ -22,7 +23,29 @@ window.ourApp.directive('clickEffect',()->
               $(this).remove()
           })
           $(element).append(div)
-      )
+
+
+      mobile_event = ()->
+        $(element).hammer().on('tap',(e)->
+          function_todo(e)
+        )
+
+      desktop_event = ()->
+        $(element).on('click',(e)->
+          function_todo(e)
+        )
+
+
+      agent = navigator.userAgent.toLowerCase()
+      
+      if agent.search("iphone") > -1
+        mobile_event()
+      else if agent.search("ipod") > -1
+        mobile_event()
+      else if agent.search("android") > -1
+        mobile_event()
+      else
+        desktop_event()
 )
 
 
