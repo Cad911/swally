@@ -26,12 +26,12 @@ window.ourApp.directive('clickEffect',()->
 
 
       mobile_event = ()->
-        $(element).hammer().on('tap',(e)->
+        $(element).hammer().on('touch',(e)->
           function_todo(e)
         )
 
       desktop_event = ()->
-        $(element).hammer().on('click',(e)->
+        $(element).hammer().on('touch',(e)->
           function_todo(e)
         )
 

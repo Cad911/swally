@@ -28,12 +28,12 @@
         }
       };
       mobile_event = function() {
-        return $(element).hammer().on('tap', function(e) {
+        return $(element).hammer().on('touch', function(e) {
           return function_todo(e);
         });
       };
       desktop_event = function() {
-        return $(element).hammer().on('click', function(e) {
+        return $(element).hammer().on('touch', function(e) {
           return function_todo(e);
         });
       };
