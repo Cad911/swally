@@ -29,4 +29,35 @@
     };
   });
 
+  window.ourApp.directive('ngShowClass', function($timeout) {
+    return function(scope, element, attrs) {
+      var hide, show, value_attr;
+      show = function() {
+        element.css('display', 'block');
+        return $timeout(function() {
+          return element.addClass('interface-is-displayed');
+        }, 10);
+      };
+      hide = function() {
+        element.removeClass('interface-is-displayed');
+        return $timeout(function() {
+          return element.css('display', 'none');
+        }, 400);
+      };
+      value_attr = scope.$eval(attrs.ngShowClass);
+      if (value_attr) {
+        show();
+      } else {
+        hide();
+      }
+      return scope.$watch(attrs.ngShowClass, function(value) {
+        if (value) {
+          return show();
+        } else {
+          return hide();
+        }
+      });
+    };
+  });
+
 }).call(this);

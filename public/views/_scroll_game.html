@@ -1,11 +1,11 @@
-<div class="interactive-area" ng-controller="TapTapCtrl" ng-click="addTapTap()" click-effect="">
+<div class="interactive-area" ng-controller="ScrollGameCtrl" click-effect="">
 	<div class="container" >        
 	    <div class="row-fluid">
 	    	<!-- STEP 1 - présentation du jeu -->
 	         <div class="introduction span8 offset2" ng-show="checkStep(1)">
 	            <div class="introduction-wrapper" ng-show="checkForScreen('intro')">
 	                <header>
-	                    <h1>Tap-tap</h1>
+	                    <h1> Scroll Game </h1>
 	                </header>
 	                <div class="content">
 	                    <p>Tap / clique le plus possible dans le temps imparti! Le plus bourrins gagne</p>   	                                  
@@ -18,7 +18,7 @@
 
 	                <footer>
 	                    <p>
-	                    	<a href="" class="btn btn-primary btn-huge" ng-hide="is_playing" ng-click="playTapTap()"> 
+	                    	<a href="" class="btn btn-primary btn-huge" ng-hide="is_playing" ng-click="playTapTap()" ng-init-scroll='.test_2'> 
 	                    		commencer le jeu ! 
 	                    	</a>
 	                    </p>
@@ -30,28 +30,18 @@
 
 
 	          <!-- DIV SHOW IF NOT PLAYER 1 WHICH PLAY -->
-	          <!-- HERE THE DISPLAY CAN BE DIFFERENT IN FUNCTION OF IF IT'S THE EQUALITY SCREEN OR NOT -->
 	          <div class="introduction-wrapper" ng-show="checkForScreen('intermediate')">
 	                <header>
-	                    <h1 ng-hide="score_are_equal">Premier round fini !</h1>
-	                    <h1 ng-show="score_are_equal"> Egalité </h1>
+	                    <h1>Premier round fini !</h1>
 	                </header>
 	                <div class="content">
 	                    <p>Ton score: <span class="score">{{score[previous_player]}}</span> points</p> 	                                  
-	                	
-	                	<p ng-show="score_are_equal">
-	                		<span ng-repeat="(player, sc) in score"> Joueur {{player}}, </span> sont à égalités ! C'est reparti pour un tour
-	                	</p>
-	                </div>
+	                </div>         
 
 	                <footer>
 	                    <p>
-	                    	<a href="" class="btn btn-primary btn-huge" ng-hide="is_playing || score_are_equal" ng-click="playTapTap()"> 
+	                    	<a href="" class="btn btn-primary btn-huge" ng-hide="is_playing" ng-click="playTapTap()" ng-init-scroll='.test_2'> 
 	                    		Deuxième round ! 
-	                    	</a>
-
-	                    	<a href="" class="btn btn-primary btn-huge" ng-show="score_are_equal" ng-click="playTapTap()"> 
-	                    		C'est reparti
 	                    	</a>
 	                    </p>
 	                  
@@ -62,12 +52,12 @@
 
 	      <!-- STEP 2 - décompte avant le jeu -->
 	      <div class="span8 offset2" ng-show="checkStep(2)">
-	      	<p class="timer-before-start" ng-show="is_playing && count_down != 0"> {{count_down}}</p>
+	      	<p class="timer-before-start" ng-show="is_playing && count_down != 0"> {{count_down}}s.</p>
 	      </div>
 
 
 	      <!-- STEP 3 - écran de jeu -->
-	      <div class="sreen-game tap-tap" ng-show-class="checkStep(3)">
+	      <div class="sreen-game tap-tap" ng-show-class="checkStep(3)"  >
 	        <div class="count">
 	            <span> {{score[actual_player]}} </span>
 	        </div>
@@ -75,6 +65,16 @@
 	        <div class="timer-during-game">
 	        	{{timer_show}}s.
 	        </div>
+
+	        <!-- SCREEN WHICH IS SCROLLABLE -->
+	        <!-- POSITION FIXED WITH HEIGHT MORE LITTLE THAN THE WINDOW TO PERMIT THE SCROLL -->
+	        <div class="test_2" ng-scroll-action="saveProgress()" style="position:fixed;top:10px; width:100%; left:0%; background:blue;padding:100px 0 0 0;">
+	        	<div style="width:30px;height:30px;top:80px;left:45%;background:red;position:fixed;"></div>
+	        	<ul style="margin:0;">
+	        		<li ng-repeat="i in counter" style="height:99px;color:white; border-top:1px white solid;"> {{i.distance}}</li>
+	        	</ul>
+	        </div>
+	        
 
 	        <ul class="gauge">
 	            <li ng-repeat="n in [] | range: level_jauge" class="level-{{n}}"></li>

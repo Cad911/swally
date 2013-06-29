@@ -220,13 +220,15 @@
 	.container {
 		margin: 0 auto;
 	}
-	.introduction-wrapper {
+	.introduction-wrapper, .winner {
 		max-width: 600px;
 		margin: 0 auto;
+		header {
+			height: inherit;
+		}
 	}
-	.introduction {
-		text-align: center; 
-		text-align: justify; 
+	.introduction, .winner {
+		text-align: center;  
 		padding-top: $main-gutter;
 		h1, footer {
 			text-align: center;
@@ -241,6 +243,16 @@
 			margin-bottom: $main-gutter;
 		}
 	}		
+	.timer, .count, .timer-during-game { // transition pour l'apparition de l'interface de jeu
+		@include transition-property(all);
+		@include transition-duration(400ms);
+		@include transition-timing-function(ease-in);
+	}	
+	.gauge {
+		@include transition-property(left, opacity);
+		@include transition-duration(400ms);
+		@include transition-timing-function(ease-in);
+	}	
 	.sreen-game {
 		.instruction {
 			text-align: center;
@@ -248,11 +260,31 @@
 			bottom: -20px;
 			left: 49%;
 		}	
-		.instruction, .timer, .gauge { // transition pour l'apparition de l'interface de jeu
+		.instruction { // transition pour l'apparition de l'interface de jeu
 			@include transition-property(all);
 			@include transition-duration(400ms);
 			@include transition-timing-function(ease-in);
 		}	
+		.gauge {
+			//left: $main-gutter;
+			opacity: 0;
+		}
+		.timer {
+			right: $main-gutter;
+			opacity: 0;
+		}
+		.count {
+			right: $main-gutter;
+			opacity: 0;
+		}
+		.timer-during-game {
+			top: $main-gutter;
+			opacity: 0;
+		}
+		.instruction {
+			bottom: $main-gutter;
+			opacity: 0;				
+		}
 		&.interface-is-displayed {
 			.gauge {
 				left: $main-gutter;
@@ -262,10 +294,18 @@
 				right: $main-gutter;
 				opacity: 1;
 			}
+			.count {
+				right: $main-gutter;
+				opacity: 1;
+			}
 			.instruction {
 				bottom: $main-gutter;
 				opacity: 1;				
 			}
+			.timer-during-game {
+				opacity: 1;
+				top: $main-gutter;
+			}			
 		}		
 	}
 }
