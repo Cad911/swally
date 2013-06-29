@@ -33,7 +33,7 @@
         });
       };
       desktop_event = function() {
-        return $(element).on('click', function(e) {
+        return $(element).hammer().on('click', function(e) {
           return function_todo(e);
         });
       };

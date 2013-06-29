@@ -31,7 +31,7 @@ window.ourApp.directive('clickEffect',()->
         )
 
       desktop_event = ()->
-        $(element).on('click',(e)->
+        $(element).hammer().on('click',(e)->
           function_todo(e)
         )
 
