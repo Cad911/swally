@@ -2,7 +2,7 @@
 (function() {
   window.ourApp.directive('clickEffect', function() {
     return function(scope, element) {
-      return $(element).on('click', function(e) {
+      return $(element).on('click touchstart', function(e) {
         var div, positionX, positionY;
         if (scope.is_playing && scope.count_down === 0) {
           positionX = e.clientX - 3;
