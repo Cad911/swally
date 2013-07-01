@@ -8,6 +8,7 @@ window.ourApp.directive('ngScrollAction', ($window)->
         scope.real_distance = elm.scrollTop()
       )
 
+
       # USEFULL TO PUT THE SCROLL BAR TO ZERO
       scope.$on('scroll-to-zero',()->
           elm.css('overflow', 'hidden')

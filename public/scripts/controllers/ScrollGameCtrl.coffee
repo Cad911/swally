@@ -14,7 +14,7 @@ window.ourApp.controller('ScrollGameCtrl', ['$scope','Pledges', 'sharedServices'
   $scope.level_jauge = 6
 
 
-  $scope.count_down = 1
+  $scope.count_down = 3
 
   $scope.counter = []
   $scope.real_distance = 0

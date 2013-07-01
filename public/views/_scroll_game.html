@@ -78,7 +78,9 @@
 	        <!-- SCREEN WHICH IS SCROLLABLE -->
 	        <!-- POSITION FIXED WITH HEIGHT MORE LITTLE THAN THE WINDOW TO PERMIT THE SCROLL -->
 	        <div class="test_2" ng-scroll-action="saveProgress()" style="position:fixed;top:10px; width:100%; left:0%; background:blue;padding:100px 0 0 0;">
+	        	<!-- THIS DIV IS THE RED CUBE TO SEE WHERE YOU ARE WHEN YOU SCROLL -->
 	        	<div style="width:30px;height:30px;top:80px;left:45%;background:red;position:fixed;"></div>
+	        	<!-- THIS UL IS THE RACETRACK -->
 	        	<ul style="margin:0;">
 	        		<li ng-repeat="i in counter" style="height:99px;color:white; border-top:1px white solid;"> {{i.distance}}</li>
 	        	</ul>
