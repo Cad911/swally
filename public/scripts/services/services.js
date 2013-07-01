@@ -51,4 +51,56 @@
     }
   ]);
 
+  window.ourApp.factory('statsServices', [
+    '$rootScope', function($rootScope) {
+      var device_name, position, statsVar;
+      statsVar = {};
+      device_name = '';
+      position = {
+        lat: 0,
+        long: 0
+      };
+      setTimeout(function() {
+        return position = {
+          lat: 0,
+          long: 0
+        };
+      }, 100000);
+      statsVar.getDeviceName = function() {
+        var user_agent;
+        if (device_name === '') {
+          user_agent = navigator.userAgent;
+          if (/iPad/.test(user_agent)) {
+            device_name = 'iPad';
+          } else if (/iPhone/.test(user_agent)) {
+            device_name = 'iPhone';
+          } else if (/Android/.test(user_agent)) {
+            device_name = 'Android';
+          }
+        }
+        return statsVar.device_name;
+      };
+      statsVar.getLatLong = function() {
+        if (position.lat === 0 && position.long === 0) {
+          position = {
+            lat: 0,
+            long: 0
+          };
+        }
+        return statsVar.position;
+      };
+      statsVar.saveStats = function() {
+        var stats;
+        this.getLatLong();
+        return stats = {
+          lat: this.position.lat,
+          long: this.position.long,
+          swallow: 1,
+          device: this.device_name
+        };
+      };
+      return statsVar;
+    }
+  ]);
+
 }).call(this);

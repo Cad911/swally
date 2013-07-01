@@ -23,7 +23,7 @@ window.ourApp.controller('ScrollGameCtrl', ['$scope','Pledges', 'sharedServices'
 
 
   $scope.step = 1
-  timer = 5000
+  timer = 500000
   $scope.timer_show = timer / 1000
 
   # INIT THE SCORE TO O

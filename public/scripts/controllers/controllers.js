@@ -37,7 +37,7 @@
       $scope.real_distance = 0;
       distance = 0;
       $scope.step = 1;
-      timer = 5000;
+      timer = 500000;
       $scope.timer_show = timer / 1000;
       for (i = _i = 1, _ref = $scope.nb_player; 1 <= _ref ? _i <= _ref : _i >= _ref; i = 1 <= _ref ? ++_i : --_i) {
         $scope.score[i] = 0;
@@ -392,7 +392,7 @@
   ]);
 
   window.ourApp.controller('PledgesCtrl', [
-    '$scope', 'Pledges', 'sharedServices', '$q', '$http', function($scope, Pledges, sharedServices, $q, $http) {
+    '$scope', 'Pledges', 'sharedServices', 'statsServices', function($scope, Pledges, sharedServices, statsServices) {
       var date_cache, generateRandomPledges, nb_card, played_card, shot_played;
       shot_played = 0;
       played_card = [];
@@ -445,6 +445,7 @@
             $scope.show_new_turn = true;
             shot_played = 0;
           }
+          statsServices.save();
           if ($scope.current_pledges[index_card].data.category.title === 'Mini-jeu') {
             return sharedServices.showMiniGame({
               url: './views/_game.html'
