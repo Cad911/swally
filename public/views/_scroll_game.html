@@ -5,10 +5,10 @@
 	         <div class="introduction span8 offset2" ng-show="checkStep(1)">
 	            <div class="introduction-wrapper" ng-show="checkForScreen('intro')">
 	                <header>
-	                    <h1> Scroll Game </h1>
+	                    <h1> La course de frotte-man ! </h1>
 	                </header>
 	                <div class="content">
-	                    <p>Tap / clique le plus possible dans le temps imparti! Le plus bourrins gagne</p>   	                                  
+	                    <p>Scroll le plus possible dans le temps imparti! Celui qui va le plus loin gagne</p>   	                                  
 <!-- 		                <div class="score">
 		                	<ul>
 		                		<li ng-repeat="(key, sco) in score"> Player {{key}} : {{sco}}</li>
@@ -32,16 +32,26 @@
 	          <!-- DIV SHOW IF NOT PLAYER 1 WHICH PLAY -->
 	          <div class="introduction-wrapper" ng-show="checkForScreen('intermediate')">
 	                <header>
-	                    <h1>Premier round fini !</h1>
+	                    <h1 ng-hide="score_are_equal">Premier round fini !</h1>
+	                    <h1 ng-show="score_are_equal"> Egalité </h1>
 	                </header>
 	                <div class="content">
-	                    <p>Ton score: <span class="score">{{score[previous_player]}}</span> points</p> 	                                  
+	                    <p>Ton score: <span class="score">{{score[previous_player]}}</span> points</p> 
+
+	                    <p ng-show="score_are_equal">
+	                		<span ng-repeat="(player, sc) in score"> Joueur {{player}}, </span> sont à égalités ! C'est reparti pour un tour
+	                	</p>	                                  
+
 	                </div>         
 
 	                <footer>
 	                    <p>
-	                    	<a href="" class="btn btn-primary btn-huge" ng-hide="is_playing" ng-click="playTapTap()" ng-init-scroll='.test_2'> 
+	                    	<a href="" class="btn btn-primary btn-huge" ng-hide="is_playing || score_are_equal" ng-click="playTapTap()"> 
 	                    		Deuxième round ! 
+	                    	</a>
+
+	                    	<a href="" class="btn btn-primary btn-huge" ng-show="score_are_equal" ng-click="playTapTap()"> 
+	                    		C'est reparti
 	                    	</a>
 	                    </p>
 	                  
@@ -68,8 +78,11 @@
 
 	        <!-- SCREEN WHICH IS SCROLLABLE -->
 	        <!-- POSITION FIXED WITH HEIGHT MORE LITTLE THAN THE WINDOW TO PERMIT THE SCROLL -->
-	        <div class="test_2" ng-scroll-action="saveProgress()" style="position:fixed;top:10px; width:100%; left:0%; background:blue;padding:100px 0 0 0;">
-	        	<div style="width:30px;height:30px;top:80px;left:45%;background:red;position:fixed;"></div>
+	        <div class="scroll-area" ng-scroll-action="saveProgress()" style="left:0%;">
+	        	<!-- THIS DIV IS THE RED CUBE TO SEE WHERE YOU ARE WHEN YOU SCROLL -->
+	        	<div class="runner-position"></div>
+	        	<!-- THIS UL IS THE RACETRACK -->
+	        	<p class="starting-block">START</p>
 	        	<ul style="margin:0;">
 	        		<li ng-repeat="i in counter" style="height:99px;color:white; border-top:1px white solid;"> {{i.distance}}</li>
 	        	</ul>
@@ -84,7 +97,7 @@
 	            <li class="level-5"></li>
 	            <li class="level-6"></li> -->
 	        </ul>
-	        <p class="light small instruction">Tap !!</p>
+	        <p class="light small instruction">scroll !!</p>
 	      </div>
 
 	      <!-- STEP 5 - score finaux--> 
