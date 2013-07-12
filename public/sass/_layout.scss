@@ -150,7 +150,7 @@
 	padding: $main-gutter;
 	background: $background-color;	
 	border-top: 1px solid $background-color-dark;
-	position: relative;
+	position: relative;	
 	&:after, &:before {  
 		bottom: 100%;
 		border: solid transparent;
@@ -210,6 +210,7 @@
 	//position: relative;
 }
 .table-main-content {
+	margin-bottom: 51px;
 	//position: fixed;
 	//height: 100%;
 	//overflow: scroll;
