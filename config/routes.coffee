@@ -3,6 +3,8 @@ exports.routes = (map)->
 
   map.resources 'pledges'
 
+  map.resources 'stats'
+
 
   # Generic routes. Add all your routes below this line
   # feel free to remove generic routes
