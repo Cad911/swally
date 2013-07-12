@@ -643,16 +643,10 @@ td {
   margin-right: 0;
 }
 
-/* line 209, ../sass/_layout.scss */
-.table-main-content {
-  position: fixed;
-  height: 100%;
-}
-
-/* line 213, ../sass/_layout.scss */
+/* line 217, ../sass/_layout.scss */
 .mini-game {
   position: fixed;
-  overflow: scroll;
+  overflow: hidden;
   width: 100%;
   height: 100%;
   top: 0;
@@ -665,41 +659,41 @@ td {
   box-sizing: border-box;
   background: rgba(255, 252, 247, 0.95);
 }
-/* line 225, ../sass/_layout.scss */
+/* line 229, ../sass/_layout.scss */
 .mini-game .container {
   margin: 0 auto;
 }
-/* line 228, ../sass/_layout.scss */
+/* line 232, ../sass/_layout.scss */
 .mini-game .introduction-wrapper, .mini-game .winner {
   max-width: 600px;
   margin: 0 auto;
 }
-/* line 231, ../sass/_layout.scss */
+/* line 235, ../sass/_layout.scss */
 .mini-game .introduction-wrapper header, .mini-game .winner header {
   height: inherit;
 }
-/* line 235, ../sass/_layout.scss */
+/* line 239, ../sass/_layout.scss */
 .mini-game .introduction, .mini-game .winner {
   text-align: center;
   padding-top: 30px;
 }
-/* line 238, ../sass/_layout.scss */
+/* line 242, ../sass/_layout.scss */
 .mini-game .introduction h1, .mini-game .introduction footer, .mini-game .winner h1, .mini-game .winner footer {
   text-align: center;
 }
-/* line 241, ../sass/_layout.scss */
+/* line 245, ../sass/_layout.scss */
 .mini-game .introduction header, .mini-game .winner header {
   margin: 0 auto 45px auto;
 }
-/* line 244, ../sass/_layout.scss */
+/* line 248, ../sass/_layout.scss */
 .mini-game .introduction .content, .mini-game .winner .content {
   margin: 0 0 37.5px 0;
 }
-/* line 247, ../sass/_layout.scss */
+/* line 251, ../sass/_layout.scss */
 .mini-game .introduction footer, .mini-game .winner footer {
   margin-bottom: 30px;
 }
-/* line 251, ../sass/_layout.scss */
+/* line 255, ../sass/_layout.scss */
 .mini-game .timer, .mini-game .count, .mini-game .timer-during-game {
   -webkit-transition-property: all;
   -moz-transition-property: all;
@@ -714,7 +708,7 @@ td {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-/* line 256, ../sass/_layout.scss */
+/* line 260, ../sass/_layout.scss */
 .mini-game .gauge {
   -webkit-transition-property: left, opacity;
   -moz-transition-property: left, opacity;
@@ -729,14 +723,14 @@ td {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-/* line 262, ../sass/_layout.scss */
+/* line 266, ../sass/_layout.scss */
 .mini-game .sreen-game .instruction {
   text-align: center;
   position: absolute;
   bottom: -20px;
   left: 49%;
 }
-/* line 268, ../sass/_layout.scss */
+/* line 272, ../sass/_layout.scss */
 .mini-game .sreen-game .instruction {
   -webkit-transition-property: all;
   -moz-transition-property: all;
@@ -751,51 +745,51 @@ td {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-/* line 273, ../sass/_layout.scss */
+/* line 277, ../sass/_layout.scss */
 .mini-game .sreen-game .gauge {
   opacity: 0;
 }
-/* line 277, ../sass/_layout.scss */
+/* line 281, ../sass/_layout.scss */
 .mini-game .sreen-game .timer {
   right: 30px;
   opacity: 0;
 }
-/* line 281, ../sass/_layout.scss */
+/* line 285, ../sass/_layout.scss */
 .mini-game .sreen-game .count {
   right: 30px;
   opacity: 0;
 }
-/* line 285, ../sass/_layout.scss */
+/* line 289, ../sass/_layout.scss */
 .mini-game .sreen-game .timer-during-game {
   top: 30px;
   opacity: 0;
 }
-/* line 289, ../sass/_layout.scss */
+/* line 293, ../sass/_layout.scss */
 .mini-game .sreen-game .instruction {
   bottom: 30px;
   opacity: 0;
 }
-/* line 294, ../sass/_layout.scss */
+/* line 298, ../sass/_layout.scss */
 .mini-game .sreen-game.interface-is-displayed .gauge {
   left: 30px;
   opacity: 1;
 }
-/* line 298, ../sass/_layout.scss */
+/* line 302, ../sass/_layout.scss */
 .mini-game .sreen-game.interface-is-displayed .timer {
   right: 30px;
   opacity: 1;
 }
-/* line 302, ../sass/_layout.scss */
+/* line 306, ../sass/_layout.scss */
 .mini-game .sreen-game.interface-is-displayed .count {
   right: 30px;
   opacity: 1;
 }
-/* line 306, ../sass/_layout.scss */
+/* line 310, ../sass/_layout.scss */
 .mini-game .sreen-game.interface-is-displayed .instruction {
   bottom: 30px;
   opacity: 1;
 }
-/* line 310, ../sass/_layout.scss */
+/* line 314, ../sass/_layout.scss */
 .mini-game .sreen-game.interface-is-displayed .timer-during-game {
   opacity: 1;
   top: 30px;
