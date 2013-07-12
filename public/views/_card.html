@@ -12,7 +12,7 @@
   <section class="box playground span9 container-fluid {{ actual_class }}">
     <div class="card-area row-fluid">
         <div class="span3 relative{{ pledge.reveal }}" data-ng-repeat="pledge in current_pledges">
-          <div class="front card is-not-revealed" data-ng-click="reveal($index)">
+          <div class="front card is-not-revealed" ng-tap-tap="reveal($index)">
           </div>
           <div class="back card default is-revealed">
             <p class="category">{{ pledge.data.category.title }}</p>
