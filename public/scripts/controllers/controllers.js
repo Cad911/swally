@@ -40,7 +40,7 @@
       $scope.real_distance = 0;
       distance = 0;
       $scope.step = 1;
-      timer = 500000;
+      timer = 5000;
       $scope.timer_show = timer / 1000;
       for (i = _i = 1, _ref = $scope.nb_player; 1 <= _ref ? _i <= _ref : _i >= _ref; i = 1 <= _ref ? ++_i : --_i) {
         $scope.score[i] = 0;
@@ -80,13 +80,23 @@
           if ($scope.count_down === 0) {
             $scope.$apply($scope.step = 3);
             timer_intval = setInterval(function() {
-              return $scope.$apply($scope.timer_show = Math.round(($scope.timer_show - 0.1) * 100) / 100);
+              $scope.$apply($scope.timer_show = Math.round(($scope.timer_show - 0.1) * 100) / 100);
+              if ($scope.timer_show === 0) {
+                clearInterval(timer_intval);
+                $scope.count_down = 3;
+                $scope.$apply($scope.step = 0);
+                if ($scope.actual_player === $scope.nb_player) {
+                  return setTimeout(function() {
+                    console.log('end');
+                    return $scope.$apply($scope.endGame());
+                  }, 200);
+                } else {
+                  return setTimeout(function() {
+                    return $scope.$apply($scope.showScore());
+                  }, 300);
+                }
+              }
             }, 100);
-            setTimeout(function() {
-              clearInterval(timer_intval);
-              $scope.count_down = 3;
-              return $scope.$apply($scope.showScore());
-            }, timer);
             return clearInterval(interval_);
           }
         }, 1000);
@@ -141,13 +151,16 @@
               }
             }
           }
-          return setTimeout(function() {
-            return $scope.$apply($scope.actual_player = actual_player_next);
-          }, 100);
+          return $scope.actual_player = actual_player_next;
         }
       };
       $scope.endGame = function() {
         var higher_score, local_win_player, player, score, score_equal_tab, _ref1, _ref2;
+        $scope.score[$scope.actual_player] = $scope.real_distance;
+        sharedServices.sharedScrollToZero();
+        initCounter();
+        $scope.timer_show = timer / 1000;
+        $scope.is_playing = false;
         higher_score = 0;
         $scope.score_are_equal = false;
         local_win_player = 1;
@@ -278,10 +291,17 @@
               if ($scope.timer_show === 0) {
                 clearInterval(timer_intval);
                 $scope.count_down = 3;
-                $scope.step = 1;
-                return setTimeout(function() {
-                  return $scope.$apply($scope.showScore());
-                }, 400);
+                $scope.$apply($scope.step = 0);
+                if ($scope.actual_player === $scope.nb_player) {
+                  return setTimeout(function() {
+                    console.log('end');
+                    return $scope.$apply($scope.endGame());
+                  }, 200);
+                } else {
+                  return setTimeout(function() {
+                    return $scope.$apply($scope.showScore());
+                  }, 300);
+                }
               }
             }, 100);
             return clearInterval(interval_);
@@ -306,26 +326,24 @@
         $scope.step = 1;
         $scope.is_playing = false;
         $scope.previous_player = $scope.actual_player;
-        if ($scope.actual_player === $scope.nb_player) {
-          return $scope.endGame();
-        } else {
-          actual_player_next = $scope.actual_player;
-          for (i = _j = _ref1 = parseInt($scope.actual_player) + 1, _ref2 = $scope.nb_player; _ref1 <= _ref2 ? _j <= _ref2 : _j >= _ref2; i = _ref1 <= _ref2 ? ++_j : --_j) {
-            if ($scope.score[i] != null) {
-              actual_player_next = i;
-              break;
-            } else {
-              if ($scope.nb_player === i) {
-                $scope.endGame();
-                return true;
-              }
+        actual_player_next = $scope.actual_player;
+        for (i = _j = _ref1 = parseInt($scope.actual_player) + 1, _ref2 = $scope.nb_player; _ref1 <= _ref2 ? _j <= _ref2 : _j >= _ref2; i = _ref1 <= _ref2 ? ++_j : --_j) {
+          if ($scope.score[i] != null) {
+            actual_player_next = i;
+            break;
+          } else {
+            if ($scope.nb_player === i) {
+              $scope.endGame();
+              return true;
             }
           }
-          return $scope.actual_player = actual_player_next;
         }
+        return $scope.actual_player = actual_player_next;
       };
       $scope.endGame = function() {
         var higher_score, local_win_player, player, score, score_equal_tab, _ref1, _ref2;
+        $scope.timer_show = timer / 1000;
+        $scope.is_playing = false;
         higher_score = 0;
         $scope.score_are_equal = false;
         local_win_player = 1;
@@ -355,6 +373,7 @@
           }
         }
         if ($scope.score_are_equal) {
+          $scope.step = 1;
           return $scope.score = score_equal_tab;
         } else {
           $scope.step = 4;

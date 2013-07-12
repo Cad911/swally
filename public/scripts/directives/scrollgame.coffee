@@ -6,6 +6,7 @@ window.ourApp.directive('ngScrollAction', ($window)->
       elm.on("scroll", (e)->
         scope.$apply(attrs.ngScrollAction);
         scope.real_distance = elm.scrollTop()
+        console.log scope.real_distance
       )
 
 

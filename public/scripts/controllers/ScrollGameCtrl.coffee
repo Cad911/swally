@@ -23,7 +23,7 @@ window.ourApp.controller('ScrollGameCtrl', ['$scope','Pledges', 'sharedServices'
 
 
   $scope.step = 1
-  timer = 500000
+  timer = 5000
   $scope.timer_show = timer / 1000
 
   # INIT THE SCORE TO O
@@ -63,7 +63,7 @@ window.ourApp.controller('ScrollGameCtrl', ['$scope','Pledges', 'sharedServices'
   # FUNCTION WHICH DETERMINE THE BEGINNING OF THE GAME OF ONE PLAYER
   $scope.playTapTap = ()->
     $scope.score_are_equal = false
-    
+
     $scope.step = 2
 
     $scope.is_playing = true
@@ -75,15 +75,22 @@ window.ourApp.controller('ScrollGameCtrl', ['$scope','Pledges', 'sharedServices'
         # TIMER SHOW ON THE PAGE
         timer_intval = setInterval(()->
           $scope.$apply($scope.timer_show = Math.round(($scope.timer_show - 0.1)*100)/100)
+          
+          if $scope.timer_show == 0
+            clearInterval(timer_intval)
+            $scope.count_down = 3
+            $scope.$apply($scope.step = 0)
+            if $scope.actual_player == $scope.nb_player
+              setTimeout(()->
+                console.log 'end'
+                $scope.$apply($scope.endGame())
+              ,200)
+            else
+              setTimeout(()->
+                $scope.$apply($scope.showScore())
+              ,300)
         ,100)
 
-
-        setTimeout(()->
-          clearInterval(timer_intval)
-
-          $scope.count_down = 3
-          $scope.$apply($scope.showScore())
-        , timer)
         clearInterval(interval_)
     ,1000)
 
@@ -136,14 +143,23 @@ window.ourApp.controller('ScrollGameCtrl', ['$scope','Pledges', 'sharedServices'
             $scope.endGame()
             return true
 
-      # TIMEOUT FOR WAIT THE END OF THE ANIMATION WHEN THE ELEMENT OF THE SCREEN GAME DISAPEAR (AVOID TO SHOW THE SCORE OF THE SECOND PLAYER)
-      setTimeout(()->
-          $scope.$apply($scope.actual_player  = actual_player_next)
-      ,100)
+      $scope.actual_player  = actual_player_next
+      
 
 
   # FUNCTION WHICH CALCULATE THE WINNER AND DEFINE IF SOME PLAYER ARE THE SAME SCORE
   $scope.endGame = ()->
+    # SAVE THE DISTANCE WHICH WAS DONE
+    $scope.score[$scope.actual_player] = $scope.real_distance
+
+    # PUT THE SCROLL BAR TO ZERO
+    sharedServices.sharedScrollToZero()
+
+    initCounter()
+    
+    $scope.timer_show = timer / 1000
+    $scope.is_playing = false
+
     higher_score = 0
     $scope.score_are_equal = false
     local_win_player = 1
@@ -179,10 +195,6 @@ window.ourApp.controller('ScrollGameCtrl', ['$scope','Pledges', 'sharedServices'
       $scope.step = 4
       $scope.win_player = local_win_player
       
-      # setTimeout(()->
-      #   sharedServices.hideMiniGame()
-      #   $scope.$apply($scope.initVar())
-      # , 2000)
 
   $scope.gameOver = ()->
     sharedServices.hideMiniGame()

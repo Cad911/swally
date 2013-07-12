@@ -71,21 +71,19 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$
           if $scope.timer_show == 0
             clearInterval(timer_intval)
             $scope.count_down = 3
-            $scope.step = 1
-            setTimeout(()->
-              $scope.$apply($scope.showScore())
-            ,400)
+            $scope.$apply($scope.step = 0)
+            if $scope.actual_player == $scope.nb_player
+              setTimeout(()->
+                console.log 'end'
+                $scope.$apply($scope.endGame())
+              ,200)
+            else
+              setTimeout(()->
+                $scope.$apply($scope.showScore())
+              ,300)
         ,100)
 
 
-        # setTimeout(()->
-        #   clearInterval(timer_intval)
-
-        #   $scope.count_down = 3
-        #   setTimeout(()->
-        #     $scope.$apply($scope.showScore())
-        #   ,1000)
-        # , timer)
         clearInterval(interval_)
     ,1000)
 
@@ -114,30 +112,30 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$
 
     $scope.previous_player = $scope.actual_player
     
-    if $scope.actual_player == $scope.nb_player
-      $scope.endGame()
-    else
-      actual_player_next = $scope.actual_player
-      
-      # CONTINUE HERE FOR PLAYER WHEN SCORE IS EQUAL => IF THERE ARE MORE THAN TWO PLAYER -> BECAUSE the index
-      # of the array can be 2, 5 because the player 2 and the player 5 have the same score
-      for i in [(parseInt($scope.actual_player) + 1)..$scope.nb_player]
-        # SI PLAYER IN THE GAME
-        if $scope.score[i]?
-          actual_player_next = i
-          break
-        else
-          # IF NO PLAYER IN THE GAME AND LOOP IS OVER
-          if $scope.nb_player == i
-            $scope.endGame()
-            return true
+    
+    actual_player_next = $scope.actual_player
+    
+    # CONTINUE HERE FOR PLAYER WHEN SCORE IS EQUAL => IF THERE ARE MORE THAN TWO PLAYER -> BECAUSE the index
+    # of the array can be 2, 5 because the player 2 and the player 5 have the same score
+    for i in [(parseInt($scope.actual_player) + 1)..$scope.nb_player]
+      # SI PLAYER IN THE GAME
+      if $scope.score[i]?
+        actual_player_next = i
+        break
+      else
+        # IF NO PLAYER IN THE GAME AND LOOP IS OVER
+        if $scope.nb_player == i
+          $scope.endGame()
+          return true
 
-      # TIMEOUT FOR WAIT THE END OF THE ANIMATION WHEN THE ELEMENT OF THE SCREEN GAME DISAPEAR (AVOID TO SHOW THE SCORE OF THE SECOND PLAYER)
-      $scope.actual_player  = actual_player_next
+    $scope.actual_player  = actual_player_next
 
 
   # FUNCTION WHICH CALCULATE THE WINNER AND DEFINE IF SOME PLAYER ARE THE SAME SCORE
   $scope.endGame = ()->
+    $scope.timer_show = timer / 1000
+    $scope.is_playing = false
+
     higher_score = 0
     $scope.score_are_equal = false
     local_win_player = 1
@@ -168,15 +166,12 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$
     # IF SCORE IS EQUAL, WE INIT VAR score WITH THE PLAYER WHO HAVE THE SAME HIGHEST SCORE
     # ELSE THE GAME IS OVER
     if $scope.score_are_equal
+      $scope.step = 1
       $scope.score = score_equal_tab
     else
       $scope.step = 4
       $scope.win_player = local_win_player
       
-      # setTimeout(()->
-      #   sharedServices.hideMiniGame()
-      #   $scope.$apply($scope.initVar())
-      # , 2000)
 
 
   $scope.gameOver = ()->

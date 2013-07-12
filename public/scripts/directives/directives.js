@@ -40,7 +40,8 @@
       elm.css('overflow', 'auto');
       elm.on("scroll", function(e) {
         scope.$apply(attrs.ngScrollAction);
-        return scope.real_distance = elm.scrollTop();
+        scope.real_distance = elm.scrollTop();
+        return console.log(scope.real_distance);
       });
       scope.$on('scroll-to-zero', function() {
         elm.css('overflow', 'hidden');
