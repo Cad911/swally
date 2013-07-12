@@ -25,8 +25,8 @@
 
       <div class="clear"></div>
     
-      <form class="action row-fluid" data-ng-submit="getPledge()" data-ng-show="show_new_turn">
-        <button type='submit' class="btn btn-primary span4 offset4 btn-huge">
+      <form class="action row-fluid" data-ng-show="show_new_turn">
+        <button type='submit' class="btn btn-primary span4 offset4 btn-huge" ng-tap-tap="getPledge()">
           <span data-ng-show="first_shot"><i class='icon-play'></i> Démarrer une partie</span>
           <span data-ng-hide="first_shot"><i class="icon-repeat"></i> Nouveau tour</span>
         </button>
