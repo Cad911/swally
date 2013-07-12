@@ -4,7 +4,7 @@
 	margin-bottom: $main-gutter;
 	
 	@extend .rounded;
-	border: solid 1px darken($background-color-dark-3, 10%);
+	border: solid 1px $background-color-dark-3;
 	background: $background-color-light-2;
 	@extend .classic-shadow;
 }
@@ -62,17 +62,40 @@
 		&:active {
 			background-image: none;
 			background-color: $primary-color-dark;
-			@include box-shadow(rgba(0,0,0, 0.45) 0 0px 1px 1px inset);
-			border:solid 1px rgba(0,0,0, 0);
+			@include box-shadow(rgba(0,0,0, 0.45) 0 0px 5px 1px inset);
+			border: none;
+			padding: 5px 13px;
 		}
 	}
 	&.btn-large {
 		padding: 7px 20px;
+		&:active {
+			padding: 8px 21px;
+		}
 	}
 	&.btn-huge {
 		font-size: 20px;
 		font-weight: normal;
 		padding: 10px 15px;	
+		&:active {
+			padding: 11px 16px;	
+		}		
+	}
+}
+// groupe les boutons, retire les border-radius, et ajuste les marges
+.btn-group {
+	.btn {
+		margin-left: -1px;
+		&:first-child {
+			@include border-top-right-radius(0);
+			@include border-bottom-right-radius(0);
+			margin-left: 0;
+		}
+		&:last-child {
+			@include border-top-left-radius(0);
+			@include border-bottom-left-radius(0);
+			margin-right: 0;			
+		}		
 	}
 }
 // élément table servant de tableau de données et non de mise en page

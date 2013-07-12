@@ -1,7 +1,12 @@
 .mini-game {
+  padding: 0;
   .interactive-area {
     padding: $main-gutter;
     height: 100%;
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+    @include box-sizing(border-box);
   }
   .tap-tap {
     .timer-during-game {

@@ -86,6 +86,7 @@
 // Zone de jeu
 .playground {	
 	padding: 0;
+	overflow: hidden;
 	.name {
 		font-size: 16px;
 		font-weight: 400;
@@ -205,6 +206,10 @@
 		}
 	}
 }
+.table-main-content {
+	position: fixed;
+	height: 100%;
+}
 .mini-game {
 	position: fixed;
 	overflow: scroll;
@@ -219,7 +224,7 @@
 	background: rgba($background-color-light-2,0.95);
 	.container {
 		margin: 0 auto;
-	}
+	}	
 	.introduction-wrapper, .winner {
 		max-width: 600px;
 		margin: 0 auto;
