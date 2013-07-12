@@ -54,15 +54,6 @@ window.ourApp.controller('PledgesCtrl', ['$scope','Pledges', 'sharedServices', '
   $scope.nb_play = 0
 
 
-  #MYCODE
-  $scope.current_mini_game = []
-  $scope.show_mini_game = false
-
-  # LISTEN EVENT FOR SHOW MINI GAME
-  $scope.$on('show-mini-game', ()->
-    $scope.show_mini_game = sharedServices.show_mini_game
-    $scope.current_mini_game = sharedServices.current_mini_game
-  )
 
   # TO DELETE WHEN THE SCREEN OF TAPTAP GAME WILL BE OVER
   # date_cache = Math.random(1,100)

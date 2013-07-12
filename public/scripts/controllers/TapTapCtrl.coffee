@@ -67,15 +67,25 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$
         # TIMER SHOW ON THE PAGE
         timer_intval = setInterval(()->
           $scope.$apply($scope.timer_show = Math.round(($scope.timer_show - 0.1)*100)/100)
+          
+          if $scope.timer_show == 0
+            clearInterval(timer_intval)
+            $scope.count_down = 3
+            $scope.step = 1
+            setTimeout(()->
+              $scope.$apply($scope.showScore())
+            ,400)
         ,100)
 
 
-        setTimeout(()->
-          clearInterval(timer_intval)
+        # setTimeout(()->
+        #   clearInterval(timer_intval)
 
-          $scope.count_down = 3
-          $scope.$apply($scope.showScore())
-        , timer)
+        #   $scope.count_down = 3
+        #   setTimeout(()->
+        #     $scope.$apply($scope.showScore())
+        #   ,1000)
+        # , timer)
         clearInterval(interval_)
     ,1000)
 
@@ -123,9 +133,7 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$
             return true
 
       # TIMEOUT FOR WAIT THE END OF THE ANIMATION WHEN THE ELEMENT OF THE SCREEN GAME DISAPEAR (AVOID TO SHOW THE SCORE OF THE SECOND PLAYER)
-      setTimeout(()->
-          $scope.$apply($scope.actual_player  = actual_player_next)
-      ,100)
+      $scope.actual_player  = actual_player_next
 
 
   # FUNCTION WHICH CALCULATE THE WINNER AND DEFINE IF SOME PLAYER ARE THE SAME SCORE

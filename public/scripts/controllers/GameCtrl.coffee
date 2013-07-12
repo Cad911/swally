@@ -7,4 +7,9 @@ window.ourApp.controller('GamesCtrl', ['$scope', 'sharedServices' , ($scope, sha
     $scope.show_mini_game = sharedServices.show_mini_game
     $scope.current_mini_game = sharedServices.current_mini_game
   )
+
+  $scope.$on('hide-mini-game', ()->
+    $scope.show_mini_game = sharedServices.show_mini_game
+    $scope.current_mini_game = sharedServices.current_mini_game
+  )
 ])
