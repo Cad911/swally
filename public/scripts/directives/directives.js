@@ -84,6 +84,15 @@
     };
   });
 
+  window.ourApp.directive('ngTouch', function() {
+    return function(scope, element, attrs) {
+      $(element).hammer().on('touch', function(e) {
+        return scope.$apply(attrs.ngTouch);
+      });
+      return true;
+    };
+  });
+
   window.ourApp.directive('noScrollMobile', function() {
     return function(scope, element, attrs) {
       document.ontouchstart = function(e) {

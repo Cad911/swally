@@ -63,6 +63,16 @@ window.ourApp.directive('ngTapTap',()->
     true
 )
 
+window.ourApp.directive('ngTouch',()->
+  (scope, element,attrs)->
+
+    $(element).hammer().on('touch',(e)->
+      scope.$apply(attrs.ngTouch)
+    )
+
+    true
+)
+
 
 window.ourApp.directive('noScrollMobile',()->
   (scope, element,attrs)->
