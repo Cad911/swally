@@ -56,7 +56,7 @@ body, p {
 /* line 24, ../sass/_base.scss */
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, .card.is-revealed .category, h6, .h6 {
   margin: 10px 0 10px 0;
-  font-family: "Merriweather", georgia, arial;
+  font-family: 'Merriweather', georgia, arial;
   font-weight: 900;
 }
 
@@ -90,14 +90,14 @@ h4, .h4 {
 
 /* line 51, ../sass/_base.scss */
 h5, .h5, .card.is-revealed .category {
-  color: #565656;
+  color: #575757;
   font-size: 18px;
   line-height: 20px;
 }
 
 /* line 56, ../sass/_base.scss */
 h6, .h6 {
-  color: #565656;
+  color: #575757;
   font-size: 16px;
   line-height: 20px;
 }
@@ -166,9 +166,9 @@ td {
 
 /* line 9, ../sass/_tools.scss */
 .classic-shadow, .box, .tag, .main-bar {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.45) 0px 1px 1px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.45) 0px 1px 1px;
-  box-shadow: rgba(0, 0, 0, 0.45) 0px 1px 1px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 1px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 1px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 1px;
 }
 
 /* line 12, ../sass/_tools.scss */
@@ -201,7 +201,7 @@ td {
 
 /* line 30, ../sass/_tools.scss */
 .light {
-  color: #939392;
+  color: #949494;
 }
 
 /* line 34, ../sass/_tools.scss */
@@ -223,7 +223,7 @@ td {
 .box {
   padding: 30px;
   margin-bottom: 30px;
-  border: solid 1px #beb2a2;
+  border: solid 1px #d3cbc0;
   background: #fffcf7;
 }
 
@@ -239,11 +239,11 @@ td {
 /* line 23, ../sass/_module.scss */
 .tag:hover {
   cursor: pointer;
-  background-color: #0a8989;
+  background-color: #098282;
 }
 /* line 27, ../sass/_module.scss */
 .tag:active, .tag.is-active {
-  background-color: #0a8989;
+  background-color: #098282;
   -webkit-box-shadow: white 0px 1px 1px;
   -moz-box-shadow: white 0px 1px 1px;
   box-shadow: white 0px 1px 1px;
@@ -288,39 +288,73 @@ td {
 .btn.btn-primary:active {
   background-image: none;
   background-color: #d96a10;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.45) 0 0px 1px 1px inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.45) 0 0px 1px 1px inset;
-  box-shadow: rgba(0, 0, 0, 0.45) 0 0px 1px 1px inset;
-  border: solid 1px rgba(0, 0, 0, 0);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.45) 0 0px 5px 1px inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.45) 0 0px 5px 1px inset;
+  box-shadow: rgba(0, 0, 0, 0.45) 0 0px 5px 1px inset;
+  border: none;
+  padding: 5px 13px;
 }
-/* line 69, ../sass/_module.scss */
+/* line 70, ../sass/_module.scss */
 .btn.btn-large {
   padding: 7px 20px;
 }
 /* line 72, ../sass/_module.scss */
+.btn.btn-large:active {
+  padding: 8px 21px;
+}
+/* line 76, ../sass/_module.scss */
 .btn.btn-huge {
   font-size: 20px;
   font-weight: normal;
   padding: 10px 15px;
 }
-
 /* line 80, ../sass/_module.scss */
+.btn.btn-huge:active {
+  padding: 11px 16px;
+}
+
+/* line 87, ../sass/_module.scss */
+.btn-group .btn {
+  margin-left: -1px;
+}
+/* line 89, ../sass/_module.scss */
+.btn-group .btn:first-child {
+  -moz-border-radius-topright: 0;
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+  -moz-border-radius-bottomright: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-left: 0;
+}
+/* line 94, ../sass/_module.scss */
+.btn-group .btn:last-child {
+  -moz-border-radius-topleft: 0;
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-right: 0;
+}
+
+/* line 103, ../sass/_module.scss */
 .table tr, .table th {
   background-color: white;
 }
-/* line 83, ../sass/_module.scss */
+/* line 106, ../sass/_module.scss */
 .table tbody:nth-child(odd) td, .table tbody:nth-child(odd) th {
   background-color: #fffcf7;
 }
-/* line 86, ../sass/_module.scss */
+/* line 109, ../sass/_module.scss */
 .table tbody, .table tr {
   vertical-align: middle;
 }
-/* line 90, ../sass/_module.scss */
+/* line 113, ../sass/_module.scss */
 .table tbody:first-child td {
   border: none;
 }
-/* line 94, ../sass/_module.scss */
+/* line 117, ../sass/_module.scss */
 .table td {
   display: table-cell;
   padding: 12px;
@@ -328,7 +362,7 @@ td {
   text-align: left;
 }
 
-/* line 106, ../sass/_module.scss */
+/* line 129, ../sass/_module.scss */
 .card,
 .first-background-color,
 .second-background-color,
@@ -344,7 +378,7 @@ td {
   border-radius: 10px;
 }
 
-/* line 112, ../sass/_module.scss */
+/* line 135, ../sass/_module.scss */
 .card {
   position: relative;
   border: solid 1px #c4bcb2;
@@ -354,22 +388,22 @@ td {
   text-align: center;
 }
 
-/* line 118, ../sass/_module.scss */
+/* line 141, ../sass/_module.scss */
 .card-is-huge, .card-area .card {
   width: 120px;
   height: 195px;
 }
 
-/* line 122, ../sass/_module.scss */
+/* line 145, ../sass/_module.scss */
 .card-is-small {
   width: 70px;
   height: 105px;
 }
-/* line 125, ../sass/_module.scss */
+/* line 148, ../sass/_module.scss */
 .card-is-small .first-background-image {
   background-image: 0 -238px !important;
 }
-/* line 128, ../sass/_module.scss */
+/* line 151, ../sass/_module.scss */
 .card-is-small .second-background-image {
   background-image: 0 -249px !important;
 }
@@ -475,79 +509,80 @@ td {
 /* line 87, ../sass/_layout.scss */
 .playground {
   padding: 0;
+  overflow: hidden;
 }
-/* line 89, ../sass/_layout.scss */
+/* line 90, ../sass/_layout.scss */
 .playground .name {
   font-size: 16px;
   font-weight: 400;
 }
-/* line 93, ../sass/_layout.scss */
+/* line 94, ../sass/_layout.scss */
 .playground .content {
   width: 75%;
   float: left;
   padding-right: 5%;
 }
-/* line 100, ../sass/_layout.scss */
+/* line 101, ../sass/_layout.scss */
 .playground .btn {
   margin-bottom: 15px;
   margin-top: 20px;
 }
-/* line 104, ../sass/_layout.scss */
+/* line 105, ../sass/_layout.scss */
 .playground .btn i {
   font-weight: normal;
 }
-/* line 107, ../sass/_layout.scss */
+/* line 108, ../sass/_layout.scss */
 .playground .time-played {
   text-align: center;
 }
 
-/* line 111, ../sass/_layout.scss */
+/* line 112, ../sass/_layout.scss */
 .card-area {
   padding: 3%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 115, ../sass/_layout.scss */
+/* line 116, ../sass/_layout.scss */
 .card-area .span3 .card:hover {
   cursor: pointer;
 }
-/* line 119, ../sass/_layout.scss */
+/* line 120, ../sass/_layout.scss */
 .card-area .card {
   margin: 0 auto;
 }
-/* line 123, ../sass/_layout.scss */
+/* line 124, ../sass/_layout.scss */
 .card-area ul {
   margin: 0;
 }
-/* line 126, ../sass/_layout.scss */
+/* line 127, ../sass/_layout.scss */
 .card-area .card-container {
   position: relative;
 }
-/* line 131, ../sass/_layout.scss */
+/* line 132, ../sass/_layout.scss */
 .card-area .card-container:first-child {
   margin-left: 0;
 }
 
-/* line 136, ../sass/_layout.scss */
+/* line 137, ../sass/_layout.scss */
 .categories-area, .playground {
   float: left;
 }
 
-/* line 140, ../sass/_layout.scss */
+/* line 141, ../sass/_layout.scss */
 .categories-area .title {
   color: #ff7d13;
   line-height: 1.5em;
 }
 
-/* line 148, ../sass/_layout.scss */
+/* line 149, ../sass/_layout.scss */
 .pledge-area {
   padding: 30px;
   background: #f7eee2;
   border-top: 1px solid #e8dfd3;
   position: relative;
 }
-/* line 153, ../sass/_layout.scss */
+/* line 154, ../sass/_layout.scss */
 .pledge-area:after, .pledge-area:before {
   bottom: 100%;
   border: solid transparent;
@@ -557,7 +592,7 @@ td {
   position: absolute;
   pointer-events: none;
 }
-/* line 162, ../sass/_layout.scss */
+/* line 163, ../sass/_layout.scss */
 .pledge-area:before {
   border-color: rgba(194, 225, 245, 0);
   border-bottom-color: #e8dfd3;
@@ -566,7 +601,7 @@ td {
   left: 12.5%;
   display: none;
 }
-/* line 170, ../sass/_layout.scss */
+/* line 171, ../sass/_layout.scss */
 .pledge-area:after {
   border-color: rgba(136, 183, 213, 0);
   border-bottom-color: #f7eee2;
@@ -576,39 +611,45 @@ td {
   display: none;
 }
 
-/* line 179, ../sass/_layout.scss */
+/* line 180, ../sass/_layout.scss */
 .activities {
   overflow: hidden;
   margin: 0 30px;
 }
-/* line 182, ../sass/_layout.scss */
+/* line 183, ../sass/_layout.scss */
 .activities .rank {
   width: 20px;
   padding: 12px 30px;
   color: #0b9999;
   font-weight: 700;
 }
-/* line 189, ../sass/_layout.scss */
+/* line 190, ../sass/_layout.scss */
 .activities .rule {
   padding-left: 0;
 }
 
-/* line 196, ../sass/_layout.scss */
+/* line 197, ../sass/_layout.scss */
 .sub-bar .label {
   font-weight: 400;
   color: #666666;
 }
-/* line 200, ../sass/_layout.scss */
+/* line 201, ../sass/_layout.scss */
 .sub-bar .filter {
   margin-right: 60px;
   float: left;
 }
-/* line 203, ../sass/_layout.scss */
+/* line 204, ../sass/_layout.scss */
 .sub-bar .filter:last-child {
   margin-right: 0;
 }
 
-/* line 208, ../sass/_layout.scss */
+/* line 209, ../sass/_layout.scss */
+.table-main-content {
+  position: fixed;
+  height: 100%;
+}
+
+/* line 213, ../sass/_layout.scss */
 .mini-game {
   position: fixed;
   overflow: scroll;
@@ -624,41 +665,41 @@ td {
   box-sizing: border-box;
   background: rgba(255, 252, 247, 0.95);
 }
-/* line 220, ../sass/_layout.scss */
+/* line 225, ../sass/_layout.scss */
 .mini-game .container {
   margin: 0 auto;
 }
-/* line 223, ../sass/_layout.scss */
+/* line 228, ../sass/_layout.scss */
 .mini-game .introduction-wrapper, .mini-game .winner {
   max-width: 600px;
   margin: 0 auto;
 }
-/* line 226, ../sass/_layout.scss */
+/* line 231, ../sass/_layout.scss */
 .mini-game .introduction-wrapper header, .mini-game .winner header {
   height: inherit;
 }
-/* line 230, ../sass/_layout.scss */
+/* line 235, ../sass/_layout.scss */
 .mini-game .introduction, .mini-game .winner {
   text-align: center;
   padding-top: 30px;
 }
-/* line 233, ../sass/_layout.scss */
+/* line 238, ../sass/_layout.scss */
 .mini-game .introduction h1, .mini-game .introduction footer, .mini-game .winner h1, .mini-game .winner footer {
   text-align: center;
 }
-/* line 236, ../sass/_layout.scss */
+/* line 241, ../sass/_layout.scss */
 .mini-game .introduction header, .mini-game .winner header {
   margin: 0 auto 45px auto;
 }
-/* line 239, ../sass/_layout.scss */
+/* line 244, ../sass/_layout.scss */
 .mini-game .introduction .content, .mini-game .winner .content {
   margin: 0 0 37.5px 0;
 }
-/* line 242, ../sass/_layout.scss */
+/* line 247, ../sass/_layout.scss */
 .mini-game .introduction footer, .mini-game .winner footer {
   margin-bottom: 30px;
 }
-/* line 246, ../sass/_layout.scss */
+/* line 251, ../sass/_layout.scss */
 .mini-game .timer, .mini-game .count, .mini-game .timer-during-game {
   -webkit-transition-property: all;
   -moz-transition-property: all;
@@ -673,7 +714,7 @@ td {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-/* line 251, ../sass/_layout.scss */
+/* line 256, ../sass/_layout.scss */
 .mini-game .gauge {
   -webkit-transition-property: left, opacity;
   -moz-transition-property: left, opacity;
@@ -688,14 +729,14 @@ td {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-/* line 257, ../sass/_layout.scss */
+/* line 262, ../sass/_layout.scss */
 .mini-game .sreen-game .instruction {
   text-align: center;
   position: absolute;
   bottom: -20px;
   left: 49%;
 }
-/* line 263, ../sass/_layout.scss */
+/* line 268, ../sass/_layout.scss */
 .mini-game .sreen-game .instruction {
   -webkit-transition-property: all;
   -moz-transition-property: all;
@@ -710,68 +751,78 @@ td {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-/* line 268, ../sass/_layout.scss */
+/* line 273, ../sass/_layout.scss */
 .mini-game .sreen-game .gauge {
   opacity: 0;
 }
-/* line 272, ../sass/_layout.scss */
+/* line 277, ../sass/_layout.scss */
 .mini-game .sreen-game .timer {
   right: 30px;
   opacity: 0;
 }
-/* line 276, ../sass/_layout.scss */
+/* line 281, ../sass/_layout.scss */
 .mini-game .sreen-game .count {
   right: 30px;
   opacity: 0;
 }
-/* line 280, ../sass/_layout.scss */
+/* line 285, ../sass/_layout.scss */
 .mini-game .sreen-game .timer-during-game {
   top: 30px;
   opacity: 0;
 }
-/* line 284, ../sass/_layout.scss */
+/* line 289, ../sass/_layout.scss */
 .mini-game .sreen-game .instruction {
   bottom: 30px;
   opacity: 0;
 }
-/* line 289, ../sass/_layout.scss */
+/* line 294, ../sass/_layout.scss */
 .mini-game .sreen-game.interface-is-displayed .gauge {
   left: 30px;
   opacity: 1;
 }
-/* line 293, ../sass/_layout.scss */
+/* line 298, ../sass/_layout.scss */
 .mini-game .sreen-game.interface-is-displayed .timer {
   right: 30px;
   opacity: 1;
 }
-/* line 297, ../sass/_layout.scss */
+/* line 302, ../sass/_layout.scss */
 .mini-game .sreen-game.interface-is-displayed .count {
   right: 30px;
   opacity: 1;
 }
-/* line 301, ../sass/_layout.scss */
+/* line 306, ../sass/_layout.scss */
 .mini-game .sreen-game.interface-is-displayed .instruction {
   bottom: 30px;
   opacity: 1;
 }
-/* line 305, ../sass/_layout.scss */
+/* line 310, ../sass/_layout.scss */
 .mini-game .sreen-game.interface-is-displayed .timer-during-game {
   opacity: 1;
   top: 30px;
 }
 
-/* line 2, ../sass/game/_tap-tap.scss */
+/* line 1, ../sass/game/_tap-tap.scss */
+.mini-game {
+  padding: 0;
+}
+/* line 3, ../sass/game/_tap-tap.scss */
 .mini-game .interactive-area {
   padding: 30px;
   height: 100%;
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-/* line 7, ../sass/game/_tap-tap.scss */
+/* line 12, ../sass/game/_tap-tap.scss */
 .mini-game .tap-tap .timer-during-game {
   position: absolute;
   top: -100px;
   opacity: 0;
 }
-/* line 12, ../sass/game/_tap-tap.scss */
+/* line 17, ../sass/game/_tap-tap.scss */
 .mini-game .tap-tap .count {
   font-size: 60px;
   position: absolute;
@@ -779,7 +830,7 @@ td {
   opacity: 0;
   color: #ff7d13;
 }
-/* line 19, ../sass/game/_tap-tap.scss */
+/* line 24, ../sass/game/_tap-tap.scss */
 .mini-game .tap-tap .gauge {
   position: absolute;
   top: 30px;
@@ -787,59 +838,59 @@ td {
   opacity: 0;
   margin: 0;
 }
-/* line 25, ../sass/game/_tap-tap.scss */
+/* line 30, ../sass/game/_tap-tap.scss */
 .mini-game .tap-tap .gauge li {
   height: 20px;
   display: block;
   position: absolute;
   margin: 0 0 7.5px 0;
 }
-/* line 32, ../sass/game/_tap-tap.scss */
+/* line 37, ../sass/game/_tap-tap.scss */
 .mini-game .tap-tap .gauge .level-1 {
   width: 45px;
   top: 0;
   background: #ff7d13;
 }
-/* line 37, ../sass/game/_tap-tap.scss */
+/* line 42, ../sass/game/_tap-tap.scss */
 .mini-game .tap-tap .gauge .level-2 {
   width: 40px;
   top: 27.5px;
   background: #ff9036;
 }
-/* line 42, ../sass/game/_tap-tap.scss */
+/* line 47, ../sass/game/_tap-tap.scss */
 .mini-game .tap-tap .gauge .level-3 {
   width: 35px;
   top: 55px;
-  background: #ffa459;
+  background: #ffa45a;
 }
-/* line 47, ../sass/game/_tap-tap.scss */
+/* line 52, ../sass/game/_tap-tap.scss */
 .mini-game .tap-tap .gauge .level-4 {
   width: 30px;
   top: 82.5px;
   background: #ffb87d;
 }
-/* line 52, ../sass/game/_tap-tap.scss */
+/* line 57, ../sass/game/_tap-tap.scss */
 .mini-game .tap-tap .gauge .level-5 {
   top: 110px;
   width: 25px;
   background: #ffcba1;
 }
-/* line 57, ../sass/game/_tap-tap.scss */
+/* line 62, ../sass/game/_tap-tap.scss */
 .mini-game .tap-tap .gauge .level-6 {
   width: 20px;
   top: 137.5px;
   background: #ffdec4;
 }
-/* line 64, ../sass/game/_tap-tap.scss */
+/* line 69, ../sass/game/_tap-tap.scss */
 .mini-game .timer-during-game, .mini-game .timer-before-start {
   position: absolute;
   left: 49%;
 }
-/* line 68, ../sass/game/_tap-tap.scss */
+/* line 73, ../sass/game/_tap-tap.scss */
 .mini-game .winner {
   text-align: center;
 }
-/* line 70, ../sass/game/_tap-tap.scss */
+/* line 75, ../sass/game/_tap-tap.scss */
 .mini-game .winner h6 {
   margin: 25px 0;
 }
@@ -975,18 +1026,28 @@ td {
   }
 }
 
-/* line 2, ../sass/game/_tap-tap.scss */
+/* line 1, ../sass/game/_tap-tap.scss */
+.mini-game {
+  padding: 0;
+}
+/* line 3, ../sass/game/_tap-tap.scss */
 .mini-game .interactive-area {
   padding: 30px;
   height: 100%;
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-/* line 7, ../sass/game/_tap-tap.scss */
+/* line 12, ../sass/game/_tap-tap.scss */
 .mini-game .tap-tap .timer-during-game {
   position: absolute;
   top: -100px;
   opacity: 0;
 }
-/* line 12, ../sass/game/_tap-tap.scss */
+/* line 17, ../sass/game/_tap-tap.scss */
 .mini-game .tap-tap .count {
   font-size: 60px;
   position: absolute;
@@ -994,7 +1055,7 @@ td {
   opacity: 0;
   color: #ff7d13;
 }
-/* line 19, ../sass/game/_tap-tap.scss */
+/* line 24, ../sass/game/_tap-tap.scss */
 .mini-game .tap-tap .gauge {
   position: absolute;
   top: 30px;
@@ -1002,59 +1063,59 @@ td {
   opacity: 0;
   margin: 0;
 }
-/* line 25, ../sass/game/_tap-tap.scss */
+/* line 30, ../sass/game/_tap-tap.scss */
 .mini-game .tap-tap .gauge li {
   height: 20px;
   display: block;
   position: absolute;
   margin: 0 0 7.5px 0;
 }
-/* line 32, ../sass/game/_tap-tap.scss */
+/* line 37, ../sass/game/_tap-tap.scss */
 .mini-game .tap-tap .gauge .level-1 {
   width: 45px;
   top: 0;
   background: #ff7d13;
 }
-/* line 37, ../sass/game/_tap-tap.scss */
+/* line 42, ../sass/game/_tap-tap.scss */
 .mini-game .tap-tap .gauge .level-2 {
   width: 40px;
   top: 27.5px;
   background: #ff9036;
 }
-/* line 42, ../sass/game/_tap-tap.scss */
+/* line 47, ../sass/game/_tap-tap.scss */
 .mini-game .tap-tap .gauge .level-3 {
   width: 35px;
   top: 55px;
-  background: #ffa459;
+  background: #ffa45a;
 }
-/* line 47, ../sass/game/_tap-tap.scss */
+/* line 52, ../sass/game/_tap-tap.scss */
 .mini-game .tap-tap .gauge .level-4 {
   width: 30px;
   top: 82.5px;
   background: #ffb87d;
 }
-/* line 52, ../sass/game/_tap-tap.scss */
+/* line 57, ../sass/game/_tap-tap.scss */
 .mini-game .tap-tap .gauge .level-5 {
   top: 110px;
   width: 25px;
   background: #ffcba1;
 }
-/* line 57, ../sass/game/_tap-tap.scss */
+/* line 62, ../sass/game/_tap-tap.scss */
 .mini-game .tap-tap .gauge .level-6 {
   width: 20px;
   top: 137.5px;
   background: #ffdec4;
 }
-/* line 64, ../sass/game/_tap-tap.scss */
+/* line 69, ../sass/game/_tap-tap.scss */
 .mini-game .timer-during-game, .mini-game .timer-before-start {
   position: absolute;
   left: 49%;
 }
-/* line 68, ../sass/game/_tap-tap.scss */
+/* line 73, ../sass/game/_tap-tap.scss */
 .mini-game .winner {
   text-align: center;
 }
-/* line 70, ../sass/game/_tap-tap.scss */
+/* line 75, ../sass/game/_tap-tap.scss */
 .mini-game .winner h6 {
   margin: 25px 0;
 }

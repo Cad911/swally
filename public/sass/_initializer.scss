@@ -1,6 +1,6 @@
 // couleur hexadécimale
 $orange: #ff7d13;
-$blue: #0B9999;
+$blue: #0b9999;
 $beige: #f7eee2;
 $grey: #666666;
 $green: #0fcc0f;
@@ -10,30 +10,25 @@ $green: #0fcc0f;
 // Couleur PRIMAIRE et ses teintes dérivées
 $primary-color: $orange;
 $primary-color-light: #ff9036;
-$primary-color-light-2: #ffa459;
+$primary-color-light-2: #ffa45a;
 $primary-color-light-3: #ffb87d;
 $primary-color-light-4: #ffcba1;
 $primary-color-light-5: #ffdec4;
 $primary-color-dark: #d96a10;
+$primary-color-dark-2: #b2570d;
+$primary-color-dark-3: #8c450a;
+$primary-color-dark-4: #663208;
 
 // Couleur SECONDAIRE et ses teintes dérivées
 $secondary-color: $blue;
-$secondary-color-light: #2fa8a7;
-$secondary-color-light-2: #53b7b6;
-$secondary-color-light-3: #78c6c4;
-$secondary-color-light-4: #9cd4d3;
-$secondary-color-dark: #0a8989;
-
-// Couleur de VALIDATION et ses teintes dérivées
-$validated-color: $green;
-$validated-color-light: #33d433;
-$validated-color-light-2: #57db57;
-$validated-color-light-3: #7be37b;
-$validated-color-light-4: #9feb9f;
-$validated-color-dark: #0dae0d;
-$validated-color-dark-2: #0a8e0a;
-$validated-color-dark-3: #087008;
-$validated-color-dark-4: #065206;
+$secondary-color-light: #2fa8a8;
+$secondary-color-light-2: #55b8b8;
+$secondary-color-light-3: #79c7c7;
+$secondary-color-light-4: #9dd6d6;
+$secondary-color-dark: #098282;
+$secondary-color-dark-2: #086b6b;
+$secondary-color-dark-3: #065454;
+$secondary-color-dark-4: #043d3d;
 
 // Couleur de FOND et ses teintes dérivées
 $background-color: $beige;
@@ -45,9 +40,14 @@ $background-color-dark-3: #d3cbc0;
 
 // Couleur de TEXTE et ses teintes dérivées
 $text-color: $grey;
-$text-color-light: #7d7c7c;
-$text-color-light-2: #939392;
-$text-color-dark: #565656;
+$text-color-light: #7d7d7d;
+$text-color-light-2: #949494;
+$text-color-light-3: #ababab;
+$text-color-light-4: #c2c2c2;
+$text-color-dark: #575757;
+$text-color-dark-2: #474747;
+$text-color-dark-3: #474747;
+$text-color-dark-4: #474747;
 
 // Importe la google WebFont Meriweahter en normal et bold
 @import url(http://fonts.googleapis.com/css?family=Merriweather:400,700);
