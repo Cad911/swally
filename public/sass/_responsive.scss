@@ -26,7 +26,7 @@
 
 			border-top: $background-color-dark solid 1px;
 			background: $background-color;
-			@include box-shadow(rgba(0,0,0,0.55) 0px -2px 1px);
+			@include box-shadow(rgba(0,0,0,0.30) 0px -1px 1px);
 			z-index: 80;
 			.btn {
 				display: block;

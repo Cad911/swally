@@ -1365,9 +1365,9 @@ td {
     left: 0;
     border-top: #e8dfd3 solid 1px;
     background: #f7eee2;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.55) 0px -2px 1px;
-    -moz-box-shadow: rgba(0, 0, 0, 0.55) 0px -2px 1px;
-    box-shadow: rgba(0, 0, 0, 0.55) 0px -2px 1px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px -1px 1px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.3) 0px -1px 1px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px -1px 1px;
     z-index: 80;
   }
   /* line 31, ../sass/_responsive.scss */
