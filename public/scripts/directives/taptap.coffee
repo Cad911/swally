@@ -64,6 +64,15 @@ window.ourApp.directive('ngTapTap',()->
 )
 
 
+window.ourApp.directive('noScrollMobile',()->
+  (scope, element,attrs)->
+    document.ontouchstart = (e)->
+      e.preventDefault()
+
+    true
+)
+
+
 window.ourApp.directive('ngShowClass',($timeout)->
   (scope, element, attrs)->
     show = ()->
