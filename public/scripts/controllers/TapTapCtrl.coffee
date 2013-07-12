@@ -122,7 +122,10 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pledges', 'sharedServices' ,'$
             $scope.endGame()
             return true
 
-      $scope.actual_player  = actual_player_next
+      # TIMEOUT FOR WAIT THE END OF THE ANIMATION WHEN THE ELEMENT OF THE SCREEN GAME DISAPEAR (AVOID TO SHOW THE SCORE OF THE SECOND PLAYER)
+      setTimeout(()->
+          $scope.$apply($scope.actual_player  = actual_player_next)
+      ,100)
 
 
   # FUNCTION WHICH CALCULATE THE WINNER AND DEFINE IF SOME PLAYER ARE THE SAME SCORE

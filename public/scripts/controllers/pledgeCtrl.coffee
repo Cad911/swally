@@ -65,11 +65,11 @@ window.ourApp.controller('PledgesCtrl', ['$scope','Pledges', 'sharedServices', '
   )
 
   # TO DELETE WHEN THE SCREEN OF TAPTAP GAME WILL BE OVER
-  date_cache = Math.random(1,100)
-  sharedServices.showMiniGame({
-      # url: './views/_game.html?'+date_cache
-      url: './views/_scroll_game.html?'+date_cache
-  })
+  # date_cache = Math.random(1,100)
+  # sharedServices.showMiniGame({
+  #     # url: './views/_game.html?'+date_cache
+  #     url: './views/_scroll_game.html?'+date_cache
+  # })
   # ------------------------------------------------------
 
   $scope.getPledge = ()->
@@ -102,7 +102,7 @@ window.ourApp.controller('PledgesCtrl', ['$scope','Pledges', 'sharedServices', '
       # -- MYCODE ---
 
       # SAVE THE STATS AT EACH SWALLOW DRUNK
-      statsServices.save()
+      statsServices.saveStats()
       
       # HERE SHOW MINI GAME IF THE CARD IS MINI GAME CARD
       if $scope.current_pledges[index_card].data.category.title == 'Mini-jeu'

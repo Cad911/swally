@@ -26,6 +26,18 @@ module.exports = (mongoose, compound)  ->
   Pledge.modelName = 'Pledge'
   compound.models.Pledge = Pledge;
 
+  # Stats Schema
+  StatSchema = new Schema
+    lat: Number
+    long: Number
+    swallow: Number
+    device: String
+
+  Stat = mongoose.model('Stat', StatSchema, 'Stat')
+  Stat.modelName = 'Stat'
+
+  compound.models.Stat = Stat
+  
 # Pledge = describe 'Pledge', ->
 #     property 'pledge', String
 #     property 'description', String

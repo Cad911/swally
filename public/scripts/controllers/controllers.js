@@ -21,7 +21,7 @@
   ]);
 
   window.ourApp.controller('ScrollGameCtrl', [
-    '$scope', 'Pledges', 'sharedServices', '$q', function($scope, Pledges, sharedServices, $q) {
+    '$scope', 'Pledges', 'sharedServices', '$q', 'Stats', function($scope, Pledges, sharedServices, $q, Stats) {
       var distance, i, initCounter, timer, _i, _ref;
       $scope.nb_player = 2;
       $scope.actual_player = 1;
@@ -137,7 +137,9 @@
               }
             }
           }
-          return $scope.actual_player = actual_player_next;
+          return setTimeout(function() {
+            return $scope.$apply($scope.actual_player = actual_player_next);
+          }, 100);
         }
       };
       $scope.endGame = function() {
@@ -312,7 +314,9 @@
               }
             }
           }
-          return $scope.actual_player = actual_player_next;
+          return setTimeout(function() {
+            return $scope.$apply($scope.actual_player = actual_player_next);
+          }, 100);
         }
       };
       $scope.endGame = function() {
@@ -392,7 +396,7 @@
 
   window.ourApp.controller('PledgesCtrl', [
     '$scope', 'Pledges', 'sharedServices', 'statsServices', function($scope, Pledges, sharedServices, statsServices) {
-      var date_cache, generateRandomPledges, nb_card, played_card, shot_played;
+      var generateRandomPledges, nb_card, played_card, shot_played;
       shot_played = 0;
       played_card = [];
       nb_card = 4;
@@ -415,10 +419,6 @@
       $scope.$on('show-mini-game', function() {
         $scope.show_mini_game = sharedServices.show_mini_game;
         return $scope.current_mini_game = sharedServices.current_mini_game;
-      });
-      date_cache = Math.random(1, 100);
-      sharedServices.showMiniGame({
-        url: './views/_scroll_game.html?' + date_cache
       });
       $scope.getPledge = function() {
         generateRandomPledges(nb_card);
@@ -444,7 +444,7 @@
             $scope.show_new_turn = true;
             shot_played = 0;
           }
-          statsServices.save();
+          statsServices.saveStats();
           if ($scope.current_pledges[index_card].data.category.title === 'Mini-jeu') {
             return sharedServices.showMiniGame({
               url: './views/_game.html'
