@@ -59,6 +59,7 @@
       var localize, statsVar;
       statsVar = {};
       statsVar.device_name = '';
+      statsVar.alreadyCheck = false;
       statsVar.position = {
         lat: 0,
         long: 0,
@@ -67,7 +68,7 @@
         region: '',
         country: ''
       };
-      localize = function() {
+      localize = function(callback) {
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
             var geocoder, latlng;
@@ -76,11 +77,27 @@
             geocoder.geocode({
               'latLng': latlng
             }, function(results, status) {
-              var rows_city;
-              statsVar.position.cp = results[0]['address_components'][6]['long_name'];
-              statsVar.position.city = results[0]['address_components'][2]['long_name'];
-              statsVar.position.region = results[0]['address_components'][3]['long_name'];
-              statsVar.position.country = results[0]['address_components'][5]['long_name'];
+              var result, rows_city, t;
+              for (t in results) {
+                result = results[t];
+                switch (result.types[0]) {
+                  case 'locality':
+                    statsVar.position.city = result['address_components'][0]['long_name'];
+                    break;
+                  case 'postal_code':
+                    statsVar.position.cp = result['address_components'][0]['long_name'];
+                    break;
+                  case 'administrative_area_level_1':
+                    statsVar.position.region = result['address_components'][0]['long_name'];
+                    break;
+                  case 'administrative_area_level_2':
+                    statsVar.position.department = result['address_components'][0]['long_name'];
+                    break;
+                  case 'country':
+                    statsVar.position.country = result['address_components'][0]['long_name'];
+                }
+              }
+              statsVar.alreadyCheck = true;
               return rows_city = Stats.query({
                 query: JSON.stringify({
                   city: "Lille"
@@ -88,25 +105,37 @@
               }, function() {
                 if (rows_city.length > 0) {
                   statsVar.position.lat = rows_city[0].lat;
-                  statsVar.position.long = rows_city[0].longitude;
-                  return statsVar.saveStats(0);
+                  statsVar.position.long = rows_city[0].long;
+                  return callback();
                 } else {
                   return geocoder.geocode({
                     'address': statsVar.position.city
                   }, function(results, status) {
                     statsVar.position.lat = results[0].geometry.location.jb;
                     statsVar.position.long = results[0].geometry.location.kb;
-                    return statsVar.saveStats(0);
+                    return callback();
                   });
                 }
               });
             });
             return true;
           });
+        } else {
+          statsVar.position = {
+            lat: 0,
+            long: 0,
+            city: 'None',
+            cp: 'None',
+            region: 'None',
+            country: 'None'
+          };
+          callback();
         }
         return true;
       };
-      localize();
+      localize(function() {
+        return statsVar.saveStats(0);
+      });
       statsVar.getDeviceName = function() {
         var user_agent;
         if (this.device_name === '') {
@@ -129,32 +158,33 @@
         }
         return statsVar.device_name;
       };
-      statsVar.getLatLong = function() {
-        if (this.position.lat === 0 && this.position.long === 0) {
-          localize();
-        }
-        return this.position;
-      };
       statsVar.saveStats = function(nb_swallow) {
         var newStats, statistiques;
         if (nb_swallow == null) {
           nb_swallow = 1;
         }
-        this.getLatLong();
-        statistiques = {
-          lat: this.position.lat,
-          long: this.position.long,
-          city: this.position.city,
-          cp: this.position.cp,
-          region: this.position.region,
-          country: this.position.country,
-          swallow: nb_swallow,
-          device: statsVar.getDeviceName(),
-          created_at: new Date()
-        };
-        newStats = new Stats(statistiques);
-        newStats.$save();
-        return console.log(newStats);
+        if (this.position.lat === 0 && this.position.long === 0 && !statsVar.alreadyCheck) {
+          return localize(function() {
+            return statsVar.saveStats(nb_swallow);
+          });
+        } else {
+          statistiques = {
+            lat: this.position.lat,
+            long: this.position.long,
+            city: this.position.city,
+            cp: this.position.cp,
+            department: this.position.department,
+            region: this.position.region,
+            country: this.position.country,
+            swallow: nb_swallow,
+            device: statsVar.getDeviceName(),
+            created_at: new Date()
+          };
+          console.log(statistiques);
+          newStats = new Stats(statistiques);
+          newStats.$save();
+          return console.log(newStats);
+        }
       };
       return statsVar;
     }
