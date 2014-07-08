@@ -9,4 +9,4 @@ module.exports =
 
   production:
     driver: "mongoose"
-    url: "mongodb://heroku_app12577889:bu5jnitm24d7u9i8ecol1nj72n@ds031277.mongolab.com:31277/heroku_app12577889"
+    url: "mongodb://heroku_app12577889_B:4yZIjKCEbnUge0XiVgOW@ds031277.mongolab.com:31277/heroku_app12577889"
